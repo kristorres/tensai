@@ -1,0 +1,5 @@
+# Finder metadata
+.DS_Store
+
+# Xcode user settings
+xcuserdata/

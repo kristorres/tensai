@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		301F0ACE253A60A8000C6439 /* TensaiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301F0ACD253A60A8000C6439 /* TensaiApp.swift */; };
-		301F0AD0253A60A8000C6439 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301F0ACF253A60A8000C6439 /* ContentView.swift */; };
+		301F0AD0253A60A8000C6439 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301F0ACF253A60A8000C6439 /* RootView.swift */; };
 		301F0AD2253A60A9000C6439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301F0AD1253A60A9000C6439 /* Assets.xcassets */; };
 		301F0AD5253A60A9000C6439 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301F0AD4253A60A9000C6439 /* Preview Assets.xcassets */; };
 		30F078DC253E49F600D7A912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F078DB253E49F600D7A912 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		301F0ACA253A60A8000C6439 /* Tensai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tensai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		301F0ACD253A60A8000C6439 /* TensaiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensaiApp.swift; sourceTree = "<group>"; };
-		301F0ACF253A60A8000C6439 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		301F0ACF253A60A8000C6439 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		301F0AD1253A60A9000C6439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		301F0AD4253A60A9000C6439 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		301F0AD6253A60A9000C6439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 		301F0AE3253A67B9000C6439 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				301F0ACF253A60A8000C6439 /* ContentView.swift */,
+				301F0ACF253A60A8000C6439 /* RootView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,7 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				301F0ACE253A60A8000C6439 /* TensaiApp.swift in Sources */,
-				301F0AD0253A60A8000C6439 /* ContentView.swift in Sources */,
+				301F0AD0253A60A8000C6439 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

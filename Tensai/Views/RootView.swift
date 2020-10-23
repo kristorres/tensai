@@ -1,7 +1,7 @@
 import SwiftUI
 
-/// The content view.
-struct ContentView: View {
+/// The **root view** for *Tensai*.
+struct RootView: View {
     var body: some View {
         VStack {
             Text("🌎").font(.system(size: 100)).padding()
@@ -11,21 +11,21 @@ struct ContentView: View {
 }
 
 #if DEBUG
-struct ContentView_Previews: PreviewProvider {
+struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewName = "Content View"
+        let viewName = "Root View"
         return Group {
-            ContentView()
+            RootView()
                 .previewDevice("iPhone SE (1st generation)")
                 .previewDisplayName("\(viewName) — iPhone SE 1")
-            ContentView()
+            RootView()
                 .previewDevice("iPhone X")
                 .previewDisplayName("\(viewName) — iPhone X")
-            ContentView()
+            RootView()
                 .previewDevice("iPhone X")
                 .preferredColorScheme(.dark)
                 .previewDisplayName("\(viewName) — iPhone X (Dark Mode)")
-            ContentView()
+            RootView()
                 .previewDevice("iPad Air (4th generation)")
                 .previewDisplayName("\(viewName) — iPad Air 4")
         }

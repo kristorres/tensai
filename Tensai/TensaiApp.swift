@@ -4,7 +4,7 @@ import SwiftUI
 struct TensaiApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
 }

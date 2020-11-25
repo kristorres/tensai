@@ -7,14 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3013E1E7255FB49F00C2B2FB /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013E1E6255FB49F00C2B2FB /* APIRequest.swift */; };
+		3013E1EB255FBA6600C2B2FB /* APIRequestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013E1EA255FBA6600C2B2FB /* APIRequestLoader.swift */; };
+		3013E1EF2560E33200C2B2FB /* TriviaQuizRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013E1EE2560E33200C2B2FB /* TriviaQuizRequest.swift */; };
+		3013E1F62560E65400C2B2FB /* TriviaQuizRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013E1F52560E65400C2B2FB /* TriviaQuizRequestTests.swift */; };
+		3013E1FF2560F83200C2B2FB /* john_carpenter_millionaire.json in Resources */ = {isa = PBXBuildFile; fileRef = 3013E1FE2560F83200C2B2FB /* john_carpenter_millionaire.json */; };
 		301F0ACE253A60A8000C6439 /* TensaiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301F0ACD253A60A8000C6439 /* TensaiApp.swift */; };
 		301F0AD0253A60A8000C6439 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301F0ACF253A60A8000C6439 /* RootView.swift */; };
 		301F0AD2253A60A9000C6439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301F0AD1253A60A9000C6439 /* Assets.xcassets */; };
 		301F0AD5253A60A9000C6439 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301F0AD4253A60A9000C6439 /* Preview Assets.xcassets */; };
+		304598C02564515400635005 /* APILoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304598BF2564515400635005 /* APILoaderTests.swift */; };
+		304598CA256A312200635005 /* TriviaQuizCreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304598C9256A312200635005 /* TriviaQuizCreatorView.swift */; };
+		306E7543254E2AE9004145A6 /* TriviaQuizCreatorForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E7542254E2AE9004145A6 /* TriviaQuizCreatorForm.swift */; };
+		307695A0254367410028E1E7 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076959F254367410028E1E7 /* ViewRouter.swift */; };
+		307695A525439DD30028E1E7 /* HBarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307695A425439DD30028E1E7 /* HBarPicker.swift */; };
+		30A04E372553BC54009C9695 /* TriviaQuizCreatorFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A04E362553BC54009C9695 /* TriviaQuizCreatorFormTests.swift */; };
+		30A04E472556153C009C9695 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A04E462556153C009C9695 /* Question.swift */; };
+		30A04E4E25573717009C9695 /* OpenTriviaDatabaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A04E4D25573717009C9695 /* OpenTriviaDatabaseResponse.swift */; };
 		30F078DC253E49F600D7A912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F078DB253E49F600D7A912 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		30A04E392553BC54009C9695 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 301F0AC2253A60A8000C6439 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 301F0AC9253A60A8000C6439;
+			remoteInfo = Tensai;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3013E1E6255FB49F00C2B2FB /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		3013E1EA255FBA6600C2B2FB /* APIRequestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestLoader.swift; sourceTree = "<group>"; };
+		3013E1EE2560E33200C2B2FB /* TriviaQuizRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizRequest.swift; sourceTree = "<group>"; };
+		3013E1F52560E65400C2B2FB /* TriviaQuizRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizRequestTests.swift; sourceTree = "<group>"; };
+		3013E1FE2560F83200C2B2FB /* john_carpenter_millionaire.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = john_carpenter_millionaire.json; sourceTree = "<group>"; };
 		301F0ACA253A60A8000C6439 /* Tensai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tensai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		301F0ACD253A60A8000C6439 /* TensaiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensaiApp.swift; sourceTree = "<group>"; };
 		301F0ACF253A60A8000C6439 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -24,6 +52,17 @@
 		301F0ADF253A6314000C6439 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		301F0AE0253A641D000C6439 /* Brainstorm.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Brainstorm.pdf; sourceTree = "<group>"; };
 		301F0AE1253A649E000C6439 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		304598BF2564515400635005 /* APILoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILoaderTests.swift; sourceTree = "<group>"; };
+		304598C9256A312200635005 /* TriviaQuizCreatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizCreatorView.swift; sourceTree = "<group>"; };
+		30594E76256DA3800084DDC6 /* trivia_quiz_creator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trivia_quiz_creator.png; sourceTree = "<group>"; };
+		306E7542254E2AE9004145A6 /* TriviaQuizCreatorForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizCreatorForm.swift; sourceTree = "<group>"; };
+		3076959F254367410028E1E7 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		307695A425439DD30028E1E7 /* HBarPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBarPicker.swift; sourceTree = "<group>"; };
+		30A04E342553BC54009C9695 /* TensaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30A04E362553BC54009C9695 /* TriviaQuizCreatorFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizCreatorFormTests.swift; sourceTree = "<group>"; };
+		30A04E382553BC54009C9695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30A04E462556153C009C9695 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		30A04E4D25573717009C9695 /* OpenTriviaDatabaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTriviaDatabaseResponse.swift; sourceTree = "<group>"; };
 		30F078DB253E49F600D7A912 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -35,16 +74,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		30A04E312553BC54009C9695 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3013E1F42560E5F700C2B2FB /* Networking Tests */ = {
+			isa = PBXGroup;
+			children = (
+				304598BF2564515400635005 /* APILoaderTests.swift */,
+				3013E1F52560E65400C2B2FB /* TriviaQuizRequestTests.swift */,
+			);
+			path = "Networking Tests";
+			sourceTree = "<group>";
+		};
 		301F0AC1253A60A8000C6439 = {
 			isa = PBXGroup;
 			children = (
 				301F0AE0253A641D000C6439 /* Brainstorm.pdf */,
 				301F0AE1253A649E000C6439 /* README.md */,
 				301F0ADF253A6314000C6439 /* .gitignore */,
+				30594E74256DA2B30084DDC6 /* Screenshots */,
 				301F0ACC253A60A8000C6439 /* Tensai */,
+				30A04E352553BC54009C9695 /* TensaiTests */,
 				301F0ACB253A60A8000C6439 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				301F0ACA253A60A8000C6439 /* Tensai.app */,
+				30A04E342553BC54009C9695 /* TensaiTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,7 +119,10 @@
 			isa = PBXGroup;
 			children = (
 				301F0ACD253A60A8000C6439 /* TensaiApp.swift */,
+				30A04E4525561457009C9695 /* Models */,
+				3076959E254366DA0028E1E7 /* View Models */,
 				301F0AE3253A67B9000C6439 /* Views */,
+				30A04E4C25573683009C9695 /* Networking */,
 				30FC5568253BFFC900AB3606 /* Supporting Files */,
 				301F0AD3253A60A9000C6439 /* Preview Content */,
 			);
@@ -80,8 +141,73 @@
 			isa = PBXGroup;
 			children = (
 				301F0ACF253A60A8000C6439 /* RootView.swift */,
+				304598C9256A312200635005 /* TriviaQuizCreatorView.swift */,
+				307695A325439D780028E1E7 /* Controls */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		30594E74256DA2B30084DDC6 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				30594E76256DA3800084DDC6 /* trivia_quiz_creator.png */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
+		3076959E254366DA0028E1E7 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				306E7542254E2AE9004145A6 /* TriviaQuizCreatorForm.swift */,
+				3076959F254367410028E1E7 /* ViewRouter.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		307695A325439D780028E1E7 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				307695A425439DD30028E1E7 /* HBarPicker.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		30A04E352553BC54009C9695 /* TensaiTests */ = {
+			isa = PBXGroup;
+			children = (
+				30A04E402553BE01009C9695 /* View Model Tests */,
+				3013E1F42560E5F700C2B2FB /* Networking Tests */,
+				3013E1FE2560F83200C2B2FB /* john_carpenter_millionaire.json */,
+				30A04E382553BC54009C9695 /* Info.plist */,
+			);
+			path = TensaiTests;
+			sourceTree = "<group>";
+		};
+		30A04E402553BE01009C9695 /* View Model Tests */ = {
+			isa = PBXGroup;
+			children = (
+				30A04E362553BC54009C9695 /* TriviaQuizCreatorFormTests.swift */,
+			);
+			path = "View Model Tests";
+			sourceTree = "<group>";
+		};
+		30A04E4525561457009C9695 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				30A04E462556153C009C9695 /* Question.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		30A04E4C25573683009C9695 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3013E1E6255FB49F00C2B2FB /* APIRequest.swift */,
+				3013E1EA255FBA6600C2B2FB /* APIRequestLoader.swift */,
+				30A04E4D25573717009C9695 /* OpenTriviaDatabaseResponse.swift */,
+				3013E1EE2560E33200C2B2FB /* TriviaQuizRequest.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		30FC5568253BFFC900AB3606 /* Supporting Files */ = {
@@ -114,17 +240,39 @@
 			productReference = 301F0ACA253A60A8000C6439 /* Tensai.app */;
 			productType = "com.apple.product-type.application";
 		};
+		30A04E332553BC54009C9695 /* TensaiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30A04E3B2553BC54009C9695 /* Build configuration list for PBXNativeTarget "TensaiTests" */;
+			buildPhases = (
+				30A04E302553BC54009C9695 /* Sources */,
+				30A04E312553BC54009C9695 /* Frameworks */,
+				30A04E322553BC54009C9695 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30A04E3A2553BC54009C9695 /* PBXTargetDependency */,
+			);
+			name = TensaiTests;
+			productName = TensaiTests;
+			productReference = 30A04E342553BC54009C9695 /* TensaiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		301F0AC2253A60A8000C6439 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1210;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					301F0AC9253A60A8000C6439 = {
 						CreatedOnToolsVersion = 12.0.1;
+					};
+					30A04E332553BC54009C9695 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 301F0AC9253A60A8000C6439;
 					};
 				};
 			};
@@ -142,6 +290,7 @@
 			projectRoot = "";
 			targets = (
 				301F0AC9253A60A8000C6439 /* Tensai */,
+				30A04E332553BC54009C9695 /* TensaiTests */,
 			);
 		};
 /* End PBXProject section */
@@ -157,6 +306,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		30A04E322553BC54009C9695 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3013E1FF2560F83200C2B2FB /* john_carpenter_millionaire.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -165,11 +322,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				301F0ACE253A60A8000C6439 /* TensaiApp.swift in Sources */,
+				30A04E472556153C009C9695 /* Question.swift in Sources */,
+				307695A0254367410028E1E7 /* ViewRouter.swift in Sources */,
+				306E7543254E2AE9004145A6 /* TriviaQuizCreatorForm.swift in Sources */,
+				307695A525439DD30028E1E7 /* HBarPicker.swift in Sources */,
 				301F0AD0253A60A8000C6439 /* RootView.swift in Sources */,
+				304598CA256A312200635005 /* TriviaQuizCreatorView.swift in Sources */,
+				30A04E4E25573717009C9695 /* OpenTriviaDatabaseResponse.swift in Sources */,
+				3013E1E7255FB49F00C2B2FB /* APIRequest.swift in Sources */,
+				3013E1EB255FBA6600C2B2FB /* APIRequestLoader.swift in Sources */,
+				3013E1EF2560E33200C2B2FB /* TriviaQuizRequest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30A04E302553BC54009C9695 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30A04E372553BC54009C9695 /* TriviaQuizCreatorFormTests.swift in Sources */,
+				304598C02564515400635005 /* APILoaderTests.swift in Sources */,
+				3013E1F62560E65400C2B2FB /* TriviaQuizRequestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30A04E3A2553BC54009C9695 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 301F0AC9253A60A8000C6439 /* Tensai */;
+			targetProxy = 30A04E392553BC54009C9695 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		301F0AD7253A60A9000C6439 /* Debug */ = {
@@ -334,6 +518,48 @@
 			};
 			name = Release;
 		};
+		30A04E3C2553BC54009C9695 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R6U5GZ53KJ;
+				INFOPLIST_FILE = TensaiTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.kristorres.TensaiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tensai.app/Tensai";
+			};
+			name = Debug;
+		};
+		30A04E3D2553BC54009C9695 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = R6U5GZ53KJ;
+				INFOPLIST_FILE = TensaiTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.kristorres.TensaiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tensai.app/Tensai";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -351,6 +577,15 @@
 			buildConfigurations = (
 				301F0ADA253A60A9000C6439 /* Debug */,
 				301F0ADB253A60A9000C6439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30A04E3B2553BC54009C9695 /* Build configuration list for PBXNativeTarget "TensaiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30A04E3C2553BC54009C9695 /* Debug */,
+				30A04E3D2553BC54009C9695 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,0 +1,185 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "category": "Cartoons",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "In the “Road Runner and Coyote” cartoons, what famous sound does the Road Runner make?",
+            "correct_answer": "Beep! Beep!",
+            "incorrect_answers": [
+                "Ping! Ping!",
+                "Aooga! Aooga!",
+                "Vroom! Vroom!"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Where should choking victims place their hands to indicate to others that they need help?",
+            "correct_answer": "Around the throat",
+            "incorrect_answers": [
+                "Over the eyes",
+                "On the knees",
+                "On the hips"
+            ]
+        },
+        {
+            "category": "Music",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "Which of these dance names is used to describe a fashionable dot?",
+            "correct_answer": "Polka",
+            "incorrect_answers": [
+                "Hora",
+                "Swing",
+                "Lambada"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "In what “language” would you say “ello-hay” to greet your friends?",
+            "correct_answer": "Pig Latin",
+            "incorrect_answers": [
+                "Bull Latin",
+                "Dog Latin",
+                "Duck Latin"
+            ]
+        },
+        {
+            "category": "Animals",
+            "type": "multiple",
+            "difficulty": "easy",
+            "question": "What part of a chicken is commonly called the “drumstick?”",
+            "correct_answer": "Leg",
+            "incorrect_answers": [
+                "Breast",
+                "Wing",
+                "Gizzard"
+            ]
+        },
+        {
+            "category": "Sports",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What is the only position on a football team that can be “sacked?”",
+            "correct_answer": "Quarterback",
+            "incorrect_answers": [
+                "Center",
+                "Wide receiver",
+                "Tight end"
+            ]
+        },
+        {
+            "category": "Mythology",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What god of love is often depicted as a chubby winged infant with a bow and arrow?",
+            "correct_answer": "Cupid",
+            "incorrect_answers": [
+                "Zeus",
+                "Mercury",
+                "Poseidon"
+            ]
+        },
+        {
+            "category": "Film",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "What Steven Spielberg film climaxes at a place called Devil’s Tower?",
+            "correct_answer": "Close Encounters of the Third Kind",
+            "incorrect_answers": [
+                "E.T. the Extra-Terrestrial",
+                "Jurassic Park",
+                "Raiders of the Lost Ark"
+            ]
+        },
+        {
+            "category": "History",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "In what U.S. town did the famous 1881 shootout at the O.K. Corral take place?",
+            "correct_answer": "Tombstone",
+            "incorrect_answers": [
+                "Laramie",
+                "El Paso",
+                "Dodge City"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "medium",
+            "question": "Which of the following months has no U.S. federal holiday?",
+            "correct_answer": "August",
+            "incorrect_answers": [
+                "February",
+                "September",
+                "November"
+            ]
+        },
+        {
+            "category": "Mythology",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "What mythological beast is reborn from its own ashes?",
+            "correct_answer": "Phoenix",
+            "incorrect_answers": [
+                "Minotaur",
+                "Dragon",
+                "Golem"
+            ]
+        },
+        {
+            "category": "Science & Nature",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Who developed the first effective vaccine against polio?",
+            "correct_answer": "Jonas Salk",
+            "incorrect_answers": [
+                "Albert Sabin",
+                "Niels Bohr",
+                "Louis Pasteur"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which of the following is not a monotheistic religion?",
+            "correct_answer": "Hinduism",
+            "incorrect_answers": [
+                "Islam",
+                "Judaism",
+                "Christianity"
+            ]
+        },
+        {
+            "category": "General Knowledge",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "What architect designed the glass pyramid in the courtyard of the Louvre?",
+            "correct_answer": "I.M. Pei",
+            "incorrect_answers": [
+                "Philip Johnson",
+                "Le Corbusier",
+                "Frank Gehry"
+            ]
+        },
+        {
+            "category": "Television",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "Which of these U.S. Presidents appeared on the television series “Laugh-In”?",
+            "correct_answer": "Richard Nixon",
+            "incorrect_answers": [
+                "Lyndon Johnson",
+                "Jimmy Carter",
+                "Gerald Ford"
+            ]
+        }
+    ]
+}

@@ -6,7 +6,7 @@ final class APILoaderTests: XCTestCase {
     private var loader: APIRequestLoader<TriviaQuizRequest>!
     
     override func setUp() {
-        let configuration = URLSessionConfiguration.ephemeral
+        let configuration = URLSessionConfiguration.noCaching
         configuration.protocolClasses = [MockURLProtocol.self]
         loader = APIRequestLoader<TriviaQuizRequest>(
             apiRequest: TriviaQuizRequest(),

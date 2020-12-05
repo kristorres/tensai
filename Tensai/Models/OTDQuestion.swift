@@ -1,7 +1,7 @@
 import Foundation
 
 /// A question in the *Open Trivia Database*.
-struct Question: Codable {
+struct OTDQuestion: Codable {
     
     // -------------------------------------------------------------------------
     // MARK:- Stored properties

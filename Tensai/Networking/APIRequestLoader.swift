@@ -12,8 +12,12 @@ struct APIRequestLoader<T> where T: APIRequest {
     /// Creates a loader with the specified API request and URL session.
     ///
     /// - Parameter apiRequest: The API request.
-    /// - Parameter urlSession: The URL session. The default is `.shared`.
-    init(apiRequest: T, urlSession: URLSession = .shared) {
+    /// - Parameter urlSession: The URL session. The default is a session that
+    ///                         is configured with no caching policy.
+    init(
+        apiRequest: T,
+        urlSession: URLSession = URLSession(configuration: .noCaching)
+    ) {
         self.apiRequest = apiRequest
         self.urlSession = urlSession
     }

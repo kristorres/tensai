@@ -72,7 +72,7 @@ struct TriviaQuiz {
     /// Creates a trivia quiz with the specified questions from the *Open Trivia
     /// Database*.
     ///
-    /// - Parameter questions: The questions.
+    /// - Parameter questions: The questions in the quiz.
     init(questions: [OTDQuestion]) {
         self.questions = questions.map { question in
             var answers = [question.correctAnswer] + question.incorrectAnswers

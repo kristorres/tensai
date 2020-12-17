@@ -48,12 +48,11 @@ final class TriviaQuizRound: ObservableObject {
     // MARK:- Initializer
     // -------------------------------------------------------------------------
     
-    /// Creates a round with a trivia quiz containing the specified questions
-    /// from the *Open Trivia Database*.
+    /// Creates a round with the specified quiz of trivia questions.
     ///
-    /// - Parameter questions: The questions in the quiz.
-    init(questions: [OTDQuestion]) {
-        triviaQuiz = TriviaQuiz(questions: questions)
+    /// - Parameter triviaQuiz: The trivia quiz.
+    init(triviaQuiz: TriviaQuiz) {
+        self.triviaQuiz = triviaQuiz
     }
     
     // -------------------------------------------------------------------------

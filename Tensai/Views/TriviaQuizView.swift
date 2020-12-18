@@ -4,7 +4,7 @@ import SwiftUI
 struct TriviaQuizView: View {
     
     // -------------------------------------------------------------------------
-    // MARK:- Properties
+    // MARK:- State management
     // -------------------------------------------------------------------------
     
     /// The round with a quiz of trivia questions.
@@ -15,6 +15,13 @@ struct TriviaQuizView: View {
     
     /// The player’s selected answer to the current question.
     @State private var selectedAnswer: String?
+    
+    // -------------------------------------------------------------------------
+    // MARK:- Other properties
+    // -------------------------------------------------------------------------
+    
+    /// The delay before the next question is displayed (in seconds).
+    private let delayForNextQuestion = 3.0
     
     var body: some View {
         let questionNumber = triviaQuizRound.currentQuestionNumber
@@ -99,7 +106,7 @@ struct TriviaQuizView: View {
         if questionNumber == questionCount {
             return
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayForNextQuestion) {
             triviaQuizRound.advanceToNextQuestion()
             selectedAnswer = nil
         }

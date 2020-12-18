@@ -12,5 +12,9 @@ final class ViewRouter: ObservableObject {
         /// The key to render a view where the user can create and start a new
         /// quiz.
         case triviaQuizCreator
+        
+        /// The key to render a view where the user answers questions in a
+        /// trivia quiz.
+        case triviaQuiz(TriviaQuiz)
     }
 }

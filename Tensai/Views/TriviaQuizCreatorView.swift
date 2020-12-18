@@ -102,9 +102,9 @@ struct TriviaQuizCreatorView: View {
                     self.responseError = defaultResponseError
                     return
                 }
-                // TODO: Create the quiz!
+                let triviaQuiz = TriviaQuiz(questions: response.questions)
                 DispatchQueue.main.async {
-                    // TODO: Start the quiz!
+                    viewRouter.currentViewKey = .triviaQuiz(triviaQuiz)
                 }
                 return
             }

@@ -9,7 +9,12 @@ struct RootView: View {
     var body: some View {
         switch viewRouter.currentViewKey {
         case .triviaQuizCreator:
-            return TriviaQuizCreatorView(viewRouter: viewRouter)
+            TriviaQuizCreatorView(viewRouter: viewRouter)
+        case .triviaQuiz(let triviaQuiz):
+            TriviaQuizView(
+                triviaQuizRound: TriviaQuizRound(triviaQuiz: triviaQuiz),
+                viewRouter: viewRouter
+            )
         }
     }
 }

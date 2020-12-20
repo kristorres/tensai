@@ -37,7 +37,7 @@ struct TriviaQuizView: View {
             Spacer()
             VStack(spacing: 12) {
                 ForEach(question.possibleAnswers, id: \.self) { answer in
-                    self.outlinedAnswerButton(for: answer)
+                    self.answerButton(for: answer)
                 }
             }
         }
@@ -47,6 +47,23 @@ struct TriviaQuizView: View {
     // -------------------------------------------------------------------------
     // MARK:- Private methods
     // -------------------------------------------------------------------------
+    
+    /// Creates a button that contains the specified answer.
+    ///
+    /// If that answer is selected by the player, then the button will have a
+    /// color fill. Otherwise, the button will have an outline.
+    ///
+    /// - Parameter answer: The answer on the button.
+    ///
+    /// - Returns: The answer button.
+    @ViewBuilder private func answerButton(for answer: String) -> some View {
+        if let selectedAnswer = selectedAnswer, selectedAnswer == answer {
+            containedAnswerButton(for: answer)
+        }
+        else {
+            outlinedAnswerButton(for: answer)
+        }
+    }
     
     /// Returns the current color of the button that contains the specified
     /// answer.
@@ -65,6 +82,28 @@ struct TriviaQuizView: View {
             return .red
         }
         return .blue
+    }
+    
+    /// Creates a color-filled button that contains the specified answer.
+    ///
+    /// - Parameter answer: The answer on the button.
+    ///
+    /// - Returns: The answer button.
+    private func containedAnswerButton(for answer: String) -> some View {
+        let buttonColor = answerButtonColor(for: answer)
+        let buttonBorder = RoundedRectangle(
+            cornerRadius: DrawingConstants.answerButtonCornerRadius
+        )
+        return Button(action: { self.selectAnswer(answer) }) {
+            Text(answer)
+                .font(.headline)
+                .padding()
+                .frame(maxWidth: DrawingConstants.maximumAnswerButtonWidth)
+                .foregroundColor(.white)
+                .background(buttonColor)
+                .clipShape(buttonBorder)
+        }
+            .disabled(selectedAnswer != nil)
     }
     
     /// Creates an outlined button that contains the specified answer.

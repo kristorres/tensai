@@ -37,7 +37,7 @@ struct TriviaQuizView: View {
             Spacer()
             VStack(spacing: 12) {
                 ForEach(question.possibleAnswers, id: \.self) { answer in
-                    self.createOutlinedAnswerButton(for: answer)
+                    self.outlinedAnswerButton(for: answer)
                 }
             }
         }
@@ -72,7 +72,7 @@ struct TriviaQuizView: View {
     /// - Parameter answer: The answer on the button.
     ///
     /// - Returns: The answer button.
-    private func createOutlinedAnswerButton(for answer: String) -> some View {
+    private func outlinedAnswerButton(for answer: String) -> some View {
         let buttonColor = answerButtonColor(for: answer)
         let buttonBorder = RoundedRectangle(
             cornerRadius: DrawingConstants.answerButtonCornerRadius

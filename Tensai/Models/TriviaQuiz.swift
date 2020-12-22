@@ -146,5 +146,18 @@ struct TriviaQuiz {
         
         /// The correct answer to this question.
         let correctAnswer: String
+        
+        /// The player’s selected answer to this question.
+        var selectedAnswer: String? {
+            didSet {
+                isAnswered = true
+            }
+        }
+        
+        /// Indicates whether this question is answered.
+        var isAnswered = false
+        
+        /// Indicates whether this question is active.
+        var isActive = false
     }
 }

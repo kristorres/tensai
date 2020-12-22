@@ -19,16 +19,6 @@ final class TriviaQuizRound: ObservableObject {
         triviaQuiz.correctAnswerCount
     }
     
-    /// The current question in the trivia quiz.
-    var currentQuestion: TriviaQuiz.Question {
-        triviaQuiz.currentQuestion
-    }
-    
-    /// The current question number.
-    var currentQuestionNumber: Int {
-        triviaQuiz.currentQuestionIndex + 1
-    }
-    
     /// The number of incorrect answers in the trivia quiz.
     var incorrectAnswerCount: Int {
         triviaQuiz.incorrectAnswerCount
@@ -36,7 +26,12 @@ final class TriviaQuizRound: ObservableObject {
     
     /// The number of questions in the trivia quiz.
     var questionCount: Int {
-        triviaQuiz.questionCount
+        triviaQuiz.questions.count
+    }
+    
+    /// The questions in the trivia quiz.
+    var questions: [TriviaQuiz.Question] {
+        triviaQuiz.questions
     }
     
     /// The player’s score on the trivia quiz.
@@ -59,15 +54,28 @@ final class TriviaQuizRound: ObservableObject {
     // MARK:- Intents
     // -------------------------------------------------------------------------
     
-    /// Advances to the next question in the trivia quiz.
-    func advanceToNextQuestion() {
-        triviaQuiz.advanceToNextQuestion()
+    /// Marks the question at the specified index as active.
+    ///
+    /// - Parameter index: The index locating the question in the trivia quiz.
+    func markQuestionAsActive(at index: Int) {
+        triviaQuiz.markQuestionAsActive(at: index)
     }
     
-    /// Submits the specified answer to the current question in the trivia quiz.
+    /// Marks the question at the specified index as inactive.
     ///
-    /// - Parameter answer: The player’s answer to the current question.
-    func submitAnswer(_ answer: String) {
-        triviaQuiz.submitAnswer(answer)
+    /// - Parameter index: The index locating the question in the trivia quiz.
+    func markQuestionAsInactive(at index: Int) {
+        triviaQuiz.markQuestionAsInactive(at: index)
+    }
+    
+    /// Submits an answer to the question at the specified index.
+    ///
+    /// If the player already answered the question, or his/her answer is not
+    /// `nil` but invalid, then this method will do nothing.
+    ///
+    /// - Parameter answer: The player’s answer to the question.
+    /// - Parameter index:  The index locating the question in the trivia quiz.
+    func submitAnswer(_ answer: String?, at index: Int) {
+        triviaQuiz.submitAnswer(answer, at: index)
     }
 }

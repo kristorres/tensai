@@ -40,50 +40,51 @@ final class TriviaQuizTests: XCTestCase {
                         + "eyebrows?",
                     correctAnswer: "True",
                     incorrectAnswers: ["False"]
+                ),
+                OTDQuestion(
+                    category: "Music",
+                    type: .multipleChoice,
+                    difficulty: .hard,
+                    text: "What K-pop girl group is Sana Minatozaki from?",
+                    correctAnswer: "Twice",
+                    incorrectAnswers: ["Blackpink", "Red Velvet", "Apink"]
                 )
             ]
         )
-        XCTAssertEqual(triviaQuiz.questionCount, 3)
-        XCTAssertEqual(triviaQuiz.currentQuestionIndex, 0)
-        XCTAssertEqual(triviaQuiz.currentQuestion.difficulty, .hard)
-        XCTAssertEqual(triviaQuiz.answers, [])
+        
         XCTAssertEqual(triviaQuiz.correctAnswerCount, 0)
         XCTAssertEqual(triviaQuiz.incorrectAnswerCount, 0)
         XCTAssertEqual(triviaQuiz.score, 0)
         
-        triviaQuiz.advanceToNextQuestion()
-        XCTAssertEqual(triviaQuiz.currentQuestionIndex, 0)
-        
-        triviaQuiz.submitAnswer("Baffin Island")
-        XCTAssertEqual(triviaQuiz.answers.count, 1)
+        triviaQuiz.submitAnswer("Baffin Island", at: 0)
+        XCTAssertTrue(triviaQuiz.questions[0].isAnswered)
         XCTAssertEqual(triviaQuiz.correctAnswerCount, 1)
         XCTAssertEqual(triviaQuiz.incorrectAnswerCount, 0)
         XCTAssertEqual(triviaQuiz.score, 3)
         
-        triviaQuiz.submitAnswer("Prince Edward Island")
-        XCTAssertEqual(triviaQuiz.answers.count, 1)
+        triviaQuiz.submitAnswer("Prince Edward Island", at: 0)
+        XCTAssertEqual(triviaQuiz.incorrectAnswerCount, 0)
         
-        triviaQuiz.advanceToNextQuestion()
-        XCTAssertEqual(triviaQuiz.currentQuestionIndex, 1)
-        XCTAssertEqual(triviaQuiz.currentQuestion.difficulty, .medium)
-        
-        triviaQuiz.submitAnswer("The Sacred Stones")
-        XCTAssertEqual(triviaQuiz.answers.count, 2)
+        triviaQuiz.submitAnswer("The Sacred Stones", at: 1)
+        XCTAssertTrue(triviaQuiz.questions[1].isAnswered)
         XCTAssertEqual(triviaQuiz.correctAnswerCount, 2)
         XCTAssertEqual(triviaQuiz.incorrectAnswerCount, 0)
         XCTAssertEqual(triviaQuiz.score, 5)
         
-        triviaQuiz.advanceToNextQuestion()
-        XCTAssertEqual(triviaQuiz.currentQuestionIndex, 2)
-        XCTAssertEqual(triviaQuiz.currentQuestion.difficulty, .easy)
-        
-        triviaQuiz.submitAnswer("False")
-        XCTAssertEqual(triviaQuiz.answers.count, 3)
+        triviaQuiz.submitAnswer("False", at: 2)
+        XCTAssertTrue(triviaQuiz.questions[2].isAnswered)
         XCTAssertEqual(triviaQuiz.correctAnswerCount, 2)
         XCTAssertEqual(triviaQuiz.incorrectAnswerCount, 1)
         XCTAssertEqual(triviaQuiz.score, 5)
         
-        triviaQuiz.advanceToNextQuestion()
-        XCTAssertEqual(triviaQuiz.currentQuestionIndex, 2)
+        triviaQuiz.submitAnswer("TWICE", at: 3)
+        XCTAssertFalse(triviaQuiz.questions[3].isAnswered)
+        XCTAssertEqual(triviaQuiz.incorrectAnswerCount, 1)
+        
+        triviaQuiz.submitAnswer(nil, at: 3)
+        XCTAssertTrue(triviaQuiz.questions[3].isAnswered)
+        XCTAssertEqual(triviaQuiz.correctAnswerCount, 2)
+        XCTAssertEqual(triviaQuiz.incorrectAnswerCount, 2)
+        XCTAssertEqual(triviaQuiz.score, 5)
     }
 }

@@ -13,8 +13,8 @@ struct TriviaQuizView: View {
     /// The view router.
     @ObservedObject var viewRouter = ViewRouter()
     
-    /// The player’s selected answer to the current question.
-    @State private var selectedAnswer: String?
+    /// The index of the current question.
+    @State private var currentQuestionIndex = 0
     
     // -------------------------------------------------------------------------
     // MARK:- Other properties
@@ -23,20 +23,24 @@ struct TriviaQuizView: View {
     /// The delay before the next question is displayed (in seconds).
     private let delayForNextQuestion = 3.0
     
+    /// The current question.
+    private var currentQuestion: TriviaQuiz.Question {
+        triviaQuizRound.questions[currentQuestionIndex]
+    }
+    
     var body: some View {
-        let questionNumber = triviaQuizRound.currentQuestionNumber
+        let questionNumber = currentQuestionIndex + 1
         let questionCount = triviaQuizRound.questionCount
-        let question = triviaQuizRound.currentQuestion
         
         return VStack(alignment: .leading) {
             Text("Question \(questionNumber)/\(questionCount)")
                 .font(.largeTitle)
                 .fontWeight(.black)
             Divider()
-            Text(question.text).font(.title)
+            Text(currentQuestion.text).font(.title)
             Spacer()
             VStack(spacing: 12) {
-                ForEach(question.possibleAnswers, id: \.self) { answer in
+                ForEach(currentQuestion.possibleAnswers, id: \.self) { answer in
                     self.answerButton(for: answer)
                 }
             }
@@ -57,7 +61,8 @@ struct TriviaQuizView: View {
     ///
     /// - Returns: The answer button.
     @ViewBuilder private func answerButton(for answer: String) -> some View {
-        if let selectedAnswer = selectedAnswer, selectedAnswer == answer {
+        if let selectedAnswer = currentQuestion.selectedAnswer,
+            selectedAnswer == answer {
             containedAnswerButton(for: answer)
         }
         else {
@@ -72,11 +77,11 @@ struct TriviaQuizView: View {
     ///
     /// - Returns: The button color.
     private func answerButtonColor(for answer: String) -> Color {
-        if let selectedAnswer = selectedAnswer {
+        if let selectedAnswer = currentQuestion.selectedAnswer {
             if selectedAnswer != answer {
                 return .gray
             }
-            if selectedAnswer == triviaQuizRound.currentQuestion.correctAnswer {
+            if selectedAnswer == currentQuestion.correctAnswer {
                 return .green
             }
             return .red
@@ -103,7 +108,7 @@ struct TriviaQuizView: View {
                 .background(buttonColor)
                 .clipShape(buttonBorder)
         }
-            .disabled(selectedAnswer != nil)
+            .disabled(currentQuestion.selectedAnswer != nil)
     }
     
     /// Creates an outlined button that contains the specified answer.
@@ -128,7 +133,7 @@ struct TriviaQuizView: View {
                 .foregroundColor(buttonColor)
                 .overlay(buttonBorder)
         }
-            .disabled(selectedAnswer != nil)
+            .disabled(currentQuestion.selectedAnswer != nil)
     }
     
     /// Selects the specified answer to the current question, and advances to
@@ -137,17 +142,16 @@ struct TriviaQuizView: View {
     /// - Parameter answer: The player’s answer to the current question.
     private func selectAnswer(_ answer: String) {
         
-        selectedAnswer = answer
-        triviaQuizRound.submitAnswer(answer)
+        triviaQuizRound.submitAnswer(answer, at: currentQuestionIndex)
         
-        let questionNumber = triviaQuizRound.currentQuestionNumber
+        let questionNumber = currentQuestionIndex + 1
         let questionCount = triviaQuizRound.questionCount
         if questionNumber == questionCount {
             return
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + delayForNextQuestion) {
-            triviaQuizRound.advanceToNextQuestion()
-            selectedAnswer = nil
+            triviaQuizRound.markQuestionAsInactive(at: currentQuestionIndex)
+            currentQuestionIndex += 1
         }
     }
     

@@ -8,16 +8,7 @@ struct TriviaQuiz {
     // -------------------------------------------------------------------------
     
     /// The questions in this trivia quiz.
-    let questions: [Question]
-    
-    /// The selected answers in this trivia quiz.
-    ///
-    /// The index of each answer is the same as that of its corresponding
-    /// question.
-    private(set) var answers = [String?]()
-    
-    /// The index of the current question in this trivia quiz.
-    private(set) var currentQuestionIndex = 0
+    private(set) var questions: [Question]
     
     // -------------------------------------------------------------------------
     // MARK:- Computed properties
@@ -25,44 +16,45 @@ struct TriviaQuiz {
     
     /// The number of correct answers in this trivia quiz.
     var correctAnswerCount: Int {
-        var count = 0
-        for index in answers.indices {
-            if answers[index] == questions[index].correctAnswer {
-                count += 1
+        questions.reduce(0) { (sum, question) in
+            if !question.isAnswered {
+                return sum
             }
+            if question.selectedAnswer == question.correctAnswer {
+                return sum + 1
+            }
+            return sum
         }
-        return count
-    }
-    
-    /// The current question in this trivia quiz.
-    var currentQuestion: Question {
-        questions[currentQuestionIndex]
     }
     
     /// The number of incorrect answers in this trivia quiz.
     var incorrectAnswerCount: Int {
-        answers.count - correctAnswerCount
-    }
-    
-    /// The number of questions in this trivia quiz.
-    var questionCount: Int {
-        questions.count
+        questions.reduce(0) { (sum, question) in
+            if !question.isAnswered {
+                return sum
+            }
+            if question.selectedAnswer != question.correctAnswer {
+                return sum + 1
+            }
+            return sum
+        }
     }
     
     /// The player’s score on this trivia quiz.
     var score: Int {
-        var pointCount = 0
-        for index in answers.indices {
-            let question = questions[index]
-            if answers[index] == question.correctAnswer {
+        questions.reduce(0) { (sum, question) in
+            if !question.isAnswered {
+                return sum
+            }
+            if question.selectedAnswer == question.correctAnswer {
                 switch question.difficulty {
-                case .easy: pointCount += 1
-                case .medium: pointCount += 2
-                case .hard: pointCount += 3
+                case .easy: return sum + 1
+                case .medium: return sum + 2
+                case .hard: return sum + 3
                 }
             }
+            return sum
         }
-        return pointCount
     }
     
     // -------------------------------------------------------------------------
@@ -95,31 +87,36 @@ struct TriviaQuiz {
     // MARK:- Methods
     // -------------------------------------------------------------------------
     
-    /// Advances to the next question in this trivia quiz, if possible.
+    /// Marks the question at the specified index as active.
     ///
-    /// If the player did not answer the current question yet or is already on
-    /// the last question, then this method will do nothing.
-    mutating func advanceToNextQuestion() {
-        if answers.count == currentQuestionIndex {
-            return
-        }
-        if currentQuestionIndex < questionCount - 1 {
-            currentQuestionIndex += 1
-        }
+    /// - Parameter index: The index locating the question in this trivia quiz.
+    mutating func markQuestionAsActive(at index: Int) {
+        questions[index].isActive = true
     }
     
-    /// Submits the specified answer to the current question in this trivia
-    /// quiz, if possible.
+    /// Marks the question at the specified index as inactive.
     ///
-    /// If the player already answered the question, then this method will do
-    /// nothing.
+    /// - Parameter index: The index locating the question in this trivia quiz.
+    mutating func markQuestionAsInactive(at index: Int) {
+        questions[index].isActive = false
+    }
+    
+    /// Submits an answer to the question at the specified index.
     ///
-    /// - Parameter answer: The player’s answer to the current question.
-    mutating func submitAnswer(_ answer: String) {
-        if answers.count == currentQuestionIndex + 1 {
+    /// If the player already answered the question, or his/her answer is not
+    /// `nil` but invalid, then this method will do nothing.
+    ///
+    /// - Parameter answer: The player’s answer to the question.
+    /// - Parameter index:  The index locating the question in this trivia quiz.
+    mutating func submitAnswer(_ answer: String?, at index: Int) {
+        if questions[index].isAnswered {
             return
         }
-        answers.append(answer)
+        if let answer = answer,
+            !questions[index].possibleAnswers.contains(answer) {
+            return
+        }
+        questions[index].selectedAnswer = answer
     }
     
     // -------------------------------------------------------------------------

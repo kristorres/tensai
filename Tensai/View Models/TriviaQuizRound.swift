@@ -51,22 +51,8 @@ final class TriviaQuizRound: ObservableObject {
     }
     
     // -------------------------------------------------------------------------
-    // MARK:- Intents
+    // MARK:- Intent
     // -------------------------------------------------------------------------
-    
-    /// Marks the question at the specified index as active.
-    ///
-    /// - Parameter index: The index locating the question in the trivia quiz.
-    func markQuestionAsActive(at index: Int) {
-        triviaQuiz.markQuestionAsActive(at: index)
-    }
-    
-    /// Marks the question at the specified index as inactive.
-    ///
-    /// - Parameter index: The index locating the question in the trivia quiz.
-    func markQuestionAsInactive(at index: Int) {
-        triviaQuiz.markQuestionAsInactive(at: index)
-    }
     
     /// Submits an answer to the question at the specified index.
     ///

@@ -84,22 +84,8 @@ struct TriviaQuiz {
     }
     
     // -------------------------------------------------------------------------
-    // MARK:- Methods
+    // MARK:- Method
     // -------------------------------------------------------------------------
-    
-    /// Marks the question at the specified index as active.
-    ///
-    /// - Parameter index: The index locating the question in this trivia quiz.
-    mutating func markQuestionAsActive(at index: Int) {
-        questions[index].isActive = true
-    }
-    
-    /// Marks the question at the specified index as inactive.
-    ///
-    /// - Parameter index: The index locating the question in this trivia quiz.
-    mutating func markQuestionAsInactive(at index: Int) {
-        questions[index].isActive = false
-    }
     
     /// Submits an answer to the question at the specified index.
     ///
@@ -153,8 +139,5 @@ struct TriviaQuiz {
         
         /// Indicates whether this question is answered.
         var isAnswered = false
-        
-        /// Indicates whether this question is active.
-        var isActive = false
     }
 }

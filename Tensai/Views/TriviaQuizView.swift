@@ -150,7 +150,6 @@ struct TriviaQuizView: View {
             return
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + delayForNextQuestion) {
-            triviaQuizRound.markQuestionAsInactive(at: currentQuestionIndex)
             currentQuestionIndex += 1
         }
     }

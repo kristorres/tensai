@@ -24,11 +24,6 @@ final class TriviaQuizRound: ObservableObject {
         triviaQuiz.incorrectAnswerCount
     }
     
-    /// The number of questions in the trivia quiz.
-    var questionCount: Int {
-        triviaQuiz.questions.count
-    }
-    
     /// The questions in the trivia quiz.
     var questions: [TriviaQuiz.Question] {
         triviaQuiz.questions

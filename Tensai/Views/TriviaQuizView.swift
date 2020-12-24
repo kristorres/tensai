@@ -30,7 +30,7 @@ struct TriviaQuizView: View {
     
     var body: some View {
         let questionNumber = currentQuestionIndex + 1
-        let questionCount = triviaQuizRound.questionCount
+        let questionCount = triviaQuizRound.questions.count
         
         return VStack(alignment: .leading) {
             Text("Question \(questionNumber)/\(questionCount)")
@@ -145,7 +145,7 @@ struct TriviaQuizView: View {
         triviaQuizRound.submitAnswer(answer, at: currentQuestionIndex)
         
         let questionNumber = currentQuestionIndex + 1
-        let questionCount = triviaQuizRound.questionCount
+        let questionCount = triviaQuizRound.questions.count
         if questionNumber == questionCount {
             return
         }

@@ -33,11 +33,19 @@ struct TriviaQuizView: View {
         let questionCount = triviaQuizRound.questions.count
         
         return VStack(alignment: .leading) {
+            HStack {
+                Text(currentQuestion.category).fontWeight(.bold)
+                Spacer()
+                difficultyStarMeter()
+            }
+                .font(.callout)
+                .foregroundColor(.gray)
+                .padding(.bottom, 6)
             Text("Question \(questionNumber)/\(questionCount)")
                 .font(.largeTitle)
                 .fontWeight(.black)
             Divider()
-            Text(currentQuestion.text).font(.title)
+            Text(currentQuestion.text).font(.title2).fontWeight(.heavy)
             Spacer()
             VStack(spacing: 12) {
                 ForEach(currentQuestion.possibleAnswers, id: \.self) { answer in
@@ -109,6 +117,27 @@ struct TriviaQuizView: View {
                 .clipShape(buttonBorder)
         }
             .disabled(currentQuestion.selectedAnswer != nil)
+    }
+    
+    /// Creates a horizontal star meter that represents the difficulty level of
+    /// the current question.
+    ///
+    /// - Returns: The difficulty star meter.
+    private func difficultyStarMeter() -> some View {
+        let starCount: Int
+        switch currentQuestion.difficulty {
+        case .easy: starCount = 1
+        case .medium: starCount = 2
+        case .hard: starCount = 3
+        }
+        return HStack {
+            ForEach(0 ..< starCount, id: \.self) { _ in
+                Image(systemName: "star.fill")
+            }
+            ForEach(0 ..< 3 - starCount, id: \.self) { _ in
+                Image(systemName: "star")
+            }
+        }
     }
     
     /// Creates an outlined button that contains the specified answer.

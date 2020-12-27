@@ -47,7 +47,7 @@ final class TriviaQuizTests: XCTestCase {
                     difficulty: .hard,
                     text: "What K-pop girl group is Sana Minatozaki from?",
                     correctAnswer: "Twice",
-                    incorrectAnswers: ["Blackpink", "Red Velvet", "Apink"]
+                    incorrectAnswers: ["Blackpink", "Red Velvet", "Itzy"]
                 )
             ]
         )
@@ -60,7 +60,7 @@ final class TriviaQuizTests: XCTestCase {
         XCTAssertTrue(triviaQuiz.questions[0].isAnswered)
         XCTAssertEqual(triviaQuiz.correctAnswerCount, 1)
         XCTAssertEqual(triviaQuiz.incorrectAnswerCount, 0)
-        XCTAssertEqual(triviaQuiz.score, 3)
+        XCTAssertEqual(triviaQuiz.score, 150)
         
         triviaQuiz.submitAnswer("Prince Edward Island", at: 0)
         XCTAssertEqual(triviaQuiz.incorrectAnswerCount, 0)
@@ -69,13 +69,13 @@ final class TriviaQuizTests: XCTestCase {
         XCTAssertTrue(triviaQuiz.questions[1].isAnswered)
         XCTAssertEqual(triviaQuiz.correctAnswerCount, 2)
         XCTAssertEqual(triviaQuiz.incorrectAnswerCount, 0)
-        XCTAssertEqual(triviaQuiz.score, 5)
+        XCTAssertEqual(triviaQuiz.score, 250)
         
         triviaQuiz.submitAnswer("False", at: 2)
         XCTAssertTrue(triviaQuiz.questions[2].isAnswered)
         XCTAssertEqual(triviaQuiz.correctAnswerCount, 2)
         XCTAssertEqual(triviaQuiz.incorrectAnswerCount, 1)
-        XCTAssertEqual(triviaQuiz.score, 5)
+        XCTAssertEqual(triviaQuiz.score, 250)
         
         triviaQuiz.submitAnswer("TWICE", at: 3)
         XCTAssertFalse(triviaQuiz.questions[3].isAnswered)
@@ -85,6 +85,6 @@ final class TriviaQuizTests: XCTestCase {
         XCTAssertTrue(triviaQuiz.questions[3].isAnswered)
         XCTAssertEqual(triviaQuiz.correctAnswerCount, 2)
         XCTAssertEqual(triviaQuiz.incorrectAnswerCount, 2)
-        XCTAssertEqual(triviaQuiz.score, 5)
+        XCTAssertEqual(triviaQuiz.score, 250)
     }
 }

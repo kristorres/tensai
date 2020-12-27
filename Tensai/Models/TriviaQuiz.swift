@@ -48,9 +48,9 @@ struct TriviaQuiz {
             }
             if question.selectedAnswer == question.correctAnswer {
                 switch question.difficulty {
-                case .easy: return sum + 1
-                case .medium: return sum + 2
-                case .hard: return sum + 3
+                case .easy: return sum + 50
+                case .medium: return sum + 100
+                case .hard: return sum + 150
                 }
             }
             return sum

@@ -13,8 +13,15 @@ struct TriviaQuizCreatorView: View {
     /// The view router.
     @ObservedObject var viewRouter = ViewRouter()
     
+    /// Indicates whether the quiz is loading.
+    @State private var quizIsLoading = false
+    
     /// The API response error that is currently presented onscreen.
-    @State private var responseError: APIResponseError?
+    @State private var responseError: APIResponseError? {
+        didSet {
+            quizIsLoading = false
+        }
+    }
     
     // -------------------------------------------------------------------------
     // MARK:- Other properties
@@ -30,41 +37,47 @@ struct TriviaQuizCreatorView: View {
     )
     
     var body: some View {
-        VStack(spacing: 10) {
-            Spacer()
-            Text("Start a New Quiz").font(.largeTitle).fontWeight(.black)
-            HBarPicker(
-                options: TriviaQuizCreatorForm.allCategories,
-                selectionIndex: $form.categoryIndex
-            )
-            HBarPicker(
-                options: TriviaQuizCreatorForm.allDifficulties,
-                selectionIndex: $form.difficultyIndex
-            )
-            HBarPicker(
-                options: TriviaQuizCreatorForm.allQuestionTypes,
-                selectionIndex: $form.questionTypeIndex
-            )
-            HBarPicker(
-                options: questionCountOptions,
-                selectionIndex: $form.questionCountIndex
-            )
-            Spacer()
-            Button(action: startQuiz) {
-                Text("PLAY")
-                    .font(.title)
-                    .fontWeight(.heavy)
-                    .padding()
-                    .frame(maxWidth: DrawingConstants.maximumButtonWidth)
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .clipShape(Capsule())
-            }
-                .alert(item: $responseError) {
-                    Alert(title: Text($0.title), message: Text($0.message))
+        ZStack {
+            VStack(spacing: 10) {
+                Spacer()
+                Text("Start a New Quiz").font(.largeTitle).fontWeight(.black)
+                HBarPicker(
+                    options: TriviaQuizCreatorForm.allCategories,
+                    selectionIndex: $form.categoryIndex
+                )
+                HBarPicker(
+                    options: TriviaQuizCreatorForm.allDifficulties,
+                    selectionIndex: $form.difficultyIndex
+                )
+                HBarPicker(
+                    options: TriviaQuizCreatorForm.allQuestionTypes,
+                    selectionIndex: $form.questionTypeIndex
+                )
+                HBarPicker(
+                    options: questionCountOptions,
+                    selectionIndex: $form.questionCountIndex
+                )
+                Spacer()
+                Button(action: startQuiz) {
+                    Text("PLAY")
+                        .font(.title)
+                        .fontWeight(.heavy)
+                        .padding()
+                        .frame(maxWidth: DrawingConstants.maximumButtonWidth)
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .clipShape(Capsule())
                 }
+                    .alert(item: $responseError) {
+                        Alert(title: Text($0.title), message: Text($0.message))
+                    }
+            }
+                .padding()
+            
+            if quizIsLoading {
+                LoadingView()
+            }
         }
-            .padding()
     }
     
     // -------------------------------------------------------------------------
@@ -101,6 +114,7 @@ struct TriviaQuizCreatorView: View {
     /// If the response code from the API request is not `0`, then this method
     /// will show an alert with an appropriate error message instead.
     private func startQuiz() {
+        quizIsLoading = true
         requestLoader.loadAPIRequest(requestData: form) { result in
             let defaultResponseError = APIResponseError(
                 title: "Could Not Start the Quiz",
@@ -161,6 +175,18 @@ struct TriviaQuizCreatorView: View {
         
         /// The maximum width of a button.
         static let maximumButtonWidth = CGFloat(400)
+    }
+}
+
+/// A view that shows a circular progress view spinning indefinitely.
+fileprivate struct LoadingView: View {
+    var body: some View {
+        ZStack {
+            Color.black.opacity(0.75).ignoresSafeArea()
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                .scaleEffect(2, anchor: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        }
     }
 }
 

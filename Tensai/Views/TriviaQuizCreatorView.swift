@@ -185,7 +185,7 @@ fileprivate struct LoadingView: View {
             Color.black.opacity(0.75).ignoresSafeArea()
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                .scaleEffect(2, anchor: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .scaleEffect(2, anchor: .center)
         }
     }
 }

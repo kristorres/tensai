@@ -28,27 +28,31 @@ struct APIRequestLoader<T> where T: APIRequest {
     /// - Parameter completionHandler: The completion handler to execute.
     func loadAPIRequest(
         requestData: T.RequestDataType,
-        completionHandler: @escaping (T.ResponseDataType?, Error?) -> Void
+        completionHandler: @escaping (Result<T.ResponseDataType, NetworkError>) -> Void
     ) {
         do {
             let urlRequest = try apiRequest.makeRequest(from: requestData)
             urlSession.dataTask(with: urlRequest) { (data, response, error) in
-                guard let data = data else {
-                    return completionHandler(nil, error)
+                if let data = data {
+                    do {
+                        let parsedResponse = try self.apiRequest.parseResponse(
+                            data: data
+                        )
+                        completionHandler(.success(parsedResponse))
+                    }
+                    catch {
+                        completionHandler(.failure(.responseParsingFailed))
+                    }
+                    return
                 }
-                do {
-                    let parsedResponse = try self.apiRequest.parseResponse(
-                        data: data
-                    )
-                    completionHandler(parsedResponse, nil)
+                if error != nil {
+                    return completionHandler(.failure(.requestFailed))
                 }
-                catch {
-                    completionHandler(nil, error)
-                }
+                completionHandler(.failure(.unknown))
             }.resume()
         }
         catch {
-            return completionHandler(nil, error)
+            return completionHandler(.failure(.badRequest))
         }
     }
 }

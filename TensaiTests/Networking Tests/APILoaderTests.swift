@@ -36,10 +36,15 @@ final class APILoaderTests: XCTestCase {
         }
         
         let expectation = XCTestExpectation(description: "response")
-        loader.loadAPIRequest(requestData: form) { (response, error) in
-            XCTAssertEqual(response?.code, 0)
-            XCTAssertEqual(response?.questions.count, 15)
-            expectation.fulfill()
+        loader.loadAPIRequest(requestData: form) { result in
+            switch result {
+            case .success(let response):
+                XCTAssertEqual(response.code, 0)
+                XCTAssertEqual(response.questions.count, 15)
+                expectation.fulfill()
+            case .failure:
+                XCTFail("Expectation failed.")
+            }
         }
         wait(for: [expectation], timeout: 1)
     }

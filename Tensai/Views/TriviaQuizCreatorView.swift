@@ -101,12 +101,13 @@ struct TriviaQuizCreatorView: View {
     /// If the response code from the API request is not `0`, then this method
     /// will show an alert with an appropriate error message instead.
     private func startQuiz() {
-        requestLoader.loadAPIRequest(requestData: form) { (response, error) in
+        requestLoader.loadAPIRequest(requestData: form) { result in
             let defaultResponseError = APIResponseError(
                 title: "Could Not Start the Quiz",
                 message: "An unknown error has occurred."
             )
-            if let response = response {
+            switch result {
+            case .success(let response):
                 if response.code == 1 {
                     self.responseError = APIResponseError(
                         title: "Not Enough Questions",
@@ -118,8 +119,8 @@ struct TriviaQuizCreatorView: View {
                 if response.code == 2 {
                     self.responseError = APIResponseError(
                         title: "Invalid Category",
-                        message: "The category is no longer valid. " +
-                            "Please try again."
+                        message: "The category is no longer valid. "
+                            + "Please try again."
                     )
                     return
                 }
@@ -133,9 +134,9 @@ struct TriviaQuizCreatorView: View {
                     )
                     viewRouter.currentViewKey = .triviaQuiz(triviaQuiz)
                 }
-                return
+            case .failure:
+                self.responseError = defaultResponseError
             }
-            self.responseError = defaultResponseError
         }
     }
     

@@ -4,7 +4,7 @@ import Foundation
 struct TriviaQuiz {
     
     // -------------------------------------------------------------------------
-    // MARK:- Stored properties
+    // MARK:- Stored property
     // -------------------------------------------------------------------------
     
     /// The questions in this trivia quiz.

@@ -32,7 +32,12 @@ struct TriviaQuizView: View {
         let questionNumber = currentQuestionIndex + 1
         let questionCount = triviaQuizRound.questions.count
         
-        return VStack(alignment: .leading) {
+        return VStack(alignment: .leading, spacing: 6) {
+            Text("Score: \(triviaQuizRound.score)")
+                .font(.title)
+                .fontWeight(.medium)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.bottom, 12)
             HStack {
                 Text(currentQuestion.category).fontWeight(.bold)
                 Spacer()
@@ -40,7 +45,6 @@ struct TriviaQuizView: View {
             }
                 .font(.callout)
                 .foregroundColor(.gray)
-                .padding(.bottom, 6)
             Text("Question \(questionNumber)/\(questionCount)")
                 .font(.largeTitle)
                 .fontWeight(.black)

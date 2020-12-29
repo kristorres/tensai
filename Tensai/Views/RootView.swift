@@ -21,23 +21,10 @@ struct RootView: View {
 #if DEBUG
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewName = "Root View"
-        let view = RootView().environmentObject(ViewRouter())
-        return Group {
-            view
-                .previewDevice("iPhone SE (1st generation)")
-                .previewDisplayName("\(viewName) — iPhone SE 1")
-            view
-                .previewDevice("iPhone X")
-                .previewDisplayName("\(viewName) — iPhone X")
-            view
-                .previewDevice("iPhone X")
-                .preferredColorScheme(.dark)
-                .previewDisplayName("\(viewName) — iPhone X (Dark Mode)")
-            view
-                .previewDevice("iPad Air (4th generation)")
-                .previewDisplayName("\(viewName) — iPad Air 4")
-        }
+        DevicePreviewGroup(
+            name: "Root View",
+            view: RootView().environmentObject(ViewRouter())
+        )
     }
 }
 #endif

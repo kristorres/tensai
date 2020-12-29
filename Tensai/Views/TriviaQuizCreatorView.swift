@@ -199,23 +199,10 @@ fileprivate extension String {
 #if DEBUG
 struct TriviaQuizCreatorView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewName = "Trivia Quiz Creator View"
-        let view = TriviaQuizCreatorView().environmentObject(ViewRouter())
-        return Group {
-            view
-                .previewDevice("iPhone SE (1st generation)")
-                .previewDisplayName("\(viewName) — iPhone SE 1")
-            view
-                .previewDevice("iPhone X")
-                .previewDisplayName("\(viewName) — iPhone X")
-            view
-                .previewDevice("iPhone X")
-                .preferredColorScheme(.dark)
-                .previewDisplayName("\(viewName) — iPhone X (Dark Mode)")
-            view
-                .previewDevice("iPad Air (4th generation)")
-                .previewDisplayName("\(viewName) — iPad Air 4")
-        }
+        DevicePreviewGroup(
+            name: "Trivia Quiz Creator View",
+            view: TriviaQuizCreatorView().environmentObject(ViewRouter())
+        )
     }
 }
 #endif

@@ -9,6 +9,9 @@ enum NetworkError: Error {
     /// A network error that indicates a failed request.
     case requestFailed
     
+    /// A network error that indicates a timed-out request.
+    case requestTimeout
+    
     /// A network error that indicates a failure in parsing the HTTP response.
     case responseParsingFailed
     

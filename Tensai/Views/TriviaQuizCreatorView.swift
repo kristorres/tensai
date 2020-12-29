@@ -148,8 +148,16 @@ struct TriviaQuizCreatorView: View {
                     )
                     viewRouter.currentViewKey = .triviaQuiz(triviaQuiz)
                 }
-            case .failure:
-                self.responseError = defaultResponseError
+            case .failure(let networkError):
+                switch networkError {
+                case .requestTimeout:
+                    self.responseError = APIResponseError(
+                        title: "Could Not Start the Quiz",
+                        message: "The request timed out. Please try again."
+                    )
+                default:
+                    self.responseError = defaultResponseError
+                }
             }
         }
     }

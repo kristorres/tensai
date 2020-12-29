@@ -45,7 +45,11 @@ struct APIRequestLoader<T> where T: APIRequest {
                     }
                     return
                 }
-                if error != nil {
+                if let error = error {
+                    let errorCode = (error as NSError).code
+                    if errorCode == -1001 {
+                        return completionHandler(.failure(.requestTimeout))
+                    }
                     return completionHandler(.failure(.requestFailed))
                 }
                 completionHandler(.failure(.unknown))

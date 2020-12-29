@@ -11,7 +11,7 @@ struct TriviaQuizView: View {
     @ObservedObject var triviaQuizRound: TriviaQuizRound
     
     /// The view router.
-    @ObservedObject var viewRouter = ViewRouter()
+    @EnvironmentObject private var viewRouter: ViewRouter
     
     /// The index of the current question.
     @State private var currentQuestionIndex = 0
@@ -208,7 +208,6 @@ struct TriviaQuizView: View {
 #if DEBUG
 struct TriviaQuizView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewName = "Trivia Quiz View"
         let view = TriviaQuizView(
             triviaQuizRound: TriviaQuizRound(
                 triviaQuiz: TriviaQuiz(
@@ -230,21 +229,9 @@ struct TriviaQuizView_Previews: PreviewProvider {
                 )
             )
         )
-        return Group {
-            view
-                .previewDevice("iPhone SE (1st generation)")
-                .previewDisplayName("\(viewName) — iPhone SE 1")
-            view
-                .previewDevice("iPhone X")
-                .previewDisplayName("\(viewName) — iPhone X")
-            view
-                .previewDevice("iPhone X")
-                .preferredColorScheme(.dark)
-                .previewDisplayName("\(viewName) — iPhone X (Dark Mode)")
-            view
-                .previewDevice("iPad Air (4th generation)")
-                .previewDisplayName("\(viewName) — iPad Air 4")
-        }
+            .environmentObject(ViewRouter())
+        
+        return DevicePreviewGroup(name: "Trivia Quiz View", view: view)
     }
 }
 #endif

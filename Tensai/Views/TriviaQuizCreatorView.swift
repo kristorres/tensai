@@ -7,11 +7,11 @@ struct TriviaQuizCreatorView: View {
     // MARK:- State management
     // -------------------------------------------------------------------------
     
-    /// The form to retrieve trivia questions from the *Open Trivia Database*.
-    @ObservedObject var form = TriviaQuizCreatorForm()
-    
     /// The view router.
-    @ObservedObject var viewRouter = ViewRouter()
+    @EnvironmentObject private var viewRouter: ViewRouter
+    
+    /// The form to retrieve trivia questions from the *Open Trivia Database*.
+    @ObservedObject private var form = TriviaQuizCreatorForm()
     
     /// The API response error that is currently presented onscreen.
     @State private var responseError: APIResponseError?
@@ -200,18 +200,19 @@ fileprivate extension String {
 struct TriviaQuizCreatorView_Previews: PreviewProvider {
     static var previews: some View {
         let viewName = "Trivia Quiz Creator View"
+        let view = TriviaQuizCreatorView().environmentObject(ViewRouter())
         return Group {
-            TriviaQuizCreatorView()
+            view
                 .previewDevice("iPhone SE (1st generation)")
                 .previewDisplayName("\(viewName) — iPhone SE 1")
-            TriviaQuizCreatorView()
+            view
                 .previewDevice("iPhone X")
                 .previewDisplayName("\(viewName) — iPhone X")
-            TriviaQuizCreatorView()
+            view
                 .previewDevice("iPhone X")
                 .preferredColorScheme(.dark)
                 .previewDisplayName("\(viewName) — iPhone X (Dark Mode)")
-            TriviaQuizCreatorView()
+            view
                 .previewDevice("iPad Air (4th generation)")
                 .previewDisplayName("\(viewName) — iPad Air 4")
         }

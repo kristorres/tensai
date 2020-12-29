@@ -11,7 +11,7 @@ struct TriviaQuizView: View {
     @ObservedObject var triviaQuizRound: TriviaQuizRound
     
     /// The view router.
-    @ObservedObject var viewRouter = ViewRouter()
+    @EnvironmentObject private var viewRouter: ViewRouter
     
     /// The index of the current question.
     @State private var currentQuestionIndex = 0
@@ -230,6 +230,7 @@ struct TriviaQuizView_Previews: PreviewProvider {
                 )
             )
         )
+            .environmentObject(ViewRouter())
         return Group {
             view
                 .previewDevice("iPhone SE (1st generation)")

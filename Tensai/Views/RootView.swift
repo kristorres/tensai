@@ -4,16 +4,15 @@ import SwiftUI
 struct RootView: View {
     
     /// The view router.
-    @ObservedObject var viewRouter = ViewRouter()
+    @EnvironmentObject private var viewRouter: ViewRouter
     
     var body: some View {
         switch viewRouter.currentViewKey {
         case .triviaQuizCreator:
-            TriviaQuizCreatorView(viewRouter: viewRouter)
+            TriviaQuizCreatorView()
         case .triviaQuiz(let triviaQuiz):
             TriviaQuizView(
-                triviaQuizRound: TriviaQuizRound(triviaQuiz: triviaQuiz),
-                viewRouter: viewRouter
+                triviaQuizRound: TriviaQuizRound(triviaQuiz: triviaQuiz)
             )
         }
     }
@@ -23,18 +22,19 @@ struct RootView: View {
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
         let viewName = "Root View"
+        let view = RootView().environmentObject(ViewRouter())
         return Group {
-            RootView()
+            view
                 .previewDevice("iPhone SE (1st generation)")
                 .previewDisplayName("\(viewName) — iPhone SE 1")
-            RootView()
+            view
                 .previewDevice("iPhone X")
                 .previewDisplayName("\(viewName) — iPhone X")
-            RootView()
+            view
                 .previewDevice("iPhone X")
                 .preferredColorScheme(.dark)
                 .previewDisplayName("\(viewName) — iPhone X (Dark Mode)")
-            RootView()
+            view
                 .previewDevice("iPad Air (4th generation)")
                 .previewDisplayName("\(viewName) — iPad Air 4")
         }

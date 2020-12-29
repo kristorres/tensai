@@ -131,7 +131,9 @@ struct TriviaQuizCreatorView: View {
                     let triviaQuiz = TriviaQuiz(
                         questions: response.questions.map(decodeQuestion)
                     )
-                    viewRouter.currentViewKey = .triviaQuiz(triviaQuiz)
+                    withAnimation {
+                        viewRouter.currentViewKey = .triviaQuiz(triviaQuiz)
+                    }
                 }
                 return
             }

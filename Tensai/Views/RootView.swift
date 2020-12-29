@@ -14,6 +14,7 @@ struct RootView: View {
             TriviaQuizView(
                 triviaQuizRound: TriviaQuizRound(triviaQuiz: triviaQuiz)
             )
+                .transition(.move(edge: .trailing))
         }
     }
 }

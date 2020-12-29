@@ -130,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				301F0ACD253A60A8000C6439 /* TensaiApp.swift */,
+				3076959F254367410028E1E7 /* ViewRouter.swift */,
 				30A04E4525561457009C9695 /* Models */,
 				3076959E254366DA0028E1E7 /* View Models */,
 				301F0AE3253A67B9000C6439 /* Views */,
@@ -173,7 +174,6 @@
 			children = (
 				306E7542254E2AE9004145A6 /* TriviaQuizCreatorForm.swift */,
 				308D5220258986630021A735 /* TriviaQuizRound.swift */,
-				3076959F254367410028E1E7 /* ViewRouter.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -347,9 +347,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				301F0ACE253A60A8000C6439 /* TensaiApp.swift in Sources */,
+				307695A0254367410028E1E7 /* ViewRouter.swift in Sources */,
 				30A04E472556153C009C9695 /* OTDQuestion.swift in Sources */,
 				30168BF42580732900FB65B9 /* TriviaQuiz.swift in Sources */,
-				307695A0254367410028E1E7 /* ViewRouter.swift in Sources */,
 				306E7543254E2AE9004145A6 /* TriviaQuizCreatorForm.swift in Sources */,
 				308D5221258986630021A735 /* TriviaQuizRound.swift in Sources */,
 				307695A525439DD30028E1E7 /* HBarPicker.swift in Sources */,

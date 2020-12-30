@@ -16,8 +16,8 @@ struct TriviaQuizCreatorView: View {
     /// Indicates whether the quiz is loading.
     @State private var quizIsLoading = false
     
-    /// The API response error that is currently presented onscreen.
-    @State private var responseError: APIResponseError? {
+    /// The error alert that is currently presented onscreen.
+    @State private var errorAlert: ErrorAlert? {
         didSet {
             quizIsLoading = false
         }
@@ -68,7 +68,7 @@ struct TriviaQuizCreatorView: View {
                         .background(Color.blue)
                         .clipShape(Capsule())
                 }
-                    .alert(item: $responseError) {
+                    .alert(item: $errorAlert) {
                         Alert(title: Text($0.title), message: Text($0.message))
                     }
             }
@@ -118,14 +118,14 @@ struct TriviaQuizCreatorView: View {
             quizIsLoading = true
         }
         requestLoader.loadAPIRequest(requestData: form) { result in
-            let defaultResponseError = APIResponseError(
+            let defaultErrorAlert = ErrorAlert(
                 title: "Could Not Start the Quiz",
                 message: "An unknown error has occurred."
             )
             switch result {
             case .success(let response):
                 if response.code == 1 {
-                    self.responseError = APIResponseError(
+                    self.errorAlert = ErrorAlert(
                         title: "Not Enough Questions",
                         message: "There are not that many questions in the "
                             + "database to start the quiz. Please try again."
@@ -133,7 +133,7 @@ struct TriviaQuizCreatorView: View {
                     return
                 }
                 if response.code == 2 {
-                    self.responseError = APIResponseError(
+                    self.errorAlert = ErrorAlert(
                         title: "Invalid Category",
                         message: "The category is no longer valid. "
                             + "Please try again."
@@ -141,7 +141,7 @@ struct TriviaQuizCreatorView: View {
                     return
                 }
                 if response.code > 0 {
-                    self.responseError = defaultResponseError
+                    self.errorAlert = defaultErrorAlert
                     return
                 }
                 DispatchQueue.main.async {
@@ -153,31 +153,19 @@ struct TriviaQuizCreatorView: View {
                     }
                 }
             case .failure(.requestTimedOut):
-                self.responseError = APIResponseError(
+                self.errorAlert = ErrorAlert(
                     title: "Could Not Start the Quiz",
                     message: "The request timed out. Please try again."
                 )
             default:
-                self.responseError = defaultResponseError
+                self.errorAlert = defaultErrorAlert
             }
         }
     }
     
     // -------------------------------------------------------------------------
-    // MARK:- Nested structs
+    // MARK:- Nested struct
     // -------------------------------------------------------------------------
-    
-    /// An internal struct that represents an API response error.
-    private struct APIResponseError: Identifiable {
-        
-        let id = UUID()
-        
-        /// The title of this API response error.
-        let title: String
-        
-        /// The message of this API response error.
-        let message: String
-    }
     
     /// An internal struct that contains drawing constants.
     private struct DrawingConstants {

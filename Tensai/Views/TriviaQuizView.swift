@@ -23,11 +23,6 @@ struct TriviaQuizView: View {
     /// The delay before the next question is displayed (in seconds).
     private let delayForNextQuestion = 3.0
     
-    /// The current question.
-    private var currentQuestion: TriviaQuiz.Question {
-        triviaQuizRound.questions[currentQuestionIndex]
-    }
-    
     var body: some View {
         let questionNumber = currentQuestionIndex + 1
         let questionCount = triviaQuizRound.questions.count
@@ -41,7 +36,7 @@ struct TriviaQuizView: View {
             HStack {
                 Text(currentQuestion.category).fontWeight(.bold)
                 Spacer()
-                difficultyStarMeter()
+                difficultyStarMeter
             }
                 .font(.callout)
                 .foregroundColor(.gray)
@@ -58,6 +53,30 @@ struct TriviaQuizView: View {
             }
         }
             .padding()
+    }
+    
+    /// The current question.
+    private var currentQuestion: TriviaQuiz.Question {
+        triviaQuizRound.questions[currentQuestionIndex]
+    }
+    
+    /// The horizontal star meter that represents the difficulty level of the
+    /// current question.
+    private var difficultyStarMeter: some View {
+        let starCount: Int
+        switch currentQuestion.difficulty {
+        case .easy: starCount = 1
+        case .medium: starCount = 2
+        case .hard: starCount = 3
+        }
+        return HStack {
+            ForEach(0 ..< starCount, id: \.self) { _ in
+                Image(systemName: "star.fill")
+            }
+            ForEach(0 ..< 3 - starCount, id: \.self) { _ in
+                Image(systemName: "star")
+            }
+        }
     }
     
     // -------------------------------------------------------------------------
@@ -121,27 +140,6 @@ struct TriviaQuizView: View {
                 .clipShape(buttonBorder)
         }
             .disabled(currentQuestion.selectedAnswer != nil)
-    }
-    
-    /// Creates a horizontal star meter that represents the difficulty level of
-    /// the current question.
-    ///
-    /// - Returns: The difficulty star meter.
-    private func difficultyStarMeter() -> some View {
-        let starCount: Int
-        switch currentQuestion.difficulty {
-        case .easy: starCount = 1
-        case .medium: starCount = 2
-        case .hard: starCount = 3
-        }
-        return HStack {
-            ForEach(0 ..< starCount, id: \.self) { _ in
-                Image(systemName: "star.fill")
-            }
-            ForEach(0 ..< 3 - starCount, id: \.self) { _ in
-                Image(systemName: "star")
-            }
-        }
     }
     
     /// Creates an outlined button that contains the specified answer.

@@ -28,27 +28,32 @@ struct APIRequestLoader<T> where T: APIRequest {
     /// - Parameter completionHandler: The completion handler to execute.
     func loadAPIRequest(
         requestData: T.RequestDataType,
-        completionHandler: @escaping (T.ResponseDataType?, Error?) -> Void
+        completionHandler: @escaping (Result<T.ResponseDataType, NetworkError>) -> Void
     ) {
-        do {
-            let urlRequest = try apiRequest.makeRequest(from: requestData)
-            urlSession.dataTask(with: urlRequest) { (data, response, error) in
-                guard let data = data else {
-                    return completionHandler(nil, error)
-                }
-                do {
-                    let parsedResponse = try self.apiRequest.parseResponse(
-                        data: data
-                    )
-                    completionHandler(parsedResponse, nil)
-                }
-                catch {
-                    completionHandler(nil, error)
-                }
-            }.resume()
+        guard let urlRequest = try? apiRequest.makeRequest(
+            from: requestData
+        ) else {
+            return completionHandler(.failure(.badRequest))
         }
-        catch {
-            return completionHandler(nil, error)
+        
+        let task = urlSession.dataTask(with: urlRequest) { (data, _, error) in
+            if let data = data {
+                if let parsedResponse = try? self.apiRequest.parseResponse(
+                    data: data
+                ) {
+                    return completionHandler(.success(parsedResponse))
+                }
+                return completionHandler(.failure(.cannotParseResponse))
+            }
+            if let error = error {
+                let errorCode = (error as NSError).code
+                if errorCode == NSURLErrorTimedOut {
+                    return completionHandler(.failure(.requestTimedOut))
+                }
+                return completionHandler(.failure(.requestFailed))
+            }
+            completionHandler(.failure(.unknown))
         }
+        task.resume()
     }
 }

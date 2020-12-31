@@ -109,39 +109,61 @@ struct TriviaQuizCreatorView: View {
         )
     }
     
+    /// Presents an alert that displays an **Invalid Category** error.
+    private func presentInvalidCategoryErrorAlert() {
+        errorAlert = ErrorAlert(
+            title: "Invalid Category",
+            message: "The category is no longer valid. Please try again."
+        )
+    }
+    
+    /// Presents an alert that displays a **No Results** error.
+    private func presentNoResultsErrorAlert() {
+        errorAlert = ErrorAlert(
+            title: "Not Enough Questions",
+            message: "There are not that many questions in the database to "
+                + "start the quiz. Please try again."
+        )
+    }
+    
+    /// Presents an alert that displays a **Request Timed Out** error.
+    private func presentRequestTimedOutErrorAlert() {
+        errorAlert = ErrorAlert(
+            title: "Could Not Start the Quiz",
+            message: "The request timed out. Please try again."
+        )
+    }
+    
+    /// Presents an alert that displays an “unknown error.”
+    private func presentUnknownErrorAlert() {
+        errorAlert = ErrorAlert(
+            title: "Could Not Start the Quiz",
+            message: "An unknown error has occurred."
+        )
+    }
+    
     /// Creates and starts a new quiz based on the customization settings.
     ///
-    /// If the response code from the API request is not `0`, then this method
-    /// will show an alert with an appropriate error message instead.
+    /// If the response code from the API request is not `0`, or the request
+    /// failed to retrieve a response altogether, then this method will show an
+    /// alert with an appropriate error message instead.
     private func startQuiz() {
         withAnimation {
             quizIsLoading = true
         }
         requestLoader.loadAPIRequest(requestData: form) { result in
-            let defaultErrorAlert = ErrorAlert(
-                title: "Could Not Start the Quiz",
-                message: "An unknown error has occurred."
-            )
             switch result {
             case .success(let response):
                 if response.code == 1 {
-                    self.errorAlert = ErrorAlert(
-                        title: "Not Enough Questions",
-                        message: "There are not that many questions in the "
-                            + "database to start the quiz. Please try again."
-                    )
+                    self.presentNoResultsErrorAlert()
                     return
                 }
                 if response.code == 2 {
-                    self.errorAlert = ErrorAlert(
-                        title: "Invalid Category",
-                        message: "The category is no longer valid. "
-                            + "Please try again."
-                    )
+                    self.presentInvalidCategoryErrorAlert()
                     return
                 }
                 if response.code > 0 {
-                    self.errorAlert = defaultErrorAlert
+                    self.presentUnknownErrorAlert()
                     return
                 }
                 DispatchQueue.main.async {
@@ -149,16 +171,13 @@ struct TriviaQuizCreatorView: View {
                         questions: response.questions.map(decodeQuestion)
                     )
                     withAnimation {
-                        viewRouter.currentViewKey = .triviaQuiz(triviaQuiz)
+                        self.viewRouter.currentViewKey = .triviaQuiz(triviaQuiz)
                     }
                 }
             case .failure(.requestTimedOut):
-                self.errorAlert = ErrorAlert(
-                    title: "Could Not Start the Quiz",
-                    message: "The request timed out. Please try again."
-                )
+                self.presentRequestTimedOutErrorAlert()
             default:
-                self.errorAlert = defaultErrorAlert
+                self.presentUnknownErrorAlert()
             }
         }
     }

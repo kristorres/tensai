@@ -10,8 +10,9 @@ struct TriviaQuizCreatorView: View {
     /// The view router.
     @EnvironmentObject private var viewRouter: ViewRouter
     
-    /// The form to retrieve trivia questions from the *Open Trivia Database*.
-    @ObservedObject private var form = TriviaQuizCreatorForm()
+    /// The settings configuration to retrieve trivia questions from the *Open
+    /// Trivia Database*.
+    @State private var config = TriviaQuizConfig()
     
     /// Indicates whether the quiz is loading.
     @State private var quizIsLoading = false
@@ -28,7 +29,7 @@ struct TriviaQuizCreatorView: View {
     // -------------------------------------------------------------------------
     
     /// The options for all possible numbers of questions.
-    private let questionCountOptions = TriviaQuizCreatorForm.allQuestionCounts
+    private let questionCountOptions = TriviaQuizConfig.allQuestionCounts
         .map { "\($0) Questions" }
     
     /// The API request loader.
@@ -42,20 +43,20 @@ struct TriviaQuizCreatorView: View {
                 Spacer()
                 Text("Start a New Quiz").font(.largeTitle).fontWeight(.black)
                 HBarPicker(
-                    options: TriviaQuizCreatorForm.allCategories,
-                    selectionIndex: $form.categoryIndex
+                    options: TriviaQuizConfig.allCategories,
+                    selectionIndex: $config.categoryIndex
                 )
                 HBarPicker(
-                    options: TriviaQuizCreatorForm.allDifficulties,
-                    selectionIndex: $form.difficultyIndex
+                    options: TriviaQuizConfig.allDifficulties,
+                    selectionIndex: $config.difficultyIndex
                 )
                 HBarPicker(
-                    options: TriviaQuizCreatorForm.allQuestionTypes,
-                    selectionIndex: $form.questionTypeIndex
+                    options: TriviaQuizConfig.allQuestionTypes,
+                    selectionIndex: $config.questionTypeIndex
                 )
                 HBarPicker(
                     options: questionCountOptions,
-                    selectionIndex: $form.questionCountIndex
+                    selectionIndex: $config.questionCountIndex
                 )
                 Spacer()
                 Button(action: startQuiz) {
@@ -151,7 +152,7 @@ struct TriviaQuizCreatorView: View {
         withAnimation {
             quizIsLoading = true
         }
-        requestLoader.loadAPIRequest(requestData: form) { result in
+        requestLoader.loadAPIRequest(requestData: config) { result in
             switch result {
             case .success(let response):
                 if response.code == 1 {

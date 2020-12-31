@@ -4,14 +4,14 @@ import SwiftUI
 final class ViewRouter: ObservableObject {
     
     /// The key of the currently rendered view.
-    @Published var currentViewKey = Key.triviaQuizCreator
+    @Published var currentViewKey = Key.triviaQuizConfig
     
     /// A valid key to render a view.
     enum Key {
         
         /// The key to render a view where the user can create and start a new
         /// quiz.
-        case triviaQuizCreator
+        case triviaQuizConfig
         
         /// The key to render a view where the user answers questions in a
         /// trivia quiz.

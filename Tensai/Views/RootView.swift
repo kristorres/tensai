@@ -8,8 +8,8 @@ struct RootView: View {
     
     var body: some View {
         switch viewRouter.currentViewKey {
-        case .triviaQuizCreator:
-            TriviaQuizCreatorView()
+        case .triviaQuizConfig:
+            TriviaQuizConfigView()
         case .triviaQuiz(let triviaQuiz):
             TriviaQuizView(
                 triviaQuizRound: TriviaQuizRound(triviaQuiz: triviaQuiz)

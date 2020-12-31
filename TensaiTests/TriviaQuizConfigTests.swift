@@ -1,7 +1,7 @@
 import XCTest
 @testable import Tensai
 
-final class TriviaQuizCreatorFormTests: XCTestCase {
+final class TriviaQuizConfigTests: XCTestCase {
     
     func testBasicURL() {
         let config = TriviaQuizConfig()

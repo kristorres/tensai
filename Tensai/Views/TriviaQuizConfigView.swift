@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// A view to create and start a new quiz.
-struct TriviaQuizCreatorView: View {
+struct TriviaQuizConfigView: View {
     
     // -------------------------------------------------------------------------
     // MARK:- State management
@@ -229,11 +229,11 @@ fileprivate extension String {
 }
 
 #if DEBUG
-struct TriviaQuizCreatorView_Previews: PreviewProvider {
+struct TriviaQuizConfigView_Previews: PreviewProvider {
     static var previews: some View {
         DevicePreviewGroup(
-            name: "Trivia Quiz Creator View",
-            view: TriviaQuizCreatorView().environmentObject(ViewRouter())
+            name: "Trivia Quiz Config View",
+            view: TriviaQuizConfigView().environmentObject(ViewRouter())
         )
     }
 }

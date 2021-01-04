@@ -59,16 +59,7 @@ struct TriviaQuizConfigView: View {
                     selectionIndex: $config.questionCountIndex
                 )
                 Spacer()
-                Button(action: startQuiz) {
-                    Text("PLAY")
-                        .font(.title)
-                        .fontWeight(.heavy)
-                        .padding()
-                        .frame(maxWidth: DrawingConstants.maximumButtonWidth)
-                        .foregroundColor(.white)
-                        .background(Color.blue)
-                        .clipShape(Capsule())
-                }
+                CapsuleButton(title: "Play", action: startQuiz)
                     .alert(item: $errorAlert) {
                         Alert(title: Text($0.title), message: Text($0.message))
                     }

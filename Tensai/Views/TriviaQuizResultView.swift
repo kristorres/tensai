@@ -41,27 +41,9 @@ struct TriviaQuizResultView: View {
                 .fontWeight(.medium)
             Spacer()
             if !playerPassed {
-                Button(action: {}) {
-                    Text("RETRY")
-                        .font(.title)
-                        .fontWeight(.heavy)
-                        .padding()
-                        .frame(maxWidth: DrawingConstants.maximumButtonWidth)
-                        .foregroundColor(.white)
-                        .background(Color.blue)
-                        .clipShape(Capsule())
-                }
+                CapsuleButton(title: "Retry", action: {})
             }
-            Button(action: goToConfigView) {
-                Text("START A NEW QUIZ")
-                    .font(.title)
-                    .fontWeight(.heavy)
-                    .padding()
-                    .frame(maxWidth: DrawingConstants.maximumButtonWidth)
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .clipShape(Capsule())
-            }
+            CapsuleButton(title: "Start a New Quiz", action: goToConfigView)
         }
             .padding()
     }

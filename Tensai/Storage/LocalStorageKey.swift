@@ -4,5 +4,5 @@ import Foundation
 struct LocalStorageKey {
     
     /// The key to store a trivia quiz configuration locally.
-    let triviaQuizConfig = "TriviaQuizConfig"
+    static let triviaQuizConfig = "TriviaQuizConfig"
 }

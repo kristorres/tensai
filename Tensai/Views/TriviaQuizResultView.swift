@@ -190,17 +190,6 @@ struct TriviaQuizResultView: View {
             }
         }
     }
-    
-    // -------------------------------------------------------------------------
-    // MARK:- Nested struct
-    // -------------------------------------------------------------------------
-    
-    /// An internal struct that contains drawing constants.
-    private struct DrawingConstants {
-        
-        /// The maximum width of a button.
-        static let maximumButtonWidth = CGFloat(400)
-    }
 }
 
 #if DEBUG

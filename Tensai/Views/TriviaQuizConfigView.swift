@@ -76,31 +76,6 @@ struct TriviaQuizConfigView: View {
     // MARK:- Private methods
     // -------------------------------------------------------------------------
     
-    /// Decodes the specified HTML-encoded question from the *Open Trivia
-    /// Database*.
-    ///
-    /// - Parameter question: The question to be decoded.
-    ///
-    /// - Returns: The HTML-decoded version of the question.
-    private func decodeQuestion(_ question: OTDQuestion) -> OTDQuestion {
-        
-        let text = question.text.htmlDecodedString ?? question.text
-        let correctAnswer = question.correctAnswer.htmlDecodedString
-            ?? question.correctAnswer
-        let incorrectAnswers = question.incorrectAnswers.map { answer in
-            answer.htmlDecodedString ?? answer
-        }
-        
-        return OTDQuestion(
-            category: question.category,
-            type: question.type,
-            difficulty: question.difficulty,
-            text: text,
-            correctAnswer: correctAnswer,
-            incorrectAnswers: incorrectAnswers
-        )
-    }
-    
     /// Presents an alert that displays an **Invalid Category** error.
     private func presentInvalidCategoryErrorAlert() {
         errorAlert = ErrorAlert(
@@ -135,10 +110,6 @@ struct TriviaQuizConfigView: View {
     }
     
     /// Creates and starts a new quiz based on the customization settings.
-    ///
-    /// If the response code from the API request is not `0`, or the request
-    /// failed to retrieve a response altogether, then this method will show an
-    /// alert with an appropriate error message instead.
     private func startQuiz() {
         withAnimation {
             quizIsLoading = true
@@ -158,12 +129,19 @@ struct TriviaQuizConfigView: View {
                     self.presentUnknownErrorAlert()
                     return
                 }
+                UserDefaults.standard.set(
+                    config.propertyList,
+                    forKey: LocalStorageKey.triviaQuizConfig
+                )
                 DispatchQueue.main.async {
                     let triviaQuiz = TriviaQuiz(
-                        questions: response.questions.map(decodeQuestion)
+                        questions: response.questions,
+                        decoded: true
                     )
                     withAnimation {
-                        self.viewRouter.currentViewKey = .triviaQuiz(triviaQuiz)
+                        self.viewRouter.currentViewKey = .triviaQuiz(
+                            TriviaQuizRound(triviaQuiz: triviaQuiz)
+                        )
                     }
                 }
             case .failure(.requestTimedOut):
@@ -183,39 +161,6 @@ struct TriviaQuizConfigView: View {
         
         /// The maximum width of a button.
         static let maximumButtonWidth = CGFloat(400)
-    }
-}
-
-fileprivate extension String {
-    
-    /// The HTML-decoded version of this string.
-    ///
-    /// ```
-    /// let htmlSong = "Twice — <b>&quot;I Can&#8217;t Stop Me&quot;</b>"
-    ///
-    /// if let song = htmlSong.htmlDecodedString {
-    ///     print(song)  // Twice — "I Can’t Stop Me"
-    /// }
-    /// ```
-    ///
-    /// - Note: Remember to call this property from the main thread only as it
-    ///         uses WebKit to parse HTML underneath.
-    var htmlDecodedString: String? {
-        if let data = self.data(using: .utf8) {
-            let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
-                .documentType: NSAttributedString.DocumentType.html,
-                .characterEncoding: String.Encoding.utf8.rawValue
-            ]
-            if let attributedString = try? NSAttributedString(
-                data: data,
-                options: options,
-                documentAttributes: nil
-            ) {
-                return String(attributedString.string)
-            }
-            return nil
-        }
-        return nil
     }
 }
 

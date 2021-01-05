@@ -27,37 +27,32 @@ struct TriviaQuizView: View {
         let questionNumber = currentQuestionIndex + 1
         let questionCount = triviaQuizRound.questions.count
         
-        if questionNumber > questionCount {
-            TriviaQuizResultView(triviaQuizRound: triviaQuizRound)
-        }
-        else {
-            VStack(alignment: .leading, spacing: 6) {
-                Text("Score: \(triviaQuizRound.score)")
-                    .font(.title)
-                    .fontWeight(.medium)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.bottom, 12)
-                HStack {
-                    Text(currentQuestion.category).fontWeight(.bold)
-                    Spacer()
-                    difficultyStarMeter
-                }
-                    .font(.callout)
-                    .foregroundColor(.gray)
-                Text("Question \(questionNumber)/\(questionCount)")
-                    .font(.largeTitle)
-                    .fontWeight(.black)
-                Divider()
-                Text(currentQuestion.text).font(.title2).fontWeight(.heavy)
+        VStack(alignment: .leading, spacing: 6) {
+            Text("Score: \(triviaQuizRound.score)")
+                .font(.title)
+                .fontWeight(.medium)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.bottom, 12)
+            HStack {
+                Text(currentQuestion.category).fontWeight(.bold)
                 Spacer()
-                VStack(spacing: 12) {
-                    ForEach(currentQuestion.possibleAnswers, id: \.self) {
-                        self.answerButton(for: $0)
-                    }
+                difficultyStarMeter
+            }
+                .font(.callout)
+                .foregroundColor(.gray)
+            Text("Question \(questionNumber)/\(questionCount)")
+                .font(.largeTitle)
+                .fontWeight(.black)
+            Divider()
+            Text(currentQuestion.text).font(.title2).fontWeight(.heavy)
+            Spacer()
+            VStack(spacing: 12) {
+                ForEach(currentQuestion.possibleAnswers, id: \.self) {
+                    self.answerButton(for: $0)
                 }
             }
-                .padding()
         }
+            .padding()
     }
     
     /// The current question.
@@ -179,6 +174,14 @@ struct TriviaQuizView: View {
     private func selectAnswer(_ answer: String) {
         triviaQuizRound.submitAnswer(answer, at: currentQuestionIndex)
         DispatchQueue.main.asyncAfter(deadline: .now() + delayForNextQuestion) {
+            let questionNumber = currentQuestionIndex + 1
+            let questionCount = triviaQuizRound.questions.count
+            if questionNumber == questionCount {
+                self.viewRouter.currentViewKey = .triviaQuizResult(
+                    triviaQuizRound
+                )
+                return
+            }
             currentQuestionIndex += 1
         }
     }

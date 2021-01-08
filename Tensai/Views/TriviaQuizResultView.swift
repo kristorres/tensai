@@ -13,6 +13,9 @@ struct TriviaQuizResultView: View {
     /// The view router.
     @EnvironmentObject private var viewRouter: ViewRouter
     
+    /// Indicates whether the trivia questions are currently presented onscreen.
+    @State private var questionsArePresented = false
+    
     /// Indicates whether the quiz is loading.
     @State private var quizIsLoading = false
     
@@ -65,6 +68,12 @@ struct TriviaQuizResultView: View {
                             )
                         }
                 }
+                CapsuleButton(title: "Review Questions", action: reviewQuiz)
+                    .fullScreenCover(isPresented: $questionsArePresented) {
+                        TriviaQuizReviewView(
+                            questions: triviaQuizRound.questions
+                        )
+                    }
                 CapsuleButton(title: "Start a New Quiz", action: goToConfigView)
             }
                 .padding()
@@ -189,6 +198,11 @@ struct TriviaQuizResultView: View {
                 self.presentUnknownErrorAlert()
             }
         }
+    }
+    
+    /// Reviews the trivia questions.
+    private func reviewQuiz() {
+        questionsArePresented = true
     }
 }
 

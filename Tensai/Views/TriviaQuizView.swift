@@ -27,7 +27,7 @@ struct TriviaQuizView: View {
         let questionNumber = currentQuestionIndex + 1
         let questionCount = triviaQuizRound.questions.count
         
-        VStack(alignment: .leading, spacing: 6) {
+        return VStack(alignment: .leading, spacing: 6) {
             Text("Score: \(triviaQuizRound.score)")
                 .font(.title)
                 .fontWeight(.medium)

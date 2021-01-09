@@ -16,9 +16,9 @@ final class APILoaderTests: XCTestCase {
     
     func testLoaderSuccess() throws {
         
-        let form = TriviaQuizCreatorForm()
-        form.questionTypeIndex = 1
-        form.questionCountIndex = 1
+        var config = TriviaQuizConfig()
+        config.questionTypeIndex = 1
+        config.questionCountIndex = 1
         
         let bundle = Bundle(for: type(of: self))
         let mockJSONURL = bundle.url(
@@ -36,7 +36,7 @@ final class APILoaderTests: XCTestCase {
         }
         
         let expectation = XCTestExpectation(description: "response")
-        loader.loadAPIRequest(requestData: form) { result in
+        loader.loadAPIRequest(requestData: config) { result in
             switch result {
             case .success(let response):
                 XCTAssertEqual(response.code, 0)

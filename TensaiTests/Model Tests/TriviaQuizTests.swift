@@ -37,7 +37,7 @@ final class TriviaQuizTests: XCTestCase {
                     type: .trueOrFalse,
                     difficulty: .easy,
                     text: "Leonardo da Vinci’s Mona Lisa does not have "
-                        + "eyebrows?",
+                        + "eyebrows.",
                     correctAnswer: "True",
                     incorrectAnswers: ["False"]
                 ),

@@ -47,8 +47,8 @@ struct TriviaQuizView: View {
             Text(currentQuestion.text).font(.title2).fontWeight(.heavy)
             Spacer()
             VStack(spacing: 12) {
-                ForEach(currentQuestion.possibleAnswers, id: \.self) { answer in
-                    self.answerButton(for: answer)
+                ForEach(currentQuestion.possibleAnswers, id: \.self) {
+                    self.answerButton(for: $0)
                 }
             }
         }
@@ -172,15 +172,16 @@ struct TriviaQuizView: View {
     ///
     /// - Parameter answer: The player’s answer to the current question.
     private func selectAnswer(_ answer: String) {
-        
         triviaQuizRound.submitAnswer(answer, at: currentQuestionIndex)
-        
-        let questionNumber = currentQuestionIndex + 1
-        let questionCount = triviaQuizRound.questions.count
-        if questionNumber == questionCount {
-            return
-        }
         DispatchQueue.main.asyncAfter(deadline: .now() + delayForNextQuestion) {
+            let questionNumber = currentQuestionIndex + 1
+            let questionCount = triviaQuizRound.questions.count
+            if questionNumber == questionCount {
+                self.viewRouter.currentViewKey = .triviaQuizResult(
+                    triviaQuizRound
+                )
+                return
+            }
             currentQuestionIndex += 1
         }
     }

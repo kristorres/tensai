@@ -141,3 +141,70 @@ struct TriviaQuiz {
         var isAnswered = false
     }
 }
+
+extension TriviaQuiz {
+    
+    /// Creates a trivia quiz with the specified questions from the *Open Trivia
+    /// Database*.
+    ///
+    /// - Parameter questions: The questions in the quiz.
+    /// - Parameter decoded:   `true` to decode the questions, or `false`
+    ///                        otherwise.
+    init(questions: [OTDQuestion], decoded: Bool) {
+        if !decoded {
+            self.init(questions: questions)
+            return
+        }
+        self.init(questions: questions.map { $0.decoded })
+    }
+}
+
+extension OTDQuestion {
+    
+    /// The HTML-decoded version of this question.
+    var decoded: OTDQuestion {
+        let newText = text.htmlDecodedString ?? text
+        let newCorrectAnswer = correctAnswer.htmlDecodedString ?? correctAnswer
+        let newIncorrectAnswers = incorrectAnswers.map {
+            $0.htmlDecodedString ?? $0
+        }
+        return OTDQuestion(
+            category: category,
+            type: type,
+            difficulty: difficulty,
+            text: newText,
+            correctAnswer: newCorrectAnswer,
+            incorrectAnswers: newIncorrectAnswers
+        )
+    }
+}
+
+fileprivate extension String {
+    
+    /// The HTML-decoded version of this string.
+    ///
+    /// ```
+    /// let htmlSong = "Twice — <b>&quot;I Can&#8217;t Stop Me&quot;</b>"
+    ///
+    /// if let song = htmlSong.htmlDecodedString {
+    ///     print(song)  // Twice — "I Can’t Stop Me"
+    /// }
+    /// ```
+    var htmlDecodedString: String? {
+        guard let data = self.data(using: .utf8) else {
+            return nil
+        }
+        let options: [NSAttributedString.DocumentReadingOptionKey: Any] = [
+            .documentType: NSAttributedString.DocumentType.html,
+            .characterEncoding: String.Encoding.utf8.rawValue
+        ]
+        guard let attributedString = try? NSAttributedString(
+            data: data,
+            options: options,
+            documentAttributes: nil
+        ) else {
+            return nil
+        }
+        return String(attributedString.string)
+    }
+}

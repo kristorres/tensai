@@ -140,7 +140,7 @@ struct TriviaQuizConfigView: View {
                     )
                     withAnimation {
                         self.viewRouter.currentViewKey = .triviaQuiz(
-                            TriviaQuizRound(triviaQuiz: triviaQuiz)
+                            TriviaQuizViewModel(triviaQuiz: triviaQuiz)
                         )
                     }
                 }

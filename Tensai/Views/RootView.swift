@@ -10,11 +10,11 @@ struct RootView: View {
         switch viewRouter.currentViewKey {
         case .triviaQuizConfig:
             TriviaQuizConfigView()
-        case .triviaQuiz(let round):
-            TriviaQuizView(triviaQuizRound: round)
+        case .triviaQuiz(let viewModel):
+            TriviaQuizView(viewModel: viewModel)
                 .transition(.move(edge: .trailing))
-        case .triviaQuizResult(let round):
-            TriviaQuizResultView(triviaQuizRound: round)
+        case .triviaQuizResult(let viewModel):
+            TriviaQuizResultView(viewModel: viewModel)
                 .transition(.move(edge: .trailing))
         }
     }

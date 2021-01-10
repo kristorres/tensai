@@ -15,10 +15,10 @@ final class ViewRouter: ObservableObject {
         
         /// The key to render a view where the user answers questions in a
         /// trivia quiz.
-        case triviaQuiz(TriviaQuizRound)
+        case triviaQuiz(TriviaQuizViewModel)
         
         /// The key to render a view where the user can see the result of a
         /// trivia quiz.
-        case triviaQuizResult(TriviaQuizRound)
+        case triviaQuizResult(TriviaQuizViewModel)
     }
 }

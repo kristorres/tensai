@@ -7,8 +7,8 @@ struct TriviaQuizView: View {
     // MARK:- State management
     // -------------------------------------------------------------------------
     
-    /// The round with a quiz of trivia questions.
-    @ObservedObject var triviaQuizRound: TriviaQuizRound
+    /// The view model that binds this view to a quiz of trivia questions.
+    @ObservedObject var viewModel: TriviaQuizViewModel
     
     /// The view router.
     @EnvironmentObject private var viewRouter: ViewRouter
@@ -25,10 +25,10 @@ struct TriviaQuizView: View {
     
     var body: some View {
         let questionNumber = currentQuestionIndex + 1
-        let questionCount = triviaQuizRound.questions.count
+        let questionCount = viewModel.questions.count
         
         return VStack(alignment: .leading, spacing: 6) {
-            Text("Score: \(triviaQuizRound.score)")
+            Text("Score: \(viewModel.score)")
                 .font(.title)
                 .fontWeight(.medium)
                 .frame(maxWidth: .infinity, alignment: .center)
@@ -57,7 +57,7 @@ struct TriviaQuizView: View {
     
     /// The current question.
     private var currentQuestion: TriviaQuiz.Question {
-        triviaQuizRound.questions[currentQuestionIndex]
+        viewModel.questions[currentQuestionIndex]
     }
     
     /// The horizontal star meter that represents the difficulty level of the
@@ -172,14 +172,12 @@ struct TriviaQuizView: View {
     ///
     /// - Parameter answer: The player’s answer to the current question.
     private func selectAnswer(_ answer: String) {
-        triviaQuizRound.submitAnswer(answer, at: currentQuestionIndex)
+        viewModel.submitAnswer(answer, at: currentQuestionIndex)
         DispatchQueue.main.asyncAfter(deadline: .now() + delayForNextQuestion) {
             let questionNumber = currentQuestionIndex + 1
-            let questionCount = triviaQuizRound.questions.count
+            let questionCount = viewModel.questions.count
             if questionNumber == questionCount {
-                self.viewRouter.currentViewKey = .triviaQuizResult(
-                    triviaQuizRound
-                )
+                self.viewRouter.currentViewKey = .triviaQuizResult(viewModel)
                 return
             }
             currentQuestionIndex += 1
@@ -208,7 +206,7 @@ struct TriviaQuizView: View {
 struct TriviaQuizView_Previews: PreviewProvider {
     static var previews: some View {
         let view = TriviaQuizView(
-            triviaQuizRound: TriviaQuizRound(
+            viewModel: TriviaQuizViewModel(
                 triviaQuiz: TriviaQuiz(
                     questions: [
                         OTDQuestion(

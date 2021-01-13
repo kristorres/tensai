@@ -7,8 +7,8 @@ struct TriviaQuizResultView: View {
     // MARK:- State management
     // -------------------------------------------------------------------------
     
-    /// The round with a quiz of trivia questions.
-    @ObservedObject var triviaQuizRound: TriviaQuizRound
+    /// The view model that binds this view to a quiz of trivia questions.
+    @ObservedObject var viewModel: TriviaQuizViewModel
     
     /// The view router.
     @EnvironmentObject private var viewRouter: ViewRouter
@@ -40,8 +40,8 @@ struct TriviaQuizResultView: View {
     )
     
     var body: some View {
-        let correctAnswerCount = triviaQuizRound.correctAnswerCount
-        let questionCount = triviaQuizRound.questions.count
+        let correctAnswerCount = viewModel.correctAnswerCount
+        let questionCount = viewModel.questions.count
         
         return ZStack {
             VStack(spacing: 12) {
@@ -55,7 +55,7 @@ struct TriviaQuizResultView: View {
                 Text("\(correctAnswerCount)/\(questionCount)")
                     .font(.system(size: 64, weight: .heavy))
                     .foregroundColor(scoreColor)
-                Text("Score: \(triviaQuizRound.score)")
+                Text("Score: \(viewModel.score)")
                     .font(.title2)
                     .fontWeight(.medium)
                 Spacer()
@@ -70,9 +70,7 @@ struct TriviaQuizResultView: View {
                 }
                 CapsuleButton(title: "Review Questions", action: reviewQuiz)
                     .fullScreenCover(isPresented: $questionsArePresented) {
-                        TriviaQuizReviewView(
-                            questions: triviaQuizRound.questions
-                        )
+                        TriviaQuizReviewView(questions: viewModel.questions)
                     }
                 CapsuleButton(title: "Start a New Quiz", action: goToConfigView)
             }
@@ -86,8 +84,8 @@ struct TriviaQuizResultView: View {
     
     /// Indicates whether the player passed the trivia quiz.
     private var playerPassed: Bool {
-        let correctAnswerCount = Double(triviaQuizRound.correctAnswerCount)
-        let questionCount = Double(triviaQuizRound.questions.count)
+        let correctAnswerCount = Double(viewModel.correctAnswerCount)
+        let questionCount = Double(viewModel.questions.count)
         return correctAnswerCount / questionCount >= passingThreshold
     }
     
@@ -188,7 +186,7 @@ struct TriviaQuizResultView: View {
                     )
                     withAnimation {
                         self.viewRouter.currentViewKey = .triviaQuiz(
-                            TriviaQuizRound(triviaQuiz: triviaQuiz)
+                            TriviaQuizViewModel(triviaQuiz: triviaQuiz)
                         )
                     }
                 }
@@ -210,7 +208,7 @@ struct TriviaQuizResultView: View {
 struct TriviaQuizResultView_Previews: PreviewProvider {
     static var previews: some View {
         let view = TriviaQuizResultView(
-            triviaQuizRound: TriviaQuizRound(
+            viewModel: TriviaQuizViewModel(
                 triviaQuiz: TriviaQuiz(
                     questions: [
                         OTDQuestion(

@@ -1,7 +1,7 @@
 import SwiftUI
 
-/// A round with a quiz of trivia questions.
-final class TriviaQuizRound: ObservableObject {
+/// A view model that binds a view to a quiz of trivia questions.
+final class TriviaQuizViewModel: ObservableObject {
     
     // -------------------------------------------------------------------------
     // MARK:- Model

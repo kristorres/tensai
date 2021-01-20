@@ -98,45 +98,12 @@ struct TriviaQuizResultView: View {
         }
     }
     
-    /// Presents an alert that displays an **Invalid Category** error.
-    private func presentInvalidCategoryErrorAlert() {
-        appState.errorAlert = ErrorAlert(
-            title: "Invalid Category",
-            message: "The category is no longer valid. Please try again."
-        )
-    }
-    
-    /// Presents an alert that displays a **No Results** error.
-    private func presentNoResultsErrorAlert() {
-        appState.errorAlert = ErrorAlert(
-            title: "Not Enough Questions",
-            message: "There are not that many questions in the database to "
-                + "start the quiz. Please try again."
-        )
-    }
-    
-    /// Presents an alert that displays a **Request Timed Out** error.
-    private func presentRequestTimedOutErrorAlert() {
-        appState.errorAlert = ErrorAlert(
-            title: "Could Not Start the Quiz",
-            message: "The request timed out. Please try again."
-        )
-    }
-    
-    /// Presents an alert that displays an “unknown error.”
-    private func presentUnknownErrorAlert() {
-        appState.errorAlert = ErrorAlert(
-            title: "Could Not Start the Quiz",
-            message: "An unknown error has occurred."
-        )
-    }
-    
     /// Retries the quiz.
     private func retryQuiz() {
         let localStorage = UserDefaults.standard
         let plist = localStorage.data(forKey: LocalStorageKey.triviaQuizConfig)
         guard let config = TriviaQuizConfig(propertyList: plist) else {
-            presentUnknownErrorAlert()
+            appState.errorAlert = .unknownErrorAlert
             return
         }
         withAnimation {
@@ -147,15 +114,15 @@ struct TriviaQuizResultView: View {
             case .success(let response):
                 DispatchQueue.main.async {
                     if response.code == 1 {
-                        self.presentNoResultsErrorAlert()
+                        self.appState.errorAlert = .noResultsErrorAlert
                         return
                     }
                     if response.code == 2 {
-                        self.presentInvalidCategoryErrorAlert()
+                        self.appState.errorAlert = .invalidCategoryErrorAlert
                         return
                     }
                     if response.code > 0 {
-                        self.presentUnknownErrorAlert()
+                        self.appState.errorAlert = .unknownErrorAlert
                         return
                     }
                     let triviaQuiz = TriviaQuiz(
@@ -169,9 +136,9 @@ struct TriviaQuizResultView: View {
                     }
                 }
             case .failure(.requestTimedOut):
-                self.presentRequestTimedOutErrorAlert()
+                self.appState.errorAlert = .requestTimedOutErrorAlert
             default:
-                self.presentUnknownErrorAlert()
+                self.appState.errorAlert = .unknownErrorAlert
             }
         }
     }

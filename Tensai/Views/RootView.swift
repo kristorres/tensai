@@ -3,11 +3,24 @@ import SwiftUI
 /// The **root view** for *Tensai*.
 struct RootView: View {
     
-    /// The view router.
-    @EnvironmentObject private var viewRouter: ViewRouter
+    /// The global app state.
+    @EnvironmentObject private var appState: AppState
     
     var body: some View {
-        switch viewRouter.currentViewKey {
+        ZStack {
+            currentView
+            if appState.responseIsLoading {
+                LoadingView()
+            }
+        }
+            .alert(item: $appState.errorAlert) {
+                Alert(title: Text($0.title), message: Text($0.message))
+            }
+    }
+    
+    /// The currently rendered view.
+    @ViewBuilder private var currentView: some View {
+        switch appState.currentViewKey {
         case .triviaQuizConfig:
             TriviaQuizConfigView()
         case .triviaQuiz(let viewModel):
@@ -25,7 +38,7 @@ struct RootView_Previews: PreviewProvider {
     static var previews: some View {
         DevicePreviewGroup(
             name: "Root View",
-            view: RootView().environmentObject(ViewRouter())
+            view: RootView().environmentObject(AppState())
         )
     }
 }

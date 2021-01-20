@@ -26,7 +26,7 @@
 		30595DC225A127AF00456E16 /* TriviaQuizResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30595DC125A127AE00456E16 /* TriviaQuizResultView.swift */; };
 		30595DCC25A2B2C400456E16 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30595DCB25A2B2C400456E16 /* CapsuleButton.swift */; };
 		306E7543254E2AE9004145A6 /* TriviaQuizConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E7542254E2AE9004145A6 /* TriviaQuizConfig.swift */; };
-		307695A0254367410028E1E7 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076959F254367410028E1E7 /* ViewRouter.swift */; };
+		307695A0254367410028E1E7 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076959F254367410028E1E7 /* AppState.swift */; };
 		307695A525439DD30028E1E7 /* HBarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307695A425439DD30028E1E7 /* HBarPicker.swift */; };
 		308D521B258977560021A735 /* TriviaQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D521A258977560021A735 /* TriviaQuizTests.swift */; };
 		308D5221258986630021A735 /* TriviaQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D5220258986630021A735 /* TriviaQuizViewModel.swift */; };
@@ -77,7 +77,7 @@
 		30595DC825A2AB6900456E16 /* trivia_quiz_result.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trivia_quiz_result.png; sourceTree = "<group>"; };
 		30595DCB25A2B2C400456E16 /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
 		306E7542254E2AE9004145A6 /* TriviaQuizConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizConfig.swift; sourceTree = "<group>"; };
-		3076959F254367410028E1E7 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		3076959F254367410028E1E7 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		307695A425439DD30028E1E7 /* HBarPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBarPicker.swift; sourceTree = "<group>"; };
 		308D521A258977560021A735 /* TriviaQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizTests.swift; sourceTree = "<group>"; };
 		308D5220258986630021A735 /* TriviaQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizViewModel.swift; sourceTree = "<group>"; };
@@ -147,9 +147,9 @@
 		301F0ACC253A60A8000C6439 /* Tensai */ = {
 			isa = PBXGroup;
 			children = (
+				3076959F254367410028E1E7 /* AppState.swift */,
 				303E5948259D2EFC00B65183 /* ErrorAlert.swift */,
 				301F0ACD253A60A8000C6439 /* TensaiApp.swift */,
-				3076959F254367410028E1E7 /* ViewRouter.swift */,
 				30A04E4525561457009C9695 /* Models */,
 				3076959E254366DA0028E1E7 /* View Models */,
 				301F0AE3253A67B9000C6439 /* Views */,
@@ -375,7 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				301F0ACE253A60A8000C6439 /* TensaiApp.swift in Sources */,
-				307695A0254367410028E1E7 /* ViewRouter.swift in Sources */,
+				307695A0254367410028E1E7 /* AppState.swift in Sources */,
 				303E5949259D2EFC00B65183 /* ErrorAlert.swift in Sources */,
 				30A04E472556153C009C9695 /* OTDQuestion.swift in Sources */,
 				30168BF42580732900FB65B9 /* TriviaQuiz.swift in Sources */,

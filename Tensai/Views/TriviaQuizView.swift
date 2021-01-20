@@ -10,8 +10,8 @@ struct TriviaQuizView: View {
     /// The view model that binds this view to a quiz of trivia questions.
     @ObservedObject var viewModel: TriviaQuizViewModel
     
-    /// The view router.
-    @EnvironmentObject private var viewRouter: ViewRouter
+    /// The global app state.
+    @EnvironmentObject private var appState: AppState
     
     /// The index of the current question.
     @State private var currentQuestionIndex = 0
@@ -177,7 +177,7 @@ struct TriviaQuizView: View {
             let questionNumber = currentQuestionIndex + 1
             let questionCount = viewModel.questions.count
             if questionNumber == questionCount {
-                self.viewRouter.currentViewKey = .triviaQuizResult(viewModel)
+                self.appState.currentViewKey = .triviaQuizResult(viewModel)
                 return
             }
             currentQuestionIndex += 1
@@ -226,7 +226,7 @@ struct TriviaQuizView_Previews: PreviewProvider {
                 )
             )
         )
-            .environmentObject(ViewRouter())
+            .environmentObject(AppState())
         
         return DevicePreviewGroup(name: "Trivia Quiz View", view: view)
     }

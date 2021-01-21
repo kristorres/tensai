@@ -3,12 +3,12 @@ import SwiftUI
 @main
 struct TensaiApp: App {
     
-    /// The view router.
-    @StateObject private var viewRouter = ViewRouter()
+    /// The global app state.
+    @StateObject private var appState = AppState()
     
     var body: some Scene {
         WindowGroup {
-            RootView().environmentObject(viewRouter)
+            RootView().environmentObject(appState)
         }
     }
 }

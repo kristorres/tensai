@@ -14,7 +14,6 @@ struct RootView: View {
                 LoadingView()
             }
         }
-            .preferredColorScheme(.dark)
             .alert(item: $appState.errorAlert) {
                 Alert(title: Text($0.title), message: Text($0.message))
             }

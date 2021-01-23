@@ -28,7 +28,6 @@ struct TriviaQuizReviewView: View {
                 .navigationBarTitle(Text("Review"), displayMode: .large)
                 .navigationBarItems(trailing: doneButton)
         }
-            .preferredColorScheme(.dark)
     }
     
     /// The *Done* button to dismiss this view.

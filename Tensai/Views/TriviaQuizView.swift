@@ -39,7 +39,7 @@ struct TriviaQuizView: View {
                 difficultyStarMeter
             }
                 .font(.callout)
-                .foregroundColor(.gray)
+                .foregroundColor(.secondary)
             Text("Question \(questionNumber)/\(questionCount)")
                 .font(.largeTitle)
                 .fontWeight(.black)
@@ -110,7 +110,7 @@ struct TriviaQuizView: View {
     private func answerButtonColor(for answer: String) -> Color {
         if let selectedAnswer = currentQuestion.selectedAnswer {
             if selectedAnswer != answer {
-                return .gray
+                return .secondary
             }
             if selectedAnswer == currentQuestion.correctAnswer {
                 return .green

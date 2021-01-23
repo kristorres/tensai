@@ -12,19 +12,23 @@ struct TriviaQuizReviewView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ScrollView(.vertical) {
-                    LazyVStack(spacing: 12) {
-                        ForEach(questions.indices) { index in
-                            QuestionCard(question: questions[index])
+                ZStack {
+                    Color("Background").edgesIgnoringSafeArea(.all)
+                    ScrollView(.vertical) {
+                        LazyVStack(spacing: 12) {
+                            ForEach(questions.indices) { index in
+                                QuestionCard(question: questions[index])
+                            }
                         }
+                            .padding()
                     }
-                        .padding()
+                        .frame(maxHeight: .infinity)
                 }
-                    .frame(maxHeight: .infinity)
             }
                 .navigationBarTitle(Text("Review"), displayMode: .large)
                 .navigationBarItems(trailing: doneButton)
         }
+            .preferredColorScheme(.dark)
     }
     
     /// The *Done* button to dismiss this view.

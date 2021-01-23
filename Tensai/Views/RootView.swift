@@ -8,11 +8,13 @@ struct RootView: View {
     
     var body: some View {
         ZStack {
+            Color("Background").edgesIgnoringSafeArea(.all)
             currentView
             if appState.responseIsLoading {
                 LoadingView()
             }
         }
+            .preferredColorScheme(.dark)
             .alert(item: $appState.errorAlert) {
                 Alert(title: Text($0.title), message: Text($0.message))
             }

@@ -13,7 +13,7 @@ struct TriviaQuizReviewView: View {
         NavigationView {
             VStack {
                 ZStack {
-                    Color("Background").edgesIgnoringSafeArea(.all)
+                    Color("Review Background").edgesIgnoringSafeArea(.all)
                     ScrollView(.vertical) {
                         LazyVStack(spacing: 12) {
                             ForEach(questions.indices) { index in
@@ -45,54 +45,36 @@ fileprivate struct QuestionCard: View {
     let question: TriviaQuiz.Question
     
     var body: some View {
-        let cardRectangle = RoundedRectangle(
-            cornerRadius: DrawingConstants.cornerRadius
-        )
-        
-        return ZStack {
-            cardRectangle.stroke(lineWidth: DrawingConstants.borderWidth)
-            VStack(alignment: .leading) {
-                HStack {
-                    Text(question.category).fontWeight(.medium)
-                    Spacer()
-                    Text(question.difficulty.rawValue.capitalized)
-                }
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
-                Divider()
-                Text(question.text).font(.headline).fontWeight(.heavy)
-                if question.selectedAnswer == question.correctAnswer {
-                    Text("Your Answer: \(question.correctAnswer) ✔︎")
-                        .font(.subheadline)
-                        .fontWeight(.bold)
-                        .foregroundColor(.green)
-                }
-                else {
-                    if question.selectedAnswer != nil {
-                        Text("Your Answer: \(question.selectedAnswer!) ✘")
-                            .font(.subheadline)
-                            .fontWeight(.bold)
-                            .foregroundColor(.red)
-                    }
-                    Text("Correct Answer: \(question.correctAnswer)")
-                        .font(.subheadline)
-                        .fontWeight(.bold)
-                        .foregroundColor(.secondary)
-                }
+        VStack(alignment: .leading) {
+            HStack {
+                Text(question.category).fontWeight(.medium)
+                Spacer()
+                Text(question.difficulty.rawValue.capitalized)
             }
-                .padding()
+                .font(.footnote)
+                .foregroundColor(.secondary)
+            Divider()
+            Text(question.text).font(.headline).fontWeight(.heavy)
+            if question.selectedAnswer == question.correctAnswer {
+                Text("Your Answer: \(question.correctAnswer) ✔︎")
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                    .foregroundColor(.green)
+            }
+            else {
+                if question.selectedAnswer != nil {
+                    Text("Your Answer: \(question.selectedAnswer!) ✘")
+                        .font(.subheadline)
+                        .fontWeight(.bold)
+                        .foregroundColor(.red)
+                }
+                Text("Correct Answer: \(question.correctAnswer)")
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                    .foregroundColor(.secondary)
+            }
         }
-            .frame(maxWidth: .infinity)
-    }
-    
-    /// An internal struct that contains drawing constants.
-    private struct DrawingConstants {
-        
-        /// The border width for the question card.
-        static let borderWidth = CGFloat(4)
-        
-        /// The corner radius for the question card.
-        static let cornerRadius = CGFloat(16)
+            .cardify(backgroundColor: Color("Background"))
     }
 }
 

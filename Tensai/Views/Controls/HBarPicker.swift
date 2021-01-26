@@ -15,20 +15,15 @@ struct HBarPicker: View {
     @Binding var selectionIndex: Int
     
     var body: some View {
-        let optionTextFieldBorder = RoundedRectangle(
-            cornerRadius: DrawingConstants.optionTextFieldCornerRadius
-        )
-            .stroke(lineWidth: DrawingConstants.optionTextFieldBorderWidth)
-        return HStack(spacing: DrawingConstants.spacing) {
+        HStack(spacing: DrawingConstants.spacing) {
             Button(action: selectPreviousOption) {
                 arrowButtonImage(for: .left)
             }
                 .disabled(selectionIndex == 0)
             Text(options[selectionIndex])
                 .font(.headline)
-                .padding()
                 .frame(maxWidth: DrawingConstants.maximumOptionTextFieldWidth)
-                .overlay(optionTextFieldBorder)
+                .cardify(backgroundColor: Color("Option Background"))
             Button(action: selectNextOption) {
                 arrowButtonImage(for: .right)
             }
@@ -73,14 +68,6 @@ struct HBarPicker: View {
         /// The maximum width of the text field that contains the currently
         /// selected option.
         static let maximumOptionTextFieldWidth = CGFloat(400)
-        
-        /// The border width for the text field that contains the currently
-        /// selected option.
-        static let optionTextFieldBorderWidth = CGFloat(4)
-        
-        /// The corner radius for the text field that contains the currently
-        /// selected option.
-        static let optionTextFieldCornerRadius = CGFloat(16)
         
         /// The spacing between the text field that contains the currently
         /// selected option, and two arrow buttons.

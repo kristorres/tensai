@@ -8,7 +8,7 @@ struct LoadingView: View {
             Color.black.opacity(0.75).ignoresSafeArea()
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                .scaleEffect(2, anchor: .center)
+                .scaleEffect(2)
         }
     }
 }

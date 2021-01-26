@@ -13,7 +13,7 @@ struct TriviaQuizReviewView: View {
         NavigationView {
             VStack {
                 ZStack {
-                    Color("Review Background").edgesIgnoringSafeArea(.all)
+                    Color("Review Background").ignoresSafeArea()
                     ScrollView(.vertical) {
                         LazyVStack(spacing: 12) {
                             ForEach(questions.indices) { index in

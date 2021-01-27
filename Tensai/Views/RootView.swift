@@ -8,6 +8,7 @@ struct RootView: View {
     
     var body: some View {
         ZStack {
+            Color("Background").ignoresSafeArea()
             currentView
             if appState.responseIsLoading {
                 LoadingView()

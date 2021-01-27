@@ -13,10 +13,6 @@ struct DevicePreviewGroup<Content>: View where Content: View {
                 .previewDevice("iPhone X")
                 .previewDisplayName("\(name) — iPhone X")
             view
-                .previewDevice("iPhone X")
-                .preferredColorScheme(.dark)
-                .previewDisplayName("\(name) — iPhone X (Dark Mode)")
-            view
                 .previewDevice("iPad Air (4th generation)")
                 .previewDisplayName("\(name) — iPad Air 4")
         }

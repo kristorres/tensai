@@ -39,7 +39,7 @@ struct TriviaQuizView: View {
                 difficultyStarMeter
             }
                 .font(.callout)
-                .foregroundColor(.gray)
+                .foregroundColor(.secondary)
             Text("Question \(questionNumber)/\(questionCount)")
                 .font(.largeTitle)
                 .fontWeight(.black)
@@ -110,7 +110,7 @@ struct TriviaQuizView: View {
     private func answerButtonColor(for answer: String) -> Color {
         if let selectedAnswer = currentQuestion.selectedAnswer {
             if selectedAnswer != answer {
-                return .gray
+                return .secondary
             }
             if selectedAnswer == currentQuestion.correctAnswer {
                 return .green
@@ -127,17 +127,16 @@ struct TriviaQuizView: View {
     /// - Returns: The answer button.
     private func containedAnswerButton(for answer: String) -> some View {
         let buttonColor = answerButtonColor(for: answer)
-        let buttonBorder = RoundedRectangle(
-            cornerRadius: DrawingConstants.answerButtonCornerRadius
-        )
         return Button(action: { self.selectAnswer(answer) }) {
             Text(answer)
                 .font(.headline)
-                .padding()
-                .frame(maxWidth: DrawingConstants.maximumAnswerButtonWidth)
                 .foregroundColor(.white)
-                .background(buttonColor)
-                .clipShape(buttonBorder)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .cardify(
+                    backgroundColor: buttonColor,
+                    borderColor: buttonColor
+                )
         }
             .disabled(currentQuestion.selectedAnswer != nil)
     }
@@ -149,20 +148,15 @@ struct TriviaQuizView: View {
     /// - Returns: The answer button.
     private func outlinedAnswerButton(for answer: String) -> some View {
         let buttonColor = answerButtonColor(for: answer)
-        let buttonBorder = RoundedRectangle(
-            cornerRadius: DrawingConstants.answerButtonCornerRadius
-        )
-            .stroke(
-                buttonColor,
-                lineWidth: DrawingConstants.answerButtonBorderWidth
-            )
         return Button(action: { self.selectAnswer(answer) }) {
             Text(answer)
                 .font(.headline)
-                .padding()
-                .frame(maxWidth: DrawingConstants.maximumAnswerButtonWidth)
-                .foregroundColor(buttonColor)
-                .overlay(buttonBorder)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .cardify(
+                    backgroundColor: Color("Option Background"),
+                    borderColor: buttonColor
+                )
         }
             .disabled(currentQuestion.selectedAnswer != nil)
     }
@@ -182,23 +176,6 @@ struct TriviaQuizView: View {
             }
             currentQuestionIndex += 1
         }
-    }
-    
-    // -------------------------------------------------------------------------
-    // MARK:- Nested struct
-    // -------------------------------------------------------------------------
-    
-    /// An internal struct that contains drawing constants.
-    private struct DrawingConstants {
-        
-        /// The border width for each answer button.
-        static let answerButtonBorderWidth = CGFloat(4)
-        
-        /// The corner radius for each answer button.
-        static let answerButtonCornerRadius = CGFloat(16)
-        
-        /// The maximum width of each answer button.
-        static let maximumAnswerButtonWidth = CGFloat.infinity
     }
 }
 

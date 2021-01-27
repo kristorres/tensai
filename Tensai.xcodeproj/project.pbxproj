@@ -27,6 +27,7 @@
 		306E7543254E2AE9004145A6 /* TriviaQuizConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306E7542254E2AE9004145A6 /* TriviaQuizConfig.swift */; };
 		307695A0254367410028E1E7 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3076959F254367410028E1E7 /* AppState.swift */; };
 		307695A525439DD30028E1E7 /* HBarPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307695A425439DD30028E1E7 /* HBarPicker.swift */; };
+		307A811725BE917B00FF30B9 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307A811625BE917B00FF30B9 /* Cardify.swift */; };
 		308D521B258977560021A735 /* TriviaQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D521A258977560021A735 /* TriviaQuizTests.swift */; };
 		308D5221258986630021A735 /* TriviaQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D5220258986630021A735 /* TriviaQuizViewModel.swift */; };
 		308D5227258991910021A735 /* TriviaQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D5226258991910021A735 /* TriviaQuizView.swift */; };
@@ -77,6 +78,7 @@
 		306E7542254E2AE9004145A6 /* TriviaQuizConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizConfig.swift; sourceTree = "<group>"; };
 		3076959F254367410028E1E7 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		307695A425439DD30028E1E7 /* HBarPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBarPicker.swift; sourceTree = "<group>"; };
+		307A811625BE917B00FF30B9 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		308D521A258977560021A735 /* TriviaQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizTests.swift; sourceTree = "<group>"; };
 		308D5220258986630021A735 /* TriviaQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizViewModel.swift; sourceTree = "<group>"; };
 		308D5226258991910021A735 /* TriviaQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizView.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				301F0ACD253A60A8000C6439 /* TensaiApp.swift */,
 				30A04E4525561457009C9695 /* Models */,
 				3076959E254366DA0028E1E7 /* View Models */,
+				307A811525BE914100FF30B9 /* View Modifiers */,
 				301F0AE3253A67B9000C6439 /* Views */,
 				303E595A259D77C700B65183 /* Storage */,
 				30A04E4C25573683009C9695 /* Networking */,
@@ -215,6 +218,14 @@
 				307695A425439DD30028E1E7 /* HBarPicker.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		307A811525BE914100FF30B9 /* View Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				307A811625BE917B00FF30B9 /* Cardify.swift */,
+			);
+			path = "View Modifiers";
 			sourceTree = "<group>";
 		};
 		308D5219258976BF0021A735 /* Model Tests */ = {
@@ -384,6 +395,7 @@
 				308D5227258991910021A735 /* TriviaQuizView.swift in Sources */,
 				30595DC225A127AF00456E16 /* TriviaQuizResultView.swift in Sources */,
 				30CC62E025A62EAF001665A4 /* TriviaQuizReviewView.swift in Sources */,
+				307A811725BE917B00FF30B9 /* Cardify.swift in Sources */,
 				30CC62D625A39783001665A4 /* LocalStorageKey.swift in Sources */,
 				306E7543254E2AE9004145A6 /* TriviaQuizConfig.swift in Sources */,
 				30A04E4E25573717009C9695 /* OpenTriviaDatabaseResponse.swift in Sources */,

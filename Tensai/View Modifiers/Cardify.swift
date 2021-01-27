@@ -43,10 +43,10 @@ extension View {
     
     /// Embeds a view in a card.
     ///
-    /// - Parameter backgroundColor:     The background color of the card.
-    ///                                  The default is `.clear`.
-    /// - Parameter borderColor:         The border color of the card.
-    ///                                  The default is `.primary`.
+    /// - Parameter backgroundColor: The background color of the card.
+    ///                              The default is `.clear`.
+    /// - Parameter borderColor:     The border color of the card.
+    ///                              The default is `.primary`.
     ///
     /// - Returns: The card view.
     func cardify(

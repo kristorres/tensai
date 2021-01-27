@@ -25,7 +25,6 @@ fileprivate struct Cardify: ViewModifier {
                     )
                 }
             )
-            
     }
     
     /// An internal struct that contains drawing constants.

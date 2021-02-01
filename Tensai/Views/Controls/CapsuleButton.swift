@@ -14,7 +14,7 @@ struct CapsuleButton: View {
             Text(title.uppercased())
                 .font(.title)
                 .fontWeight(.heavy)
-                .padding()
+                .padding(.all, 8)
                 .frame(maxWidth: DrawingConstants.maximumButtonWidth)
                 .foregroundColor(.white)
                 .background(Color.blue)

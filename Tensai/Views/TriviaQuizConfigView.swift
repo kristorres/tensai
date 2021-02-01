@@ -28,9 +28,12 @@ struct TriviaQuizConfigView: View {
     )
     
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 12) {
             Spacer()
-            Text("Start a New Quiz").font(.largeTitle).fontWeight(.black)
+            Text("Start a New Quiz")
+                .font(.largeTitle)
+                .fontWeight(.black)
+                .padding(.bottom, 12)
             HBarPicker(
                 options: TriviaQuizConfig.allCategories,
                 selectionIndex: $config.categoryIndex

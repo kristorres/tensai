@@ -28,9 +28,12 @@ struct TriviaQuizConfigView: View {
     )
     
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 12) {
             Spacer()
-            Text("Start a New Quiz").font(.largeTitle).fontWeight(.black)
+            Text("Start a New Quiz")
+                .font(.largeTitle)
+                .fontWeight(.black)
+                .padding(.bottom, 12)
             HBarPicker(
                 options: TriviaQuizConfig.allCategories,
                 selectionIndex: $config.categoryIndex
@@ -63,9 +66,9 @@ struct TriviaQuizConfigView: View {
             appState.responseIsLoading = true
         }
         requestLoader.loadAPIRequest(requestData: config) { result in
-            switch result {
-            case .success(let response):
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let response):
                     if response.code == 1 {
                         self.appState.errorAlert = .noResultsErrorAlert
                         return
@@ -91,11 +94,11 @@ struct TriviaQuizConfigView: View {
                             TriviaQuizViewModel(triviaQuiz: triviaQuiz)
                         )
                     }
+                case .failure(.requestTimedOut):
+                    self.appState.errorAlert = .requestTimedOutErrorAlert
+                default:
+                    self.appState.errorAlert = .unknownErrorAlert
                 }
-            case .failure(.requestTimedOut):
-                self.appState.errorAlert = .requestTimedOutErrorAlert
-            default:
-                self.appState.errorAlert = .unknownErrorAlert
             }
         }
     }

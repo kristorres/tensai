@@ -34,11 +34,12 @@ struct TriviaQuizResultView: View {
         let questionCount = viewModel.questions.count
         
         return VStack(spacing: 12) {
-            Spacer()
+            Spacer(minLength: 0)
             Image(systemName: symbolName)
-                .font(.system(size: 160))
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxHeight: 160)
                 .foregroundColor(scoreColor)
-                .padding()
             Text(primaryMessage).font(.largeTitle).fontWeight(.black)
             Text(secondaryMessage).font(.title)
             Text("\(correctAnswerCount)/\(questionCount)")
@@ -47,7 +48,7 @@ struct TriviaQuizResultView: View {
             Text("Score: \(viewModel.score)")
                 .font(.title2)
                 .fontWeight(.medium)
-            Spacer()
+            Spacer(minLength: 0)
             if !playerPassed {
                 CapsuleButton(title: "Retry", action: retryQuiz)
             }
@@ -110,9 +111,9 @@ struct TriviaQuizResultView: View {
             appState.responseIsLoading = true
         }
         requestLoader.loadAPIRequest(requestData: config) { result in
-            switch result {
-            case .success(let response):
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let response):
                     if response.code == 1 {
                         self.appState.errorAlert = .noResultsErrorAlert
                         return
@@ -134,11 +135,11 @@ struct TriviaQuizResultView: View {
                             TriviaQuizViewModel(triviaQuiz: triviaQuiz)
                         )
                     }
+                case .failure(.requestTimedOut):
+                    self.appState.errorAlert = .requestTimedOutErrorAlert
+                default:
+                    self.appState.errorAlert = .unknownErrorAlert
                 }
-            case .failure(.requestTimedOut):
-                self.appState.errorAlert = .requestTimedOutErrorAlert
-            default:
-                self.appState.errorAlert = .unknownErrorAlert
             }
         }
     }

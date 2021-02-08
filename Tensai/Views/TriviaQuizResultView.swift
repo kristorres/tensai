@@ -1,6 +1,10 @@
 import SwiftUI
 
 /// A view to see the result of a trivia quiz.
+///
+/// In order for the player to pass the quiz, he/she must get at least 70% of
+/// the questions right. If he/she did not pass, then he/she is given the chance
+/// to retry the quiz with the same configuration but different questions.
 struct TriviaQuizResultView: View {
     
     // -------------------------------------------------------------------------

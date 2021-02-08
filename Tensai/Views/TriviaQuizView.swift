@@ -1,6 +1,10 @@
 import SwiftUI
 
 /// A view to answer questions in a trivia quiz.
+///
+/// The player will immediately know if he/she answered a question correctly or
+/// incorrectly. Regardless, the next question will be displayed three seconds
+/// after the current question is answered.
 struct TriviaQuizView: View {
     
     // -------------------------------------------------------------------------

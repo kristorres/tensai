@@ -1,6 +1,9 @@
 import SwiftUI
 
 /// A view to review questions in a trivia quiz.
+///
+/// If the player answered any question incorrectly, then the correct answer
+/// will be displayed below his/her answer for that question.
 struct TriviaQuizReviewView: View {
     
     /// The questions in the trivia quiz.

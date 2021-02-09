@@ -1,6 +1,10 @@
 import SwiftUI
 
 /// A view to create and start a new trivia quiz.
+///
+/// The player can select the category, difficulty level, question type, and
+/// number of questions in the trivia quiz. The questions are random and
+/// retrieved from the *Open Trivia Database*.
 struct TriviaQuizConfigView: View {
     
     // -------------------------------------------------------------------------

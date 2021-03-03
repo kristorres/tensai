@@ -17,12 +17,27 @@ struct TriviaQuizView: View {
     /// The global app state.
     @EnvironmentObject private var appState: AppState
     
+    /// The timer.
+    @State private var timer = Timer.publish(every: 1, on: .main, in: .common)
+        .autoconnect()
+    
+    /// The time remaining for the player to answer the current question
+    /// (in seconds).
+    @State private var timeRemaining = 15.0
+    
     /// The index of the current question.
-    @State private var currentQuestionIndex = 0
+    @State private var currentQuestionIndex = 0 {
+        didSet {
+            restartTimer()
+        }
+    }
     
     // -------------------------------------------------------------------------
     // MARK:- Other properties
     // -------------------------------------------------------------------------
+    
+    /// The time limit for each question in the trivia quiz (in seconds).
+    private let timeLimit = 15.0
     
     /// The delay before the next question is displayed (in seconds).
     private let delayForNextQuestion = 3.0
@@ -32,6 +47,8 @@ struct TriviaQuizView: View {
         let questionCount = viewModel.questions.count
         
         return VStack(alignment: .leading, spacing: 6) {
+            ProgressView(value: timeRemaining / timeLimit)
+                .progressViewStyle(LinearProgressViewStyle(tint: timerColor))
             Text("Score: \(viewModel.score)")
                 .font(.title)
                 .fontWeight(.medium)
@@ -57,6 +74,16 @@ struct TriviaQuizView: View {
             }
         }
             .padding()
+            .onReceive(timer) { _ in
+                if self.timeRemaining > 0 {
+                    withAnimation(.linear) {
+                        self.timeRemaining -= 1
+                        if (self.timeRemaining == 0) {
+                            self.selectAnswer(nil)
+                        }
+                    }
+                }
+            }
     }
     
     /// The current question.
@@ -81,6 +108,11 @@ struct TriviaQuizView: View {
                 Image(systemName: "star")
             }
         }
+    }
+    
+    /// The timer color.
+    private var timerColor: Color {
+        timeRemaining > 5.0 ? .green : .red
     }
     
     // -------------------------------------------------------------------------
@@ -121,6 +153,12 @@ struct TriviaQuizView: View {
             }
             return .red
         }
+        if currentQuestion.isAnswered {
+            if answer == currentQuestion.correctAnswer {
+                return .green
+            }
+            return .secondary
+        }
         return .blue
     }
     
@@ -142,7 +180,7 @@ struct TriviaQuizView: View {
                     borderColor: buttonColor
                 )
         }
-            .disabled(currentQuestion.selectedAnswer != nil)
+            .disabled(currentQuestion.isAnswered)
     }
     
     /// Creates an outlined button that contains the specified answer.
@@ -155,6 +193,7 @@ struct TriviaQuizView: View {
         return Button(action: { self.selectAnswer(answer) }) {
             Text(answer)
                 .font(.headline)
+                .foregroundColor(buttonColor)
                 .fixedSize(horizontal: false, vertical: true)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .cardify(
@@ -162,15 +201,27 @@ struct TriviaQuizView: View {
                     borderColor: buttonColor
                 )
         }
-            .disabled(currentQuestion.selectedAnswer != nil)
+            .disabled(currentQuestion.isAnswered)
+    }
+    
+    /// Restarts the timer.
+    private func restartTimer() {
+        timeRemaining = timeLimit
+        timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    }
+    
+    /// Stops the timer.
+    private func stopTimer() {
+        timer.upstream.connect().cancel()
     }
     
     /// Selects the specified answer to the current question, and advances to
     /// the next question.
     ///
     /// - Parameter answer: The player’s answer to the current question.
-    private func selectAnswer(_ answer: String) {
+    private func selectAnswer(_ answer: String?) {
         viewModel.submitAnswer(answer, at: currentQuestionIndex)
+        stopTimer()
         DispatchQueue.main.asyncAfter(deadline: .now() + delayForNextQuestion) {
             let questionNumber = currentQuestionIndex + 1
             let questionCount = viewModel.questions.count

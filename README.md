@@ -34,7 +34,8 @@ Key Features
   * The player can select the category, difficulty level, question type, and
     number of questions in the trivia quiz. The questions are random and
     retrieved from the [*Open Trivia Database*](https://opentdb.com).
-  * The player will immediately know if he/she answered a question correctly or
+  * The player will have 15 seconds to answer each question in the trivia quiz.
+    He/she will immediately know if he/she answered a question correctly or
     incorrectly. Regardless, the next question will be displayed three seconds
     after the current question is answered.
   * The player can review every question in the quiz. If he/she answered any

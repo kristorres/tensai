@@ -52,6 +52,7 @@ struct TriviaQuizView: View {
         return VStack(alignment: .leading, spacing: 6) {
             ProgressView(value: timeRemaining / timeLimit)
                 .progressViewStyle(LinearProgressViewStyle(tint: timerColor))
+                .padding(.bottom, 12)
             Text("Score: \(viewModel.score)")
                 .font(.title)
                 .fontWeight(.medium)

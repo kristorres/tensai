@@ -21,6 +21,9 @@ struct TriviaQuizView: View {
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common)
         .autoconnect()
     
+    /// Indicates whether the timer is active.
+    @State private var timerIsActive = true
+    
     /// The time remaining for the player to answer the current question
     /// (in seconds).
     @State private var timeRemaining = 15.0
@@ -75,6 +78,9 @@ struct TriviaQuizView: View {
         }
             .padding()
             .onReceive(timer) { _ in
+                if !self.timerIsActive {
+                    return
+                }
                 if self.timeRemaining > 0 {
                     withAnimation(.linear) {
                         self.timeRemaining -= 1
@@ -83,6 +89,20 @@ struct TriviaQuizView: View {
                         }
                     }
                 }
+            }
+            .onReceive(
+                NotificationCenter.default.publisher(
+                    for: UIApplication.willResignActiveNotification
+                )
+            ) { _ in
+                self.timerIsActive = false
+            }
+            .onReceive(
+                NotificationCenter.default.publisher(
+                    for: UIApplication.willEnterForegroundNotification
+                )
+            ) { _ in
+                self.timerIsActive = true
             }
     }
     

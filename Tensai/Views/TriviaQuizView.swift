@@ -86,7 +86,7 @@ struct TriviaQuizView: View {
                     withAnimation(.linear) {
                         self.timeRemaining -= 1
                         if (self.timeRemaining == 0) {
-                            playSound("times_up")
+                            EffectsManager.shared.playSound("times_up")
                             self.selectAnswer(nil)
                         }
                     }
@@ -247,7 +247,7 @@ struct TriviaQuizView: View {
             let sound = (selectedAnswer == currentQuestion.correctAnswer)
                 ? "correct_answer"
                 : "wrong_answer"
-            playSound(sound)
+            EffectsManager.shared.playSound(sound)
         }
         stopTimer()
         DispatchQueue.main.asyncAfter(deadline: .now() + delayForNextQuestion) {

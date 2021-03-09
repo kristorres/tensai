@@ -24,7 +24,7 @@
 		304598CA256A312200635005 /* TriviaQuizConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304598C9256A312200635005 /* TriviaQuizConfigView.swift */; };
 		30595DC225A127AF00456E16 /* TriviaQuizResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30595DC125A127AE00456E16 /* TriviaQuizResultView.swift */; };
 		30595DCC25A2B2C400456E16 /* CapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30595DCB25A2B2C400456E16 /* CapsuleButton.swift */; };
-		305FB94825F6F82F00868761 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FB94725F6F82F00868761 /* Audio.swift */; };
+		305FB94825F6F82F00868761 /* EffectsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305FB94725F6F82F00868761 /* EffectsManager.swift */; };
 		305FB95025F7240C00868761 /* button_click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 305FB94F25F7240C00868761 /* button_click.mp3 */; };
 		305FB95425F72BE800868761 /* select.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 305FB95325F72BE800868761 /* select.mp3 */; };
 		305FB95825F72CB000868761 /* times_up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 305FB95725F72CB000868761 /* times_up.mp3 */; };
@@ -83,7 +83,7 @@
 		30595DC125A127AE00456E16 /* TriviaQuizResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizResultView.swift; sourceTree = "<group>"; };
 		30595DC825A2AB6900456E16 /* trivia_quiz_result.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trivia_quiz_result.png; sourceTree = "<group>"; };
 		30595DCB25A2B2C400456E16 /* CapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleButton.swift; sourceTree = "<group>"; };
-		305FB94725F6F82F00868761 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		305FB94725F6F82F00868761 /* EffectsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectsManager.swift; sourceTree = "<group>"; };
 		305FB94F25F7240C00868761 /* button_click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = button_click.mp3; sourceTree = "<group>"; };
 		305FB95325F72BE800868761 /* select.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = select.mp3; sourceTree = "<group>"; };
 		305FB95725F72CB000868761 /* times_up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = times_up.mp3; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				3076959F254367410028E1E7 /* AppState.swift */,
-				305FB94725F6F82F00868761 /* Audio.swift */,
+				305FB94725F6F82F00868761 /* EffectsManager.swift */,
 				301F0ACD253A60A8000C6439 /* TensaiApp.swift */,
 				30A04E4525561457009C9695 /* Models */,
 				3076959E254366DA0028E1E7 /* View Models */,
@@ -431,7 +431,7 @@
 			files = (
 				301F0ACE253A60A8000C6439 /* TensaiApp.swift in Sources */,
 				307695A0254367410028E1E7 /* AppState.swift in Sources */,
-				305FB94825F6F82F00868761 /* Audio.swift in Sources */,
+				305FB94825F6F82F00868761 /* EffectsManager.swift in Sources */,
 				30A04E472556153C009C9695 /* OTDQuestion.swift in Sources */,
 				30168BF42580732900FB65B9 /* TriviaQuiz.swift in Sources */,
 				308D5221258986630021A735 /* TriviaQuizViewModel.swift in Sources */,

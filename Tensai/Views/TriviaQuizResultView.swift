@@ -65,10 +65,10 @@ struct TriviaQuizResultView: View {
             .padding()
             .onAppear {
                 if self.playerPassed {
-                    playSound("pass")
+                    EffectsManager.shared.playSound("pass")
                     return
                 }
-                playSound("fail")
+                EffectsManager.shared.playSound("fail")
             }
     }
     
@@ -105,7 +105,7 @@ struct TriviaQuizResultView: View {
     
     /// Sends the player back to the *Start a New Quiz* view.
     private func goToConfigView() {
-        playSound("button_click")
+        EffectsManager.shared.playSound("button_click")
         withAnimation {
             appState.currentViewKey = .triviaQuizConfig
         }
@@ -113,7 +113,7 @@ struct TriviaQuizResultView: View {
     
     /// Retries the quiz.
     private func retryQuiz() {
-        playSound("button_click")
+        EffectsManager.shared.playSound("button_click")
         let localStorage = UserDefaults.standard
         let plist = localStorage.data(forKey: LocalStorageKey.triviaQuizConfig)
         guard let config = TriviaQuizConfig(propertyList: plist) else {
@@ -159,7 +159,7 @@ struct TriviaQuizResultView: View {
     
     /// Reviews the trivia questions.
     private func reviewQuiz() {
-        playSound("button_click")
+        EffectsManager.shared.playSound("button_click")
         questionsArePresented = true
     }
 }

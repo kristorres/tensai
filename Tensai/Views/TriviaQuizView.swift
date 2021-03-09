@@ -86,6 +86,7 @@ struct TriviaQuizView: View {
                     withAnimation(.linear) {
                         self.timeRemaining -= 1
                         if (self.timeRemaining == 0) {
+                            playSound("times_up")
                             self.selectAnswer(nil)
                         }
                     }
@@ -242,6 +243,12 @@ struct TriviaQuizView: View {
     /// - Parameter answer: The player’s answer to the current question.
     private func selectAnswer(_ answer: String?) {
         viewModel.submitAnswer(answer, at: currentQuestionIndex)
+        if let selectedAnswer = currentQuestion.selectedAnswer {
+            let sound = (selectedAnswer == currentQuestion.correctAnswer)
+                ? "correct_answer"
+                : "wrong_answer"
+            playSound(sound)
+        }
         stopTimer()
         DispatchQueue.main.asyncAfter(deadline: .now() + delayForNextQuestion) {
             let questionNumber = currentQuestionIndex + 1

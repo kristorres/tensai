@@ -63,6 +63,13 @@ struct TriviaQuizResultView: View {
             CapsuleButton(title: "Start a New Quiz", action: goToConfigView)
         }
             .padding()
+            .onAppear {
+                if self.playerPassed {
+                    playSound("pass")
+                    return
+                }
+                playSound("fail")
+            }
     }
     
     /// Indicates whether the player passed the trivia quiz.
@@ -98,6 +105,7 @@ struct TriviaQuizResultView: View {
     
     /// Sends the player back to the *Start a New Quiz* view.
     private func goToConfigView() {
+        playSound("button_click")
         withAnimation {
             appState.currentViewKey = .triviaQuizConfig
         }
@@ -105,6 +113,7 @@ struct TriviaQuizResultView: View {
     
     /// Retries the quiz.
     private func retryQuiz() {
+        playSound("button_click")
         let localStorage = UserDefaults.standard
         let plist = localStorage.data(forKey: LocalStorageKey.triviaQuizConfig)
         guard let config = TriviaQuizConfig(propertyList: plist) else {
@@ -150,6 +159,7 @@ struct TriviaQuizResultView: View {
     
     /// Reviews the trivia questions.
     private func reviewQuiz() {
+        playSound("button_click")
         questionsArePresented = true
     }
 }

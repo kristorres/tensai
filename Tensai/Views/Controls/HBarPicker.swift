@@ -47,11 +47,13 @@ struct HBarPicker: View {
     
     /// Selects the next possible option.
     private func selectNextOption() {
+        playSound("select")
         selectionIndex += 1
     }
     
     /// Selects the previous possible option.
     private func selectPreviousOption() {
+        playSound("select")
         selectionIndex -= 1
     }
     

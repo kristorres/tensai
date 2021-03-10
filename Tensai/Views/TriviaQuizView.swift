@@ -3,8 +3,9 @@ import SwiftUI
 /// A view to answer questions in a trivia quiz.
 ///
 /// The player will immediately know if he/she answered a question correctly or
-/// incorrectly. Regardless, the next question will be displayed three seconds
-/// after the current question is answered.
+/// incorrectly. If the player gave a wrong answer, then he/she will be
+/// “shocked” for half a second. Regardless, the next question will be displayed
+/// three seconds after the current question is answered.
 struct TriviaQuizView: View {
     
     // -------------------------------------------------------------------------
@@ -87,6 +88,7 @@ struct TriviaQuizView: View {
                         self.timeRemaining -= 1
                         if (self.timeRemaining == 0) {
                             EffectsManager.shared.playSound("times_up")
+                            EffectsManager.shared.shock(duration: 0.5)
                             self.selectAnswer(nil)
                         }
                     }
@@ -244,10 +246,13 @@ struct TriviaQuizView: View {
     private func selectAnswer(_ answer: String?) {
         viewModel.submitAnswer(answer, at: currentQuestionIndex)
         if let selectedAnswer = currentQuestion.selectedAnswer {
-            let sound = (selectedAnswer == currentQuestion.correctAnswer)
-                ? "correct_answer"
-                : "wrong_answer"
-            EffectsManager.shared.playSound(sound)
+            if selectedAnswer == currentQuestion.correctAnswer {
+                EffectsManager.shared.playSound("correct_answer")
+            }
+            else {
+                EffectsManager.shared.playSound("wrong_answer")
+                EffectsManager.shared.shock(duration: 0.5)
+            }
         }
         stopTimer()
         DispatchQueue.main.asyncAfter(deadline: .now() + delayForNextQuestion) {

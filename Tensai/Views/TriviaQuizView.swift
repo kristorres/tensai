@@ -168,22 +168,18 @@ struct TriviaQuizView: View {
     ///
     /// - Returns: The button color.
     private func answerButtonColor(for answer: String) -> Color {
+        if !currentQuestion.isAnswered {
+            return .blue
+        }
+        if answer == currentQuestion.correctAnswer {
+            return .green
+        }
         if let selectedAnswer = currentQuestion.selectedAnswer {
-            if selectedAnswer != answer {
-                return .secondary
+            if selectedAnswer == answer {
+                return .red
             }
-            if selectedAnswer == currentQuestion.correctAnswer {
-                return .green
-            }
-            return .red
         }
-        if currentQuestion.isAnswered {
-            if answer == currentQuestion.correctAnswer {
-                return .green
-            }
-            return .secondary
-        }
-        return .blue
+        return .secondary
     }
     
     /// Creates a color-filled button that contains the specified answer.

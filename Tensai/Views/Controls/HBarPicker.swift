@@ -12,7 +12,11 @@ struct HBarPicker: View {
     
     /// A binding to a property that determines the index of the currently
     /// selected option.
-    @Binding var selectionIndex: Int
+    @Binding var selectionIndex: Int {
+        didSet {
+            EffectsManager.shared.playSound("select")
+        }
+    }
     
     var body: some View {
         HStack(spacing: DrawingConstants.spacing) {
@@ -47,13 +51,11 @@ struct HBarPicker: View {
     
     /// Selects the next possible option.
     private func selectNextOption() {
-        EffectsManager.shared.playSound("select")
         selectionIndex += 1
     }
     
     /// Selects the previous possible option.
     private func selectPreviousOption() {
-        EffectsManager.shared.playSound("select")
         selectionIndex -= 1
     }
     

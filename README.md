@@ -47,6 +47,7 @@ Key Features
     for three seconds. Additionally, the player will be given the chance to
     retry the quiz with the same configuration but different questions.
 
------
+Credits
+-------
 
 The sound effects are from [Zapsplat.com](https://www.zapsplat.com).

@@ -18,6 +18,12 @@ final class AppState: ObservableObject {
         didSet {
             responseIsLoading = false
         }
+        willSet {
+            if newValue != nil {
+                let feedbackGenerator = UINotificationFeedbackGenerator()
+                feedbackGenerator.notificationOccurred(.error)
+            }
+        }
     }
     
     /// A valid key to render a view.

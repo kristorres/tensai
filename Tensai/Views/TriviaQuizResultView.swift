@@ -3,8 +3,9 @@ import SwiftUI
 /// A view to see the result of a trivia quiz.
 ///
 /// In order for the player to pass the quiz, he/she must get at least 70% of
-/// the questions right. If he/she did not pass, then he/she is given the chance
-/// to retry the quiz with the same configuration but different questions.
+/// the questions right. If he/she did not pass, then he/she will be “shocked”
+/// for three seconds. Additionally, the player will be given the chance to
+/// retry the quiz with the same configuration but different questions.
 struct TriviaQuizResultView: View {
     
     // -------------------------------------------------------------------------
@@ -63,6 +64,14 @@ struct TriviaQuizResultView: View {
             CapsuleButton(title: "Start a New Quiz", action: goToConfigView)
         }
             .padding()
+            .onAppear {
+                if self.playerPassed {
+                    EffectsManager.shared.playSound("pass")
+                    return
+                }
+                EffectsManager.shared.playSound("fail")
+                EffectsManager.shared.shock(duration: 3)
+            }
     }
     
     /// Indicates whether the player passed the trivia quiz.
@@ -98,6 +107,7 @@ struct TriviaQuizResultView: View {
     
     /// Sends the player back to the *Start a New Quiz* view.
     private func goToConfigView() {
+        EffectsManager.shared.playSound("button_click")
         withAnimation {
             appState.currentViewKey = .triviaQuizConfig
         }
@@ -105,6 +115,7 @@ struct TriviaQuizResultView: View {
     
     /// Retries the quiz.
     private func retryQuiz() {
+        EffectsManager.shared.playSound("button_click")
         let localStorage = UserDefaults.standard
         let plist = localStorage.data(forKey: LocalStorageKey.triviaQuizConfig)
         guard let config = TriviaQuizConfig(propertyList: plist) else {
@@ -150,6 +161,7 @@ struct TriviaQuizResultView: View {
     
     /// Reviews the trivia questions.
     private func reviewQuiz() {
+        EffectsManager.shared.playSound("button_click")
         questionsArePresented = true
     }
 }

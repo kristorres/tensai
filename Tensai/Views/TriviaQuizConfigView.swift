@@ -66,6 +66,7 @@ struct TriviaQuizConfigView: View {
     
     /// Creates and starts a new quiz based on the customization settings.
     private func startQuiz() {
+        EffectsManager.shared.playSound("button_click")
         withAnimation {
             appState.responseIsLoading = true
         }

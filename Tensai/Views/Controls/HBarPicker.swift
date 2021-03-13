@@ -12,7 +12,11 @@ struct HBarPicker: View {
     
     /// A binding to a property that determines the index of the currently
     /// selected option.
-    @Binding var selectionIndex: Int
+    @Binding var selectionIndex: Int {
+        didSet {
+            EffectsManager.shared.playSound("select")
+        }
+    }
     
     var body: some View {
         HStack(spacing: DrawingConstants.spacing) {

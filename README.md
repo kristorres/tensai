@@ -50,4 +50,23 @@ Key Features
 Credits
 -------
 
-The sound effects are from [Zapsplat.com](https://www.zapsplat.com).
+  * Lightbulb icon made by
+    [Good Ware](https://www.flaticon.com/authors/good-ware) from
+    [www.flaticon.com](https://www.flaticon.com).
+  * Computer icon made by [xnimrodx](https://www.flaticon.com/authors/xnimrodx)
+    from [www.flaticon.com](https://www.flaticon.com).
+  * Gadgets icon made by
+    [pongsakornRed](https://www.flaticon.com/authors/pongsakornred) from
+    [www.flaticon.com](https://www.flaticon.com).
+  * "[Anime Eye](https://upload.wikimedia.org/wikipedia/commons/b/bb/Anime_eye.svg)"
+    by [Oni Lukos](https://commons.wikimedia.org/wiki/User:Oni_Lukos), used
+    under [CC BY-SA](https://creativecommons.org/licenses/by-sa/2.5). Resized
+    from original.
+  * Leonardo icon made by [surang](https://www.flaticon.com/authors/surang) from
+    [www.flaticon.com](https://www.flaticon.com).
+  * Books, television, and Zeus icons made by
+    [Smashicons](https://smashicons.com) from
+    [www.flaticon.com](https://www.flaticon.com).
+  * All other category icons made by [Freepik](https://www.freepik.com) from
+    [www.flaticon.com](https://www.flaticon.com).
+  * Sound effects obtained from [Zapsplat.com](https://www.zapsplat.com).

@@ -44,6 +44,7 @@
 		30A04E4E25573717009C9695 /* OpenTriviaDatabaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A04E4D25573717009C9695 /* OpenTriviaDatabaseResponse.swift */; };
 		30CC62D625A39783001665A4 /* LocalStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC62D525A39783001665A4 /* LocalStorageKey.swift */; };
 		30CC62E025A62EAF001665A4 /* TriviaQuizReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC62DF25A62EAF001665A4 /* TriviaQuizReviewView.swift */; };
+		30D9250726CC7F7D00F769F5 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9250626CC7F7D00F769F5 /* AppTheme.swift */; };
 		30E757BE257B061200CC1F53 /* NoCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E757BD257B061200CC1F53 /* NoCaching.swift */; };
 		30F078DC253E49F600D7A912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F078DB253E49F600D7A912 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -107,6 +108,7 @@
 		30CC62D525A39783001665A4 /* LocalStorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageKey.swift; sourceTree = "<group>"; };
 		30CC62DF25A62EAF001665A4 /* TriviaQuizReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizReviewView.swift; sourceTree = "<group>"; };
 		30CC62E825A828B7001665A4 /* trivia_quiz_review.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trivia_quiz_review.png; sourceTree = "<group>"; };
+		30D9250626CC7F7D00F769F5 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		30E757BD257B061200CC1F53 /* NoCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCaching.swift; sourceTree = "<group>"; };
 		30F078DB253E49F600D7A912 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				3076959F254367410028E1E7 /* AppState.swift */,
+				30D9250626CC7F7D00F769F5 /* AppTheme.swift */,
 				305FB94725F6F82F00868761 /* EffectsManager.swift */,
 				301F0ACD253A60A8000C6439 /* TensaiApp.swift */,
 				30A04E4525561457009C9695 /* Models */,
@@ -431,6 +434,7 @@
 			files = (
 				301F0ACE253A60A8000C6439 /* TensaiApp.swift in Sources */,
 				307695A0254367410028E1E7 /* AppState.swift in Sources */,
+				30D9250726CC7F7D00F769F5 /* AppTheme.swift in Sources */,
 				305FB94825F6F82F00868761 /* EffectsManager.swift in Sources */,
 				30A04E472556153C009C9695 /* OTDQuestion.swift in Sources */,
 				30168BF42580732900FB65B9 /* TriviaQuiz.swift in Sources */,

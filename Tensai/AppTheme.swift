@@ -16,6 +16,7 @@ struct AppTheme {
         static let danger = colorPair(name: "Danger")
         static let surface = colorPair(name: "Surface")
         static let background = colorPair(name: "Background")
+        static let disabled = colorPair(name: "Disabled")
         
         /// Returns a color pair from the color resource with the specified
         /// name.
@@ -29,5 +30,12 @@ struct AppTheme {
         private static func colorPair(name: String) -> ColorPair {
             return (Color(name), Color("On \(name)"))
         }
+    }
+    
+    /// A color mode that makes sense for the component it is used on.
+    enum ColorMode {
+        case primary
+        case secondary
+        case danger
     }
 }

@@ -45,6 +45,7 @@
 		30CC62D625A39783001665A4 /* LocalStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC62D525A39783001665A4 /* LocalStorageKey.swift */; };
 		30CC62E025A62EAF001665A4 /* TriviaQuizReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC62DF25A62EAF001665A4 /* TriviaQuizReviewView.swift */; };
 		30D9250726CC7F7D00F769F5 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9250626CC7F7D00F769F5 /* AppTheme.swift */; };
+		30D9250A26CD829C00F769F5 /* FilledButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9250926CD829C00F769F5 /* FilledButtonStyle.swift */; };
 		30E757BE257B061200CC1F53 /* NoCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E757BD257B061200CC1F53 /* NoCaching.swift */; };
 		30F078DC253E49F600D7A912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F078DB253E49F600D7A912 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -109,6 +110,7 @@
 		30CC62DF25A62EAF001665A4 /* TriviaQuizReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizReviewView.swift; sourceTree = "<group>"; };
 		30CC62E825A828B7001665A4 /* trivia_quiz_review.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trivia_quiz_review.png; sourceTree = "<group>"; };
 		30D9250626CC7F7D00F769F5 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		30D9250926CD829C00F769F5 /* FilledButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledButtonStyle.swift; sourceTree = "<group>"; };
 		30E757BD257B061200CC1F53 /* NoCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCaching.swift; sourceTree = "<group>"; };
 		30F078DB253E49F600D7A912 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +171,7 @@
 				30D9250626CC7F7D00F769F5 /* AppTheme.swift */,
 				305FB94725F6F82F00868761 /* EffectsManager.swift */,
 				301F0ACD253A60A8000C6439 /* TensaiApp.swift */,
+				30D9250826CD81CC00F769F5 /* Button Styles */,
 				30A04E4525561457009C9695 /* Models */,
 				3076959E254366DA0028E1E7 /* View Models */,
 				307A811525BE914100FF30B9 /* View Modifiers */,
@@ -312,6 +315,14 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		30D9250826CD81CC00F769F5 /* Button Styles */ = {
+			isa = PBXGroup;
+			children = (
+				30D9250926CD829C00F769F5 /* FilledButtonStyle.swift */,
+			);
+			path = "Button Styles";
+			sourceTree = "<group>";
+		};
 		30FC5568253BFFC900AB3606 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,6 +458,7 @@
 				308D5227258991910021A735 /* TriviaQuizView.swift in Sources */,
 				30595DC225A127AF00456E16 /* TriviaQuizResultView.swift in Sources */,
 				30CC62E025A62EAF001665A4 /* TriviaQuizReviewView.swift in Sources */,
+				30D9250A26CD829C00F769F5 /* FilledButtonStyle.swift in Sources */,
 				307A811725BE917B00FF30B9 /* Cardify.swift in Sources */,
 				30CC62D625A39783001665A4 /* LocalStorageKey.swift in Sources */,
 				306E7543254E2AE9004145A6 /* TriviaQuizConfig.swift in Sources */,

@@ -61,4 +61,26 @@ struct AppTheme {
             }
         }
     }
+    
+    /// Returns a button with the specified title, type, color mode, and action.
+    ///
+    /// - Parameter title:     The title that is displayed on the button.
+    /// - Parameter type:      The button type. The default is `.plain`.
+    /// - Parameter colorMode: The color mode that makes sense for the button’s
+    ///                        context. The default is `.primary`.
+    /// - Parameter action:    The action to perform when a user taps on the
+    ///                        button.
+    static func button(
+        _ title: String,
+        type: AppTheme.ButtonType = .plain,
+        colorMode: AppTheme.ColorMode = .primary,
+        action: @escaping () -> Void
+    ) -> some View {
+        return SanaButton(
+            title,
+            type: type,
+            colorMode: colorMode,
+            action: action
+        )
+    }
 }

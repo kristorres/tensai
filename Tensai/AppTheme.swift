@@ -6,7 +6,7 @@ import SwiftUI
 /// customize design aspects such as the colors, typography, and more.
 struct AppTheme {
     
-    /// A main/content pair color.
+    /// A main/content color pair.
     typealias ColorPair = (mainColor: Color, contentColor: Color)
     
     /// The color palette.
@@ -30,6 +30,20 @@ struct AppTheme {
         private static func colorPair(name: String) -> ColorPair {
             return (Color(name), Color("On \(name)"))
         }
+    }
+    
+    /// A button type.
+    enum ButtonType {
+        
+        /// A button type that displays a container with a solid color fill
+        /// around a content label.
+        case filled
+        
+        /// A button type that displays a stroke around a content label.
+        case outlined
+        
+        /// A button type that does not decorate its content.
+        case plain
     }
     
     /// A color mode that makes sense for the component it is used on.

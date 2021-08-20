@@ -12,11 +12,7 @@ struct FilledButtonStyle: ButtonStyle {
     /// - Parameter colorMode: The color mode of the button. The default is
     ///                        `.primary`.
     init(colorMode: AppTheme.ColorMode = .primary) {
-        switch colorMode {
-        case .primary: colorPair = AppTheme.ColorPalette.primary
-        case .secondary: colorPair = AppTheme.ColorPalette.secondary
-        case .danger: colorPair = AppTheme.ColorPalette.danger
-        }
+        colorPair = colorMode.colorPair
     }
     
     func makeBody(configuration: Configuration) -> some View {

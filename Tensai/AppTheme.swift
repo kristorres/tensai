@@ -37,5 +37,14 @@ struct AppTheme {
         case primary
         case secondary
         case danger
+        
+        /// The color pair that is associated with this color mode.
+        var colorPair: ColorPair {
+            switch self {
+            case .primary: return ColorPalette.primary
+            case .secondary: return ColorPalette.secondary
+            case .danger: return ColorPalette.danger
+            }
+        }
     }
 }

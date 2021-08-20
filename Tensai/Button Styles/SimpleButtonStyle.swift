@@ -11,13 +11,7 @@ struct SimpleButtonStyle: ButtonStyle {
     /// - Parameter colorMode: The color mode of the button. The default is
     ///                        `.primary`.
     init(colorMode: AppTheme.ColorMode = .primary) {
-        let colorPair: AppTheme.ColorPair
-        switch colorMode {
-        case .primary: colorPair = AppTheme.ColorPalette.primary
-        case .secondary: colorPair = AppTheme.ColorPalette.secondary
-        case .danger: colorPair = AppTheme.ColorPalette.danger
-        }
-        color = colorPair.mainColor
+        color = colorMode.colorPair.mainColor
     }
     
     func makeBody(configuration: Configuration) -> some View {

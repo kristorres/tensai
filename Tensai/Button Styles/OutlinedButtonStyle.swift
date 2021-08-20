@@ -44,7 +44,7 @@ struct OutlinedButtonStyle: ButtonStyle {
                 .padding(.horizontal, DrawingConstants.horizontalPadding)
                 .background(
                     ZStack {
-                        Self.buttonShape.fill(backgroundColor)
+                        Self.buttonShape.fill(color.opacity(opacity))
                         Self.buttonShape
                             .stroke(
                                 color,
@@ -55,24 +55,23 @@ struct OutlinedButtonStyle: ButtonStyle {
                 .animation(.default, value: buttonIsEnabled)
         }
         
-        /// The current background color of the button.
-        private var backgroundColor: Color {
-            if !buttonIsEnabled {
-                return .clear
-            }
-            if configuration.isPressed {
-                return color
-                    .opacity(DrawingConstants.opacityWhenButtonIsPressed)
-            }
-            return .clear
-        }
-        
         /// The current button color.
         private var color: Color {
             if !buttonIsEnabled {
                 return AppTheme.ColorPalette.disabled.contentColor
             }
             return defaultColor
+        }
+        
+        /// The current opacity of the button.
+        private var opacity: Double {
+            if !buttonIsEnabled {
+                return 0
+            }
+            if configuration.isPressed {
+                return DrawingConstants.opacityWhenButtonIsPressed
+            }
+            return 0
         }
     }
     

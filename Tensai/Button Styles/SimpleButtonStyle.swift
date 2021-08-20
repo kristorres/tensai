@@ -40,21 +40,9 @@ struct SimpleButtonStyle: ButtonStyle {
                     RoundedRectangle(
                         cornerRadius: DrawingConstants.cornerRadius
                     )
-                        .fill(backgroundColor)
+                        .fill(color.opacity(opacity))
                 )
                 .animation(.default, value: buttonIsEnabled)
-        }
-        
-        /// The current background color of the button.
-        private var backgroundColor: Color {
-            if !buttonIsEnabled {
-                return .clear
-            }
-            if configuration.isPressed {
-                return color
-                    .opacity(DrawingConstants.opacityWhenButtonIsPressed)
-            }
-            return .clear
         }
         
         /// The current button color.
@@ -63,6 +51,17 @@ struct SimpleButtonStyle: ButtonStyle {
                 return AppTheme.ColorPalette.disabled.contentColor
             }
             return defaultColor
+        }
+        
+        /// The current opacity of the button.
+        private var opacity: Double {
+            if !buttonIsEnabled {
+                return 0
+            }
+            if configuration.isPressed {
+                return DrawingConstants.opacityWhenButtonIsPressed
+            }
+            return 0
         }
     }
     

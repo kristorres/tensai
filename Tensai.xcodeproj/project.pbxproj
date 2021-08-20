@@ -47,6 +47,7 @@
 		30D9250726CC7F7D00F769F5 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9250626CC7F7D00F769F5 /* AppTheme.swift */; };
 		30D9250A26CD829C00F769F5 /* FilledButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9250926CD829C00F769F5 /* FilledButtonStyle.swift */; };
 		30D9250C26CEE89F00F769F5 /* OutlinedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9250B26CEE89F00F769F5 /* OutlinedButtonStyle.swift */; };
+		30D9250E26CF21A300F769F5 /* SimpleButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9250D26CF21A300F769F5 /* SimpleButtonStyle.swift */; };
 		30E757BE257B061200CC1F53 /* NoCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E757BD257B061200CC1F53 /* NoCaching.swift */; };
 		30F078DC253E49F600D7A912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F078DB253E49F600D7A912 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -113,6 +114,7 @@
 		30D9250626CC7F7D00F769F5 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		30D9250926CD829C00F769F5 /* FilledButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledButtonStyle.swift; sourceTree = "<group>"; };
 		30D9250B26CEE89F00F769F5 /* OutlinedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButtonStyle.swift; sourceTree = "<group>"; };
+		30D9250D26CF21A300F769F5 /* SimpleButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleButtonStyle.swift; sourceTree = "<group>"; };
 		30E757BD257B061200CC1F53 /* NoCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCaching.swift; sourceTree = "<group>"; };
 		30F078DB253E49F600D7A912 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -322,6 +324,7 @@
 			children = (
 				30D9250926CD829C00F769F5 /* FilledButtonStyle.swift */,
 				30D9250B26CEE89F00F769F5 /* OutlinedButtonStyle.swift */,
+				30D9250D26CF21A300F769F5 /* SimpleButtonStyle.swift */,
 			);
 			path = "Button Styles";
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				30CC62E025A62EAF001665A4 /* TriviaQuizReviewView.swift in Sources */,
 				30D9250A26CD829C00F769F5 /* FilledButtonStyle.swift in Sources */,
 				30D9250C26CEE89F00F769F5 /* OutlinedButtonStyle.swift in Sources */,
+				30D9250E26CF21A300F769F5 /* SimpleButtonStyle.swift in Sources */,
 				307A811725BE917B00FF30B9 /* Cardify.swift in Sources */,
 				30CC62D625A39783001665A4 /* LocalStorageKey.swift in Sources */,
 				306E7543254E2AE9004145A6 /* TriviaQuizConfig.swift in Sources */,

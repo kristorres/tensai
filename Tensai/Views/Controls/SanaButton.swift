@@ -12,6 +12,9 @@ struct SanaButton: View {
     /// The color mode that makes sense for this button’s context.
     private let colorMode: AppTheme.ColorMode
     
+    /// The maximum width of this button.
+    private let maxWidth: CGFloat?
+    
     /// The action to perform when a user taps on this button.
     private let action: () -> Void
     
@@ -24,12 +27,14 @@ struct SanaButton: View {
     /// - Parameter type:      The button type. The default is `.plain`.
     /// - Parameter colorMode: The color mode that makes sense for the button’s
     ///                        context. The default is `.primary`.
+    /// - Parameter maxWidth:  The maximum width of the button.
     /// - Parameter action:    The action to perform when a user taps on the
     ///                        button.
     init(
         _ title: String,
         type: AppTheme.ButtonType = .plain,
         colorMode: AppTheme.ColorMode = .primary,
+        maxWidth: CGFloat? = nil,
         action: @escaping () -> Void
     ) {
         self.title = title
@@ -37,6 +42,7 @@ struct SanaButton: View {
             .trimmingCharacters(in: .whitespacesAndNewlines)
         self.type = type
         self.colorMode = colorMode
+        self.maxWidth = maxWidth
         self.action = action
     }
     
@@ -45,6 +51,7 @@ struct SanaButton: View {
             Text(title)
                 .font(.system(size: fontSize))
                 .fontWeight(.semibold)
+                .frame(maxWidth: maxWidth)
         }
             .buttonStyle(Style(type: type, colorMode: colorMode))
     }
@@ -93,7 +100,6 @@ struct SanaButton: View {
             
             var body: some View {
                 configuration.label
-                    .frame(maxWidth: .infinity)
                     .multilineTextAlignment(.center)
                     .foregroundColor(currentForegroundColor)
                     .padding(.vertical, DrawingConstants.verticalPadding)

@@ -118,20 +118,26 @@ struct SanaButton: View {
                         DrawingConstants.buttonShape
                             .fill(currentHighlightColor)
                     }
-                    DrawingConstants.buttonShape
-                        .stroke(
-                            defaultColorPair.mainColor,
-                            lineWidth: borderWidth
-                        )
+                    if let borderColor = self.borderColor {
+                        DrawingConstants.buttonShape
+                            .stroke(
+                                borderColor,
+                                lineWidth: DrawingConstants
+                                    .outlinedButtonBorderWidth
+                            )
+                    }
                 }
             }
             
-            /// The border width of the button.
-            private var borderWidth: CGFloat {
-                if type == .outlined {
-                    return DrawingConstants.outlinedButtonBorderWidth
+            /// The border color of the button.
+            private var borderColor: Color? {
+                if type != .outlined {
+                    return nil
                 }
-                return 0
+                if !buttonIsEnabled {
+                    return AppTheme.ColorPalette.disabled.contentColor
+                }
+                return defaultColorPair.mainColor
             }
             
             /// The current background color of the button.
@@ -224,6 +230,8 @@ struct SanaButton_Previews: PreviewProvider {
                 ForEach(colorModes, id: \.self) { colorMode in
                     SanaButton("Press Me", type: type, colorMode: colorMode) {}
                 }
+                SanaButton("Press Me", type: type) {}
+                    .disabled(true)
             }
         }
             .padding()

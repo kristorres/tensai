@@ -83,4 +83,22 @@ struct AppTheme {
             action: action
         )
     }
+    
+    /// Returns a picker with a set of possible options.
+    ///
+    /// - Parameter options:     The possible options.
+    /// - Parameter selection:   A binding to the currently selected option.
+    /// - Parameter optionLabel: The closure to map an option to its
+    ///                          corresponding string label.
+    static func picker<SelectionValue: Hashable>(
+        options: [SelectionValue],
+        selection: Binding<SelectionValue>,
+        optionLabel: @escaping (SelectionValue) -> String = { "\($0)" }
+    ) -> some View {
+        return SanaPicker<SelectionValue>(
+            options: options,
+            selection: selection,
+            optionLabel: optionLabel
+        )
+    }
 }

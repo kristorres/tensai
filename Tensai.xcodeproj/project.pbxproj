@@ -39,6 +39,7 @@
 		308D521B258977560021A735 /* TriviaQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D521A258977560021A735 /* TriviaQuizTests.swift */; };
 		308D5221258986630021A735 /* TriviaQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D5220258986630021A735 /* TriviaQuizViewModel.swift */; };
 		308D5227258991910021A735 /* TriviaQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D5226258991910021A735 /* TriviaQuizView.swift */; };
+		3094547C26D069C300251E95 /* SanaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3094547B26D069C300251E95 /* SanaPicker.swift */; };
 		30A04E372553BC54009C9695 /* TriviaQuizConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A04E362553BC54009C9695 /* TriviaQuizConfigTests.swift */; };
 		30A04E472556153C009C9695 /* OTDQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A04E462556153C009C9695 /* OTDQuestion.swift */; };
 		30A04E4E25573717009C9695 /* OpenTriviaDatabaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A04E4D25573717009C9695 /* OpenTriviaDatabaseResponse.swift */; };
@@ -101,6 +102,7 @@
 		308D5220258986630021A735 /* TriviaQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizViewModel.swift; sourceTree = "<group>"; };
 		308D5226258991910021A735 /* TriviaQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizView.swift; sourceTree = "<group>"; };
 		308D524D258C2D8B0021A735 /* trivia_quiz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trivia_quiz.png; sourceTree = "<group>"; };
+		3094547B26D069C300251E95 /* SanaPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanaPicker.swift; sourceTree = "<group>"; };
 		30A04E342553BC54009C9695 /* TensaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A04E362553BC54009C9695 /* TriviaQuizConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizConfigTests.swift; sourceTree = "<group>"; };
 		30A04E382553BC54009C9695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				30595DCB25A2B2C400456E16 /* CapsuleButton.swift */,
 				307695A425439DD30028E1E7 /* HBarPicker.swift */,
 				30D9250F26CF71BD00F769F5 /* SanaButton.swift */,
+				3094547B26D069C300251E95 /* SanaPicker.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				30168BF42580732900FB65B9 /* TriviaQuiz.swift in Sources */,
 				308D5221258986630021A735 /* TriviaQuizViewModel.swift in Sources */,
 				30D9251026CF71BD00F769F5 /* SanaButton.swift in Sources */,
+				3094547C26D069C300251E95 /* SanaPicker.swift in Sources */,
 				30595DCC25A2B2C400456E16 /* CapsuleButton.swift in Sources */,
 				307695A525439DD30028E1E7 /* HBarPicker.swift in Sources */,
 				30372837259C02F800A866D4 /* LoadingView.swift in Sources */,

@@ -70,6 +70,8 @@ struct AppTheme {
     ///                        context. The default is `.primary`.
     /// - Parameter action:    The action to perform when a user taps on the
     ///                        button.
+    ///
+    /// - Returns: The button.
     static func button(
         _ title: String,
         type: AppTheme.ButtonType = .plain,
@@ -84,12 +86,25 @@ struct AppTheme {
         )
     }
     
+    /// Returns a card with the specified content.
+    ///
+    /// - Parameter content: The closure to render the content of this card.
+    ///
+    /// - Returns: The card.
+    static func card<Content: View>(
+        content: @escaping () -> Content
+    ) -> some View {
+        return SanaCard(content: content)
+    }
+    
     /// Returns a picker with a set of possible options.
     ///
     /// - Parameter options:     The possible options.
     /// - Parameter selection:   A binding to the currently selected option.
     /// - Parameter optionLabel: The closure to map an option to its
     ///                          corresponding string label.
+    ///
+    /// - Returns: The picker.
     static func picker<SelectionValue: Hashable>(
         options: [SelectionValue],
         selection: Binding<SelectionValue>,

@@ -32,6 +32,26 @@ struct AppTheme {
         }
     }
     
+    /// A button that represents an action in responding to a dialog.
+    struct DialogButton {
+        
+        /// The title that is displayed on this button.
+        let title: String
+        
+        /// The action to perform when a user taps on this button.
+        let action: () -> Void
+        
+        /// Creates a dialog button with the specified title and action.
+        ///
+        /// - Parameter title:  The title that is displayed on the button.
+        /// - Parameter action: The action to perform when a user taps on the
+        ///                     button.
+        init(_ title: String, action: @escaping () -> Void) {
+            self.title = title
+            self.action = action
+        }
+    }
+    
     /// A button type.
     enum ButtonType {
         
@@ -61,6 +81,10 @@ struct AppTheme {
             }
         }
     }
+    
+    // -------------------------------------------------------------------------
+    // MARK:- Components
+    // -------------------------------------------------------------------------
     
     /// Returns a button with the specified title, type, color mode, and action.
     ///
@@ -95,6 +119,28 @@ struct AppTheme {
         content: @escaping () -> Content
     ) -> some View {
         return SanaCard(content: content)
+    }
+    
+    /// Returns a dialog with the specified title, content, and action buttons.
+    ///
+    /// - Parameter title:           The title of the dialog.
+    /// - Parameter content:         The closure to render the content of the
+    ///                              dialog.
+    /// - Parameter primaryButton:   The primary action button.
+    /// - Parameter secondaryButton: The secondary action button. The default is
+    ///                              `nil`.
+    static func dialog<Content: View>(
+        title: String,
+        content: @escaping () -> Content,
+        primaryButton: DialogButton,
+        secondaryButton: DialogButton? = nil
+    ) -> some View {
+        return SanaDialog(
+            title: title,
+            content: content,
+            primaryButton: primaryButton,
+            secondaryButton: secondaryButton
+        )
     }
     
     /// Returns a picker with a set of possible options.

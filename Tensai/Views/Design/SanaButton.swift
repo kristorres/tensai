@@ -110,21 +110,20 @@ struct SanaButton: View {
             
             /// The background of the button.
             private var background: some View {
-                ZStack {
-                    DrawingConstants.buttonShape
+                let buttonShape = Rectangle()
+                return ZStack {
+                    buttonShape
                         .fill(currentBackgroundColor)
                         .shadow(radius: currentShadowRadius)
                     if configuration.isPressed {
-                        DrawingConstants.buttonShape
-                            .fill(currentHighlightColor)
+                        buttonShape.fill(currentHighlightColor)
                     }
                     if let borderColor = self.borderColor {
-                        DrawingConstants.buttonShape
-                            .stroke(
-                                borderColor,
-                                lineWidth: DrawingConstants
-                                    .outlinedButtonBorderWidth
-                            )
+                        buttonShape.stroke(
+                            borderColor,
+                            lineWidth: DrawingConstants
+                                .outlinedButtonBorderWidth
+                        )
                     }
                 }
             }
@@ -197,9 +196,6 @@ struct SanaButton: View {
     /// An internal struct that contains drawing constants.
     private struct DrawingConstants {
         
-        /// The button shape.
-        static let buttonShape = RoundedRectangle(cornerRadius: cornerRadius)
-        
         /// The default font size of the title.
         static let defaultFontSize: CGFloat = 16
         
@@ -214,9 +210,6 @@ struct SanaButton: View {
         
         /// The vertical padding in the button.
         static let verticalPadding: CGFloat = 16
-        
-        /// The corner radius of the button.
-        private static let cornerRadius: CGFloat = 16
     }
 }
 

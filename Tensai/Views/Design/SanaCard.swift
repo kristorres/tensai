@@ -9,7 +9,7 @@ struct SanaCard<Content>: View where Content: View {
     var body: some View {
         content()
             .background(
-                RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius)
+                Rectangle()
                     .fill(AppTheme.ColorPalette.surface.mainColor)
                     .shadow(radius: DrawingConstants.shadowRadius)
             )
@@ -18,9 +18,6 @@ struct SanaCard<Content>: View where Content: View {
 
 /// A struct that contains drawing constants.
 fileprivate struct DrawingConstants {
-    
-    /// The corner radius of a card.
-    static let cornerRadius: CGFloat = 16
     
     /// The “radius” of a card’s shadow.
     static let shadowRadius: CGFloat = 4

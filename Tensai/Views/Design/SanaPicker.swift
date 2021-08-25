@@ -51,19 +51,11 @@ struct SanaPicker<SelectionValue>: View where SelectionValue: Hashable {
         }
             .frame(maxWidth: .infinity)
             .padding()
-            .background(
-                RoundedRectangle(cornerRadius: DrawingConstants.cornerRadius)
-                    .fill(backgroundColor)
-            )
+            .background(Rectangle().fill(DrawingConstants.backgroundColor))
             .onAppear {
                 selectionIndex = options.firstIndex(of: selection) ?? 0
                 selection = options[selectionIndex]
             }
-    }
-    
-    /// The background color of this picker.
-    private var backgroundColor: Color {
-        Color.primary.opacity(DrawingConstants.backgroundOpacity)
     }
     
     /// The button that selects the next possible option.
@@ -122,14 +114,14 @@ fileprivate struct DrawingConstants {
     /// The width of the arrow buttons.
     static let arrowButtonWidth: CGFloat = 24
     
-    /// The opacity of a picker’s background.
-    static let backgroundOpacity = 0.125
-    
-    /// The corner radius of a picker.
-    static let cornerRadius: CGFloat = 16
+    /// The background color of a picker.
+    static let backgroundColor: Color = Color.primary.opacity(backgroundOpacity)
     
     /// The default font size of the currently selected option.
     static let defaultFontSize: CGFloat = 16
+    
+    /// The opacity of a picker’s background.
+    private static let backgroundOpacity = 0.125
 }
 
 #if DEBUG

@@ -50,4 +50,4 @@ Key Features
 Credits
 -------
 
-The sound effects are from [Zapsplat.com](https://www.zapsplat.com).
+Sound effects obtained from [Zapsplat.com](https://www.zapsplat.com).

@@ -142,8 +142,10 @@
 		30070A3526D57637002023E9 /* Design */ = {
 			isa = PBXGroup;
 			children = (
+				30D9250F26CF71BD00F769F5 /* SanaButton.swift */,
 				30070A3626D57678002023E9 /* SanaCard.swift */,
 				30070A3826D59A85002023E9 /* SanaDialog.swift */,
+				3094547B26D069C300251E95 /* SanaPicker.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -276,8 +278,6 @@
 			children = (
 				30595DCB25A2B2C400456E16 /* CapsuleButton.swift */,
 				307695A425439DD30028E1E7 /* HBarPicker.swift */,
-				30D9250F26CF71BD00F769F5 /* SanaButton.swift */,
-				3094547B26D069C300251E95 /* SanaPicker.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";

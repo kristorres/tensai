@@ -7,7 +7,7 @@ struct SanaButton: View {
     private let title: String
     
     /// The type of this button.
-    private let type: AppTheme.ButtonType
+    private let type: Variant
     
     /// The color mode that makes sense for this button’s context.
     private let colorMode: AppTheme.ColorMode
@@ -32,7 +32,7 @@ struct SanaButton: View {
     ///                        button.
     init(
         _ title: String,
-        type: AppTheme.ButtonType = .plain,
+        type: Variant = .plain,
         colorMode: AppTheme.ColorMode = .primary,
         maxWidth: CGFloat? = nil,
         action: @escaping () -> Void
@@ -56,11 +56,25 @@ struct SanaButton: View {
             .buttonStyle(Style(type: type, colorMode: colorMode))
     }
     
+    /// A button type.
+    enum Variant {
+        
+        /// A button type that displays a container with a solid color fill
+        /// around a content label.
+        case filled
+        
+        /// A button type that displays a stroke around a content label.
+        case outlined
+        
+        /// A button type that does not decorate its content.
+        case plain
+    }
+    
     /// A style that is applied to the button.
     private struct Style: ButtonStyle {
         
         /// The button type.
-        private let type: AppTheme.ButtonType
+        private let type: Variant
         
         /// The color pair that is used on the button.
         private let colorPair: AppTheme.ColorPair
@@ -70,7 +84,7 @@ struct SanaButton: View {
         /// - Parameter type:      The button type.
         /// - Parameter colorMode: The color mode that makes sense for the
         ///                        button’s context.
-        init(type: AppTheme.ButtonType, colorMode: AppTheme.ColorMode) {
+        init(type: Variant, colorMode: AppTheme.ColorMode) {
             self.type = type
             self.colorPair = colorMode.colorPair
         }
@@ -87,7 +101,7 @@ struct SanaButton: View {
         private struct ContainerView: View {
             
             /// The button type.
-            let type: AppTheme.ButtonType
+            let type: Variant
             
             /// The default color pair when the button is idle.
             let defaultColorPair: AppTheme.ColorPair
@@ -216,7 +230,7 @@ struct SanaButton: View {
 #if DEBUG
 struct SanaButton_Previews: PreviewProvider {
     static var previews: some View {
-        let buttonTypes: [AppTheme.ButtonType] = [.filled, .outlined, .plain]
+        let buttonTypes: [SanaButton.Variant] = [.filled, .outlined, .plain]
         let colorModes: [AppTheme.ColorMode] = [.primary, .secondary, .danger]
         return VStack(spacing: 16) {
             ForEach(buttonTypes, id: \.self) { type in

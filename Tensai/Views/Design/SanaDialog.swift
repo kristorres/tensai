@@ -10,10 +10,10 @@ struct SanaDialog<Content>: View where Content: View {
     private let content: () -> Content
     
     /// The primary action button.
-    private let primaryButton: AppTheme.DialogButton
+    private let primaryButton: SanaDialogButton
     
     /// The secondary action button.
-    private let secondaryButton: AppTheme.DialogButton?
+    private let secondaryButton: SanaDialogButton?
     
     /// Creates a dialog with the specified title, content, and action buttons.
     ///
@@ -26,8 +26,8 @@ struct SanaDialog<Content>: View where Content: View {
     init(
         title: String,
         content: @escaping () -> Content,
-        primaryButton: AppTheme.DialogButton,
-        secondaryButton: AppTheme.DialogButton? = nil
+        primaryButton: SanaDialogButton,
+        secondaryButton: SanaDialogButton? = nil
     ) {
         self.title = title.trimmingCharacters(in: .whitespacesAndNewlines)
         self.content = content
@@ -75,6 +75,26 @@ struct SanaDialog<Content>: View where Content: View {
     }
 }
 
+/// A button that represents an action in responding to a dialog.
+struct SanaDialogButton {
+    
+    /// The title that is displayed on this button.
+    let title: String
+    
+    /// The action to perform when a user taps on this button.
+    let action: () -> Void
+    
+    /// Creates a dialog button with the specified title and action.
+    ///
+    /// - Parameter title:  The title that is displayed on the button.
+    /// - Parameter action: The action to perform when a user taps on the
+    ///                     button.
+    init(_ title: String, action: @escaping () -> Void) {
+        self.title = title
+        self.action = action
+    }
+}
+
 /// A struct that contains drawing constants.
 fileprivate struct DrawingConstants {
     
@@ -105,8 +125,8 @@ struct SanaDialog_Previews: PreviewProvider {
                     .frame(maxWidth: .infinity)
                     .padding()
             },
-            primaryButton: AppTheme.DialogButton("Action 1") {},
-            secondaryButton: AppTheme.DialogButton("Action 2") {}
+            primaryButton: SanaDialogButton("Action 1") {},
+            secondaryButton: SanaDialogButton("Action 2") {}
         )
             .frame(width: 320)
             .padding()

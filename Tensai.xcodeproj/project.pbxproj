@@ -139,7 +139,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		30070A3526D57637002023E9 /* Design */ = {
+		30070A3526D57637002023E9 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
 				30D9250F26CF71BD00F769F5 /* SanaButton.swift */,
@@ -147,7 +147,7 @@
 				30070A3826D59A85002023E9 /* SanaDialog.swift */,
 				3094547B26D069C300251E95 /* SanaPicker.swift */,
 			);
-			path = Design;
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		3013E1F42560E5F700C2B2FB /* Networking Tests */ = {
@@ -218,7 +218,7 @@
 				30CC62DF25A62EAF001665A4 /* TriviaQuizReviewView.swift */,
 				308D5226258991910021A735 /* TriviaQuizView.swift */,
 				307695A325439D780028E1E7 /* Controls */,
-				30070A3526D57637002023E9 /* Design */,
+				30070A3526D57637002023E9 /* Theme */,
 			);
 			path = Views;
 			sourceTree = "<group>";

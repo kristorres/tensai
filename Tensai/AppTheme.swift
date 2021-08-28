@@ -47,4 +47,7 @@ struct AppTheme {
             }
         }
     }
+    
+    /// The standard shadow “radius.”
+    static let shadowRadius: CGFloat = 4
 }

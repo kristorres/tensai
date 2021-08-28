@@ -192,9 +192,9 @@ struct SanaButton: View {
                     return 0
                 }
                 if configuration.isPressed {
-                    return DrawingConstants.defaultShadowRadius * 2
+                    return AppTheme.shadowRadius * 2
                 }
-                return DrawingConstants.defaultShadowRadius
+                return AppTheme.shadowRadius
             }
             
             /// The horizontal padding in the button.
@@ -212,9 +212,6 @@ struct SanaButton: View {
         
         /// The default font size of the title.
         static let defaultFontSize: CGFloat = 16
-        
-        /// The default “radius” of the button’s shadow.
-        static let defaultShadowRadius: CGFloat = 4
         
         /// The highlight opacity of the button when it is pressed.
         static let highlightOpacity: Double = 0.25

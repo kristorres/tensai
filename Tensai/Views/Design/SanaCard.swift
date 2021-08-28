@@ -11,16 +11,9 @@ struct SanaCard<Content>: View where Content: View {
             .background(
                 Rectangle()
                     .fill(AppTheme.ColorPalette.surface.mainColor)
-                    .shadow(radius: DrawingConstants.shadowRadius)
+                    .shadow(radius: AppTheme.shadowRadius)
             )
     }
-}
-
-/// A struct that contains drawing constants.
-fileprivate struct DrawingConstants {
-    
-    /// The “radius” of a card’s shadow.
-    static let shadowRadius: CGFloat = 4
 }
 
 #if DEBUG

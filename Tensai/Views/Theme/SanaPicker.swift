@@ -18,6 +18,9 @@ struct SanaPicker<SelectionValue>: View where SelectionValue: Hashable {
     /// The font size of the currently selected option.
     @ScaledMetric private var fontSize = DrawingConstants.defaultFontSize
     
+    /// The app theme.
+    @Environment(\.theme) private var theme
+    
     /// The environment color scheme.
     @Environment(\.colorScheme) private var colorScheme
     
@@ -47,7 +50,7 @@ struct SanaPicker<SelectionValue>: View where SelectionValue: Hashable {
                 upArrowButton
                 downArrowButton
             }
-                .foregroundColor(AppTheme.ColorPalette.primary.mainColor)
+                .foregroundColor(theme.colorPalette.primary.mainColor)
         }
             .frame(maxWidth: .infinity)
             .padding()

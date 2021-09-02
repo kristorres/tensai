@@ -74,25 +74,15 @@ struct SanaButton: View {
     private struct Style: ButtonStyle {
         
         /// The button type.
-        private let type: Variant
+        let type: Variant
         
-        /// The color pair that is used on the button.
-        private let colorPair: AppTheme.ColorPair
-        
-        /// Creates a style that is applied to the button.
-        ///
-        /// - Parameter type:      The button type.
-        /// - Parameter colorMode: The color mode that makes sense for the
-        ///                        button’s context.
-        init(type: Variant, colorMode: AppTheme.ColorMode) {
-            self.type = type
-            self.colorPair = colorMode.colorPair
-        }
+        /// The color mode that makes sense for the button’s context.
+        let colorMode: AppTheme.ColorMode
         
         func makeBody(configuration: Configuration) -> some View {
             return ContainerView(
                 type: type,
-                defaultColorPair: colorPair,
+                colorMode: colorMode,
                 configuration: configuration
             )
         }
@@ -103,11 +93,14 @@ struct SanaButton: View {
             /// The button type.
             let type: Variant
             
-            /// The default color pair when the button is idle.
-            let defaultColorPair: AppTheme.ColorPair
+            /// The color mode that makes sense for the button’s context.
+            let colorMode: AppTheme.ColorMode
             
             /// The properties of the button.
             let configuration: Configuration
+            
+            /// The app theme.
+            @Environment(\.theme) private var theme
             
             /// Indicates whether the button allows user interaction.
             @Environment(\.isEnabled) private var buttonIsEnabled
@@ -148,7 +141,7 @@ struct SanaButton: View {
                     return nil
                 }
                 if !buttonIsEnabled {
-                    return AppTheme.ColorPalette.disabled.contentColor
+                    return theme.colorPalette.disabled.contentColor
                 }
                 return defaultColorPair.mainColor
             }
@@ -159,7 +152,7 @@ struct SanaButton: View {
                     return .clear
                 }
                 if !buttonIsEnabled {
-                    return AppTheme.ColorPalette.disabled.mainColor
+                    return theme.colorPalette.disabled.mainColor
                 }
                 return defaultColorPair.mainColor
             }
@@ -167,7 +160,7 @@ struct SanaButton: View {
             /// The current foreground color of the button.
             private var currentForegroundColor: Color {
                 if !buttonIsEnabled {
-                    return AppTheme.ColorPalette.disabled.contentColor
+                    return theme.colorPalette.disabled.contentColor
                 }
                 if type == .filled {
                     return defaultColorPair.contentColor
@@ -192,9 +185,18 @@ struct SanaButton: View {
                     return 0
                 }
                 if configuration.isPressed {
-                    return AppTheme.shadowRadius * 2
+                    return theme.shadowRadius * 2
                 }
-                return AppTheme.shadowRadius
+                return theme.shadowRadius
+            }
+            
+            /// The default main/content color pair when the button is idle.
+            private var defaultColorPair: Color.Pair {
+                switch colorMode {
+                case .primary: return theme.colorPalette.primary
+                case .secondary: return theme.colorPalette.secondary
+                case .danger: return theme.colorPalette.danger
+                }
             }
             
             /// The horizontal padding in the button.

@@ -45,6 +45,8 @@
 		30A04E372553BC54009C9695 /* TriviaQuizConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A04E362553BC54009C9695 /* TriviaQuizConfigTests.swift */; };
 		30A04E472556153C009C9695 /* OTDQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A04E462556153C009C9695 /* OTDQuestion.swift */; };
 		30A04E4E25573717009C9695 /* OpenTriviaDatabaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A04E4D25573717009C9695 /* OpenTriviaDatabaseResponse.swift */; };
+		30C0092326E01CE700C4161E /* Color+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C0092226E01CE700C4161E /* Color+Palette.swift */; };
+		30C0092526E03E3E00C4161E /* Color Palettes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C0092426E03E3E00C4161E /* Color Palettes.xcassets */; };
 		30CC62D625A39783001665A4 /* LocalStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC62D525A39783001665A4 /* LocalStorageKey.swift */; };
 		30CC62E025A62EAF001665A4 /* TriviaQuizReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC62DF25A62EAF001665A4 /* TriviaQuizReviewView.swift */; };
 		30D9250726CC7F7D00F769F5 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9250626CC7F7D00F769F5 /* AppTheme.swift */; };
@@ -112,6 +114,8 @@
 		30A04E382553BC54009C9695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30A04E462556153C009C9695 /* OTDQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDQuestion.swift; sourceTree = "<group>"; };
 		30A04E4D25573717009C9695 /* OpenTriviaDatabaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTriviaDatabaseResponse.swift; sourceTree = "<group>"; };
+		30C0092226E01CE700C4161E /* Color+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Palette.swift"; sourceTree = "<group>"; };
+		30C0092426E03E3E00C4161E /* Color Palettes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Color Palettes.xcassets"; sourceTree = "<group>"; };
 		30CC62D525A39783001665A4 /* LocalStorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageKey.swift; sourceTree = "<group>"; };
 		30CC62DF25A62EAF001665A4 /* TriviaQuizReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizReviewView.swift; sourceTree = "<group>"; };
 		30CC62E825A828B7001665A4 /* trivia_quiz_review.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trivia_quiz_review.png; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 			children = (
 				3076959F254367410028E1E7 /* AppState.swift */,
 				30D9250626CC7F7D00F769F5 /* AppTheme.swift */,
+				30C0092226E01CE700C4161E /* Color+Palette.swift */,
 				305FB94725F6F82F00868761 /* EffectsManager.swift */,
 				301F0ACD253A60A8000C6439 /* TensaiApp.swift */,
 				30A04E4525561457009C9695 /* Models */,
@@ -337,6 +342,7 @@
 			children = (
 				305FB94D25F7238000868761 /* Resources */,
 				301F0AD1253A60A9000C6439 /* Assets.xcassets */,
+				30C0092426E03E3E00C4161E /* Color Palettes.xcassets */,
 				30F078DB253E49F600D7A912 /* LaunchScreen.storyboard */,
 				30372822259BB14900A866D4 /* DevicePreviewGroup.swift */,
 				301F0AD6253A60A9000C6439 /* Info.plist */,
@@ -432,6 +438,7 @@
 				305FB95825F72CB000868761 /* times_up.mp3 in Resources */,
 				305FB96025F72D6800868761 /* wrong_answer.mp3 in Resources */,
 				301F0AD2253A60A9000C6439 /* Assets.xcassets in Resources */,
+				30C0092526E03E3E00C4161E /* Color Palettes.xcassets in Resources */,
 				301F0AD5253A60A9000C6439 /* Preview Assets.xcassets in Resources */,
 				30F078DC253E49F600D7A912 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -455,6 +462,7 @@
 				301F0ACE253A60A8000C6439 /* TensaiApp.swift in Sources */,
 				307695A0254367410028E1E7 /* AppState.swift in Sources */,
 				30D9250726CC7F7D00F769F5 /* AppTheme.swift in Sources */,
+				30C0092326E01CE700C4161E /* Color+Palette.swift in Sources */,
 				305FB94825F6F82F00868761 /* EffectsManager.swift in Sources */,
 				30A04E472556153C009C9695 /* OTDQuestion.swift in Sources */,
 				30168BF42580732900FB65B9 /* TriviaQuiz.swift in Sources */,

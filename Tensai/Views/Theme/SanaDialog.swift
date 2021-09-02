@@ -15,6 +15,9 @@ struct SanaDialog<Content>: View where Content: View {
     /// The secondary action button.
     private let secondaryButton: SanaDialogButton?
     
+    /// The app theme.
+    @Environment(\.theme) private var theme
+    
     /// Creates a dialog with the specified title, content, and action buttons.
     ///
     /// - Parameter title:           The title of the dialog.
@@ -68,7 +71,7 @@ struct SanaDialog<Content>: View where Content: View {
             Text(title)
                 .font(.title)
                 .fontWeight(.bold)
-                .foregroundColor(AppTheme.ColorPalette.surface.contentColor)
+                .foregroundColor(theme.colorPalette.surface.contentColor)
             Spacer()
         }
             .padding()
@@ -105,33 +108,41 @@ fileprivate struct DrawingConstants {
 #if DEBUG
 struct SanaDialog_Previews: PreviewProvider {
     static var previews: some View {
-        SanaDialog(
-            title: "Dialog Header",
-            content: {
-                VStack(alignment: .leading) {
-                    ForEach(0 ..< 4) { index in
-                        HStack {
-                            Image(systemName: "star")
-                                .foregroundColor(
-                                    AppTheme.ColorPalette.primary.mainColor
-                                )
-                            Text("Item \(index + 1)")
-                            Spacer()
+        Preview()
+    }
+    private struct Preview: View {
+        @Environment(\.theme) private var theme
+        var body: some View {
+            SanaDialog(
+                title: "Dialog Header",
+                content: {
+                    VStack(alignment: .leading) {
+                        ForEach(0 ..< 4) { index in
+                            HStack {
+                                Image(systemName: "star")
+                                    .foregroundColor(
+                                        theme.colorPalette.primary.mainColor
+                                    )
+                                Text("Item \(index + 1)")
+                                Spacer()
+                            }
+                                .padding(.vertical, 4)
                         }
-                            .padding(.vertical, 4)
                     }
-                }
-                    .foregroundColor(AppTheme.ColorPalette.surface.contentColor)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-            },
-            primaryButton: SanaDialogButton("Action 1") {},
-            secondaryButton: SanaDialogButton("Action 2") {}
-        )
-            .frame(width: 320)
-            .padding()
-            .preferredColorScheme(.light)
-            .previewLayout(.sizeThatFits)
+                        .foregroundColor(
+                            theme.colorPalette.surface.contentColor
+                        )
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                },
+                primaryButton: SanaDialogButton("Action 1") {},
+                secondaryButton: SanaDialogButton("Action 2") {}
+            )
+                .frame(width: 320)
+                .padding()
+                .preferredColorScheme(.light)
+                .previewLayout(.sizeThatFits)
+        }
     }
 }
 #endif

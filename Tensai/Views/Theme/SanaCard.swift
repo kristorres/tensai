@@ -6,12 +6,15 @@ struct SanaCard<Content>: View where Content: View {
     /// The closure to render the content of this card.
     let content: () -> Content
     
+    /// The app theme.
+    @Environment(\.theme) private var theme
+    
     var body: some View {
         content()
             .background(
                 Rectangle()
-                    .fill(AppTheme.ColorPalette.surface.mainColor)
-                    .shadow(radius: AppTheme.shadowRadius)
+                    .fill(theme.colorPalette.surface.mainColor)
+                    .shadow(radius: theme.shadowRadius)
             )
     }
 }

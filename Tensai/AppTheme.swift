@@ -17,13 +17,6 @@ struct AppTheme {
     
     /// The standard shadow “radius.”
     var shadowRadius: CGFloat
-    
-    /// A color mode that makes sense for the component it is used on.
-    enum ColorMode {
-        case primary
-        case secondary
-        case danger
-    }
 }
 
 extension EnvironmentValues {

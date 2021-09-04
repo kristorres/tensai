@@ -10,7 +10,7 @@ struct SanaButton: View {
     private let type: Variant
     
     /// The color mode that makes sense for this button’s context.
-    private let colorMode: AppTheme.ColorMode
+    private let colorMode: ColorMode
     
     /// The maximum width of this button.
     private let maxWidth: CGFloat?
@@ -33,7 +33,7 @@ struct SanaButton: View {
     init(
         _ title: String,
         type: Variant = .plain,
-        colorMode: AppTheme.ColorMode = .primary,
+        colorMode: ColorMode = .primary,
         maxWidth: CGFloat? = nil,
         action: @escaping () -> Void
     ) {
@@ -54,6 +54,13 @@ struct SanaButton: View {
                 .frame(maxWidth: maxWidth)
         }
             .buttonStyle(Style(type: type, colorMode: colorMode))
+    }
+    
+    /// A color mode that makes sense for the button’s context.
+    enum ColorMode {
+        case primary
+        case secondary
+        case danger
     }
     
     /// A button type.
@@ -77,7 +84,7 @@ struct SanaButton: View {
         let type: Variant
         
         /// The color mode that makes sense for the button’s context.
-        let colorMode: AppTheme.ColorMode
+        let colorMode: ColorMode
         
         func makeBody(configuration: Configuration) -> some View {
             return ContainerView(
@@ -94,7 +101,7 @@ struct SanaButton: View {
             let type: Variant
             
             /// The color mode that makes sense for the button’s context.
-            let colorMode: AppTheme.ColorMode
+            let colorMode: ColorMode
             
             /// The properties of the button.
             let configuration: Configuration
@@ -230,7 +237,7 @@ struct SanaButton: View {
 struct SanaButton_Previews: PreviewProvider {
     static var previews: some View {
         let buttonTypes: [SanaButton.Variant] = [.filled, .outlined, .plain]
-        let colorModes: [AppTheme.ColorMode] = [.primary, .secondary, .danger]
+        let colorModes: [SanaButton.ColorMode] = [.primary, .secondary, .danger]
         return VStack(spacing: 16) {
             ForEach(buttonTypes, id: \.self) { type in
                 ForEach(colorModes, id: \.self) { colorMode in

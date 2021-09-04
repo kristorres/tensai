@@ -10,10 +10,10 @@ struct SanaDialog<Content>: View where Content: View {
     private let content: () -> Content
     
     /// The primary action button.
-    private let primaryButton: SanaDialogButton
+    private let primaryButton: SanaDialog.Button
     
     /// The secondary action button.
-    private let secondaryButton: SanaDialogButton?
+    private let secondaryButton: SanaDialog.Button?
     
     /// The app theme.
     @Environment(\.theme) private var theme
@@ -29,8 +29,8 @@ struct SanaDialog<Content>: View where Content: View {
     init(
         title: String,
         content: @escaping () -> Content,
-        primaryButton: SanaDialogButton,
-        secondaryButton: SanaDialogButton? = nil
+        primaryButton: SanaDialog.Button,
+        secondaryButton: SanaDialog.Button? = nil
     ) {
         self.title = title.trimmingCharacters(in: .whitespacesAndNewlines)
         self.content = content
@@ -55,12 +55,9 @@ struct SanaDialog<Content>: View where Content: View {
         HStack {
             Spacer()
             if let secondaryButton = self.secondaryButton {
-                SanaButton(
-                    secondaryButton.title,
-                    action: secondaryButton.action
-                )
+                secondaryButton.view
             }
-            SanaButton(primaryButton.title, action: primaryButton.action)
+            primaryButton.view
         }
             .padding(DrawingConstants.footerPadding)
     }
@@ -76,25 +73,30 @@ struct SanaDialog<Content>: View where Content: View {
         }
             .padding()
     }
-}
-
-/// A button that represents an action in responding to a dialog.
-struct SanaDialogButton {
     
-    /// The title that is displayed on this button.
-    let title: String
-    
-    /// The action to perform when a user taps on this button.
-    let action: () -> Void
-    
-    /// Creates a dialog button with the specified title and action.
-    ///
-    /// - Parameter title:  The title that is displayed on the button.
-    /// - Parameter action: The action to perform when a user taps on the
-    ///                     button.
-    init(_ title: String, action: @escaping () -> Void) {
-        self.title = title
-        self.action = action
+    /// A button that represents an action in responding to a dialog.
+    struct Button {
+        
+        /// The title that is displayed on this button.
+        let title: String
+        
+        /// The action to perform when a user taps on this button.
+        let action: () -> Void
+        
+        /// Creates a dialog button with the specified title and action.
+        ///
+        /// - Parameter title:  The title that is displayed on the button.
+        /// - Parameter action: The action to perform when a user taps on the
+        ///                     button.
+        init(_ title: String, action: @escaping () -> Void) {
+            self.title = title
+            self.action = action
+        }
+        
+        /// The SwiftUI view representation of this button.
+        fileprivate var view: SanaButton {
+            SanaButton(title, action: action)
+        }
     }
 }
 
@@ -135,8 +137,8 @@ struct SanaDialog_Previews: PreviewProvider {
                         .frame(maxWidth: .infinity)
                         .padding()
                 },
-                primaryButton: SanaDialogButton("Action 1") {},
-                secondaryButton: SanaDialogButton("Action 2") {}
+                primaryButton: SanaDialog.Button("Action 1") {},
+                secondaryButton: SanaDialog.Button("Action 2") {}
             )
                 .frame(width: 320)
                 .padding()

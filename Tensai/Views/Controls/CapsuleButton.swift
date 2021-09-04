@@ -1,6 +1,7 @@
 import SwiftUI
 
 /// A capsule-shaped button that performs an action when tapped on.
+@available(*, deprecated, message: "Use `SanaButton` instead.")
 struct CapsuleButton: View {
     
     /// The title that is displayed on this button.

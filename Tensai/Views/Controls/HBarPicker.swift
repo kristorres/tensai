@@ -1,6 +1,7 @@
 import SwiftUI
 
 /// A horizontal bar control for selecting from a list of possible options.
+@available(*, deprecated, message: "Use `SanaPicker` instead.")
 struct HBarPicker: View {
     
     // -------------------------------------------------------------------------

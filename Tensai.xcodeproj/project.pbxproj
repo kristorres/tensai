@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30070A3726D57678002023E9 /* SanaCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30070A3626D57678002023E9 /* SanaCard.swift */; };
+		30070A3926D59A85002023E9 /* SanaDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30070A3826D59A85002023E9 /* SanaDialog.swift */; };
 		3013E1E7255FB49F00C2B2FB /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013E1E6255FB49F00C2B2FB /* APIRequest.swift */; };
 		3013E1EB255FBA6600C2B2FB /* APIRequestLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013E1EA255FBA6600C2B2FB /* APIRequestLoader.swift */; };
 		3013E1EF2560E33200C2B2FB /* TriviaQuizRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3013E1EE2560E33200C2B2FB /* TriviaQuizRequest.swift */; };
@@ -39,11 +41,16 @@
 		308D521B258977560021A735 /* TriviaQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D521A258977560021A735 /* TriviaQuizTests.swift */; };
 		308D5221258986630021A735 /* TriviaQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D5220258986630021A735 /* TriviaQuizViewModel.swift */; };
 		308D5227258991910021A735 /* TriviaQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D5226258991910021A735 /* TriviaQuizView.swift */; };
+		3094547C26D069C300251E95 /* SanaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3094547B26D069C300251E95 /* SanaPicker.swift */; };
 		30A04E372553BC54009C9695 /* TriviaQuizConfigTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A04E362553BC54009C9695 /* TriviaQuizConfigTests.swift */; };
 		30A04E472556153C009C9695 /* OTDQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A04E462556153C009C9695 /* OTDQuestion.swift */; };
 		30A04E4E25573717009C9695 /* OpenTriviaDatabaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A04E4D25573717009C9695 /* OpenTriviaDatabaseResponse.swift */; };
+		30C0092326E01CE700C4161E /* Color+Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C0092226E01CE700C4161E /* Color+Palette.swift */; };
+		30C0092526E03E3E00C4161E /* Color Palettes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30C0092426E03E3E00C4161E /* Color Palettes.xcassets */; };
 		30CC62D625A39783001665A4 /* LocalStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC62D525A39783001665A4 /* LocalStorageKey.swift */; };
 		30CC62E025A62EAF001665A4 /* TriviaQuizReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CC62DF25A62EAF001665A4 /* TriviaQuizReviewView.swift */; };
+		30D9250726CC7F7D00F769F5 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9250626CC7F7D00F769F5 /* AppTheme.swift */; };
+		30D9251026CF71BD00F769F5 /* SanaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D9250F26CF71BD00F769F5 /* SanaButton.swift */; };
 		30E757BE257B061200CC1F53 /* NoCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E757BD257B061200CC1F53 /* NoCaching.swift */; };
 		30F078DC253E49F600D7A912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F078DB253E49F600D7A912 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -59,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30070A3626D57678002023E9 /* SanaCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanaCard.swift; sourceTree = "<group>"; };
+		30070A3826D59A85002023E9 /* SanaDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanaDialog.swift; sourceTree = "<group>"; };
 		3013E1E6255FB49F00C2B2FB /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		3013E1EA255FBA6600C2B2FB /* APIRequestLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestLoader.swift; sourceTree = "<group>"; };
 		3013E1EE2560E33200C2B2FB /* TriviaQuizRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizRequest.swift; sourceTree = "<group>"; };
@@ -99,14 +108,19 @@
 		308D5220258986630021A735 /* TriviaQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizViewModel.swift; sourceTree = "<group>"; };
 		308D5226258991910021A735 /* TriviaQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizView.swift; sourceTree = "<group>"; };
 		308D524D258C2D8B0021A735 /* trivia_quiz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trivia_quiz.png; sourceTree = "<group>"; };
+		3094547B26D069C300251E95 /* SanaPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanaPicker.swift; sourceTree = "<group>"; };
 		30A04E342553BC54009C9695 /* TensaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30A04E362553BC54009C9695 /* TriviaQuizConfigTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizConfigTests.swift; sourceTree = "<group>"; };
 		30A04E382553BC54009C9695 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30A04E462556153C009C9695 /* OTDQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDQuestion.swift; sourceTree = "<group>"; };
 		30A04E4D25573717009C9695 /* OpenTriviaDatabaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTriviaDatabaseResponse.swift; sourceTree = "<group>"; };
+		30C0092226E01CE700C4161E /* Color+Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Palette.swift"; sourceTree = "<group>"; };
+		30C0092426E03E3E00C4161E /* Color Palettes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Color Palettes.xcassets"; sourceTree = "<group>"; };
 		30CC62D525A39783001665A4 /* LocalStorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageKey.swift; sourceTree = "<group>"; };
 		30CC62DF25A62EAF001665A4 /* TriviaQuizReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizReviewView.swift; sourceTree = "<group>"; };
 		30CC62E825A828B7001665A4 /* trivia_quiz_review.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trivia_quiz_review.png; sourceTree = "<group>"; };
+		30D9250626CC7F7D00F769F5 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		30D9250F26CF71BD00F769F5 /* SanaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SanaButton.swift; sourceTree = "<group>"; };
 		30E757BD257B061200CC1F53 /* NoCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCaching.swift; sourceTree = "<group>"; };
 		30F078DB253E49F600D7A912 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +143,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30070A3526D57637002023E9 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				30D9250F26CF71BD00F769F5 /* SanaButton.swift */,
+				30070A3626D57678002023E9 /* SanaCard.swift */,
+				30070A3826D59A85002023E9 /* SanaDialog.swift */,
+				3094547B26D069C300251E95 /* SanaPicker.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		3013E1F42560E5F700C2B2FB /* Networking Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				3076959F254367410028E1E7 /* AppState.swift */,
+				30D9250626CC7F7D00F769F5 /* AppTheme.swift */,
+				30C0092226E01CE700C4161E /* Color+Palette.swift */,
 				305FB94725F6F82F00868761 /* EffectsManager.swift */,
 				301F0ACD253A60A8000C6439 /* TensaiApp.swift */,
 				30A04E4525561457009C9695 /* Models */,
@@ -196,6 +223,7 @@
 				30CC62DF25A62EAF001665A4 /* TriviaQuizReviewView.swift */,
 				308D5226258991910021A735 /* TriviaQuizView.swift */,
 				307695A325439D780028E1E7 /* Controls */,
+				30070A3526D57637002023E9 /* Theme */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -314,6 +342,7 @@
 			children = (
 				305FB94D25F7238000868761 /* Resources */,
 				301F0AD1253A60A9000C6439 /* Assets.xcassets */,
+				30C0092426E03E3E00C4161E /* Color Palettes.xcassets */,
 				30F078DB253E49F600D7A912 /* LaunchScreen.storyboard */,
 				30372822259BB14900A866D4 /* DevicePreviewGroup.swift */,
 				301F0AD6253A60A9000C6439 /* Info.plist */,
@@ -409,6 +438,7 @@
 				305FB95825F72CB000868761 /* times_up.mp3 in Resources */,
 				305FB96025F72D6800868761 /* wrong_answer.mp3 in Resources */,
 				301F0AD2253A60A9000C6439 /* Assets.xcassets in Resources */,
+				30C0092526E03E3E00C4161E /* Color Palettes.xcassets in Resources */,
 				301F0AD5253A60A9000C6439 /* Preview Assets.xcassets in Resources */,
 				30F078DC253E49F600D7A912 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -431,10 +461,16 @@
 			files = (
 				301F0ACE253A60A8000C6439 /* TensaiApp.swift in Sources */,
 				307695A0254367410028E1E7 /* AppState.swift in Sources */,
+				30D9250726CC7F7D00F769F5 /* AppTheme.swift in Sources */,
+				30C0092326E01CE700C4161E /* Color+Palette.swift in Sources */,
 				305FB94825F6F82F00868761 /* EffectsManager.swift in Sources */,
 				30A04E472556153C009C9695 /* OTDQuestion.swift in Sources */,
 				30168BF42580732900FB65B9 /* TriviaQuiz.swift in Sources */,
 				308D5221258986630021A735 /* TriviaQuizViewModel.swift in Sources */,
+				30D9251026CF71BD00F769F5 /* SanaButton.swift in Sources */,
+				30070A3726D57678002023E9 /* SanaCard.swift in Sources */,
+				30070A3926D59A85002023E9 /* SanaDialog.swift in Sources */,
+				3094547C26D069C300251E95 /* SanaPicker.swift in Sources */,
 				30595DCC25A2B2C400456E16 /* CapsuleButton.swift in Sources */,
 				307695A525439DD30028E1E7 /* HBarPicker.swift in Sources */,
 				30372837259C02F800A866D4 /* LoadingView.swift in Sources */,

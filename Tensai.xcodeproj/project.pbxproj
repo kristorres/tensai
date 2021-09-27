@@ -12,6 +12,7 @@
 		301F0AD5253A60A9000C6439 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301F0AD4253A60A9000C6439 /* Preview Assets.xcassets */; };
 		30DA0B9826FE77CA00B9B7C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA0B9726FE77CA00B9B7C8 /* ContentView.swift */; };
 		30DA0B9B26FE864A00B9B7C8 /* OpenTriviaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA0B9A26FE864A00B9B7C8 /* OpenTriviaDB.swift */; };
+		30DA0B9E26FE978B00B9B7C8 /* TriviaQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30DA0B9D26FE978B00B9B7C8 /* TriviaQuiz.swift */; };
 		30F078DC253E49F600D7A912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F078DB253E49F600D7A912 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		301F0AE1253A649E000C6439 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		30DA0B9726FE77CA00B9B7C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		30DA0B9A26FE864A00B9B7C8 /* OpenTriviaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTriviaDB.swift; sourceTree = "<group>"; };
+		30DA0B9D26FE978B00B9B7C8 /* TriviaQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuiz.swift; sourceTree = "<group>"; };
 		30F078DB253E49F600D7A912 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 			children = (
 				30DA0B9726FE77CA00B9B7C8 /* ContentView.swift */,
 				301F0ACD253A60A8000C6439 /* TensaiApp.swift */,
+				30DA0B9C26FE972B00B9B7C8 /* Models */,
 				30DA0B9926FE853C00B9B7C8 /* Networking */,
 				30FC5568253BFFC900AB3606 /* Supporting Files */,
 				301F0AD3253A60A9000C6439 /* Preview Content */,
@@ -85,6 +88,14 @@
 				30DA0B9A26FE864A00B9B7C8 /* OpenTriviaDB.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		30DA0B9C26FE972B00B9B7C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				30DA0B9D26FE978B00B9B7C8 /* TriviaQuiz.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		30FC5568253BFFC900AB3606 /* Supporting Files */ = {
@@ -169,6 +180,7 @@
 			files = (
 				301F0ACE253A60A8000C6439 /* TensaiApp.swift in Sources */,
 				30DA0B9B26FE864A00B9B7C8 /* OpenTriviaDB.swift in Sources */,
+				30DA0B9E26FE978B00B9B7C8 /* TriviaQuiz.swift in Sources */,
 				30DA0B9826FE77CA00B9B7C8 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,7 +28,6 @@ struct TriviaQuiz {
             return Question(
                 category: question.category,
                 type: question.type,
-                difficulty: question.difficulty,
                 description: description,
                 possibleAnswers: answers,
                 correctAnswer: correctAnswer
@@ -83,9 +82,6 @@ struct TriviaQuiz {
         
         /// The question type.
         let type: OpenTriviaDB.Question.Kind
-        
-        /// The difficulty level of this question.
-        let difficulty: OpenTriviaDB.Question.Difficulty
         
         /// The textual representation of this question.
         let description: String

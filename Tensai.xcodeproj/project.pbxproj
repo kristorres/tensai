@@ -12,6 +12,7 @@
 		304DA4FC2707719500D4229C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 304DA4FB2707719500D4229C /* Assets.xcassets */; };
 		304DA4FF2707719500D4229C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 304DA4FE2707719500D4229C /* Preview Assets.xcassets */; };
 		304DA50A2707C85500D4229C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 304DA5092707C85500D4229C /* LaunchScreen.storyboard */; };
+		30B0FEE1270CB7B30025A5D9 /* OpenTriviaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0FEE0270CB7B30025A5D9 /* OpenTriviaDB.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		304DA5082707C69800D4229C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		304DA5092707C85500D4229C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		304DA50C2707D3A800D4229C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		30B0FEE0270CB7B30025A5D9 /* OpenTriviaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTriviaDB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				304DA4F72707719200D4229C /* TensaiApp.swift */,
+				30B0FEDF270CB7450025A5D9 /* Networking */,
 				304DA505270776A900D4229C /* Views */,
 				304DA5062707772700D4229C /* Supporting Files */,
 				304DA4FD2707719500D4229C /* Preview Content */,
@@ -90,6 +93,14 @@
 				304DA50C2707D3A800D4229C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		30B0FEDF270CB7450025A5D9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				30B0FEE0270CB7B30025A5D9 /* OpenTriviaDB.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				304DA4F82707719200D4229C /* TensaiApp.swift in Sources */,
+				30B0FEE1270CB7B30025A5D9 /* OpenTriviaDB.swift in Sources */,
 				304DA4FA2707719200D4229C /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

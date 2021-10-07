@@ -15,6 +15,7 @@
 		30B0FEE1270CB7B30025A5D9 /* OpenTriviaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0FEE0270CB7B30025A5D9 /* OpenTriviaDB.swift */; };
 		30B0FEE3270CDA230025A5D9 /* String+HTMLDecoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0FEE2270CDA230025A5D9 /* String+HTMLDecoded.swift */; };
 		30B0FEEB270CDD2D0025A5D9 /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0FEEA270CDD2D0025A5D9 /* HTMLDecodingTests.swift */; };
+		30B0FEF3270E48060025A5D9 /* OpenTriviaDBQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0FEF2270E48060025A5D9 /* OpenTriviaDBQuestionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		30B0FEE2270CDA230025A5D9 /* String+HTMLDecoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTMLDecoded.swift"; sourceTree = "<group>"; };
 		30B0FEE8270CDD2D0025A5D9 /* TensaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B0FEEA270CDD2D0025A5D9 /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
+		30B0FEF2270E48060025A5D9 /* OpenTriviaDBQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTriviaDBQuestionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				30B0FEEA270CDD2D0025A5D9 /* HTMLDecodingTests.swift */,
+				30B0FEF2270E48060025A5D9 /* OpenTriviaDBQuestionTests.swift */,
 			);
 			path = TensaiTests;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30B0FEEB270CDD2D0025A5D9 /* HTMLDecodingTests.swift in Sources */,
+				30B0FEF3270E48060025A5D9 /* OpenTriviaDBQuestionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

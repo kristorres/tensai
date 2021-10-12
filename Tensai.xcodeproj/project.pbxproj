@@ -16,6 +16,8 @@
 		30B0FEE3270CDA230025A5D9 /* String+HTMLDecoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0FEE2270CDA230025A5D9 /* String+HTMLDecoded.swift */; };
 		30B0FEEB270CDD2D0025A5D9 /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0FEEA270CDD2D0025A5D9 /* HTMLDecodingTests.swift */; };
 		30B0FEF3270E48060025A5D9 /* OpenTriviaDBQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0FEF2270E48060025A5D9 /* OpenTriviaDBQuestionTests.swift */; };
+		30B0FEF6270E8C0A0025A5D9 /* TriviaQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0FEF5270E8C0A0025A5D9 /* TriviaQuiz.swift */; };
+		30B0FEF82710F81B0025A5D9 /* TriviaQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0FEF72710F81B0025A5D9 /* TriviaQuizTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		30B0FEE8270CDD2D0025A5D9 /* TensaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B0FEEA270CDD2D0025A5D9 /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
 		30B0FEF2270E48060025A5D9 /* OpenTriviaDBQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTriviaDBQuestionTests.swift; sourceTree = "<group>"; };
+		30B0FEF5270E8C0A0025A5D9 /* TriviaQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuiz.swift; sourceTree = "<group>"; };
+		30B0FEF72710F81B0025A5D9 /* TriviaQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 			children = (
 				30B0FEE2270CDA230025A5D9 /* String+HTMLDecoded.swift */,
 				304DA4F72707719200D4229C /* TensaiApp.swift */,
+				30B0FEF4270E8BDA0025A5D9 /* Models */,
 				30B0FEDF270CB7450025A5D9 /* Networking */,
 				304DA505270776A900D4229C /* Views */,
 				304DA5062707772700D4229C /* Supporting Files */,
@@ -135,8 +140,17 @@
 			children = (
 				30B0FEEA270CDD2D0025A5D9 /* HTMLDecodingTests.swift */,
 				30B0FEF2270E48060025A5D9 /* OpenTriviaDBQuestionTests.swift */,
+				30B0FEF72710F81B0025A5D9 /* TriviaQuizTests.swift */,
 			);
 			path = TensaiTests;
+			sourceTree = "<group>";
+		};
+		30B0FEF4270E8BDA0025A5D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				30B0FEF5270E8C0A0025A5D9 /* TriviaQuiz.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +257,7 @@
 				304DA4F82707719200D4229C /* TensaiApp.swift in Sources */,
 				30B0FEE3270CDA230025A5D9 /* String+HTMLDecoded.swift in Sources */,
 				30B0FEE1270CB7B30025A5D9 /* OpenTriviaDB.swift in Sources */,
+				30B0FEF6270E8C0A0025A5D9 /* TriviaQuiz.swift in Sources */,
 				304DA4FA2707719200D4229C /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,6 +268,7 @@
 			files = (
 				30B0FEEB270CDD2D0025A5D9 /* HTMLDecodingTests.swift in Sources */,
 				30B0FEF3270E48060025A5D9 /* OpenTriviaDBQuestionTests.swift in Sources */,
+				30B0FEF82710F81B0025A5D9 /* TriviaQuizTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

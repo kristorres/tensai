@@ -5,30 +5,19 @@ final class OpenTriviaDBQuestionTests: XCTestCase {
     
     func testInitWithProperties() {
         let question = OpenTriviaDB.Question(
-            "Which is the only film in the <i>Fast & Furious</i> franchise that Vin Diesel did not appear in?",
+            "The 1995 film <i>Clueless</i> is based on what Jane Austen novel?",
             category: "Movies",
             difficulty: .hard,
             type: .multipleChoice,
-            correctAnswer: "<i>2 Fast 2 Furious</i>",
+            correctAnswer: "<i>Emma</i>",
             incorrectAnswers: [
-                "<i>The Fast & The Furious: Tokyo Drift</i>",
-                "<i>Fast Five</i>",
-                "<i>Furious 7</i>"
+                "<i>Sense and Sensibility</i>",
+                "<i>Pride and Prejudice</i>",
+                "<i>Mansfield Park</i>"
             ]
         )
         
-        XCTAssertEqual(
-            question.string,
-            "Which is the only film in the Fast & Furious franchise that Vin Diesel did not appear in?"
-        )
-        XCTAssertEqual(question.category, "Movies")
-        XCTAssertEqual(question.difficulty, .hard)
-        XCTAssertEqual(question.type, .multipleChoice)
-        XCTAssertEqual(question.correctAnswer, "2 Fast 2 Furious")
-        XCTAssertEqual(
-            question.incorrectAnswers,
-            ["The Fast & The Furious: Tokyo Drift", "Fast Five", "Furious 7"]
-        )
+        testQuestion(question)
     }
     
     func testInitWithDecoder() throws {
@@ -37,12 +26,12 @@ final class OpenTriviaDBQuestionTests: XCTestCase {
             "category": "Movies",
             "type": "multiple",
             "difficulty": "hard",
-            "question": "Which is the only film in the <i>Fast & Furious</i> franchise that Vin Diesel did not appear in?",
-            "correct_answer": "<i>2 Fast 2 Furious</i>",
+            "question": "The 1995 film <i>Clueless</i> is based on what Jane Austen novel?",
+            "correct_answer": "<i>Emma</i>",
             "incorrect_answers": [
-                "<i>The Fast & The Furious: Tokyo Drift</i>",
-                "<i>Fast Five</i>",
-                "<i>Furious 7</i>"
+                "<i>Sense and Sensibility</i>",
+                "<i>Pride and Prejudice</i>",
+                "<i>Mansfield Park</i>"
             ]
         }
         """.data(using: .utf8)!
@@ -50,17 +39,21 @@ final class OpenTriviaDBQuestionTests: XCTestCase {
         let question = try JSONDecoder()
             .decode(OpenTriviaDB.Question.self, from: json)
         
+        testQuestion(question)
+    }
+    
+    private func testQuestion(_ question: OpenTriviaDB.Question) {
         XCTAssertEqual(
             question.string,
-            "Which is the only film in the Fast & Furious franchise that Vin Diesel did not appear in?"
+            "The 1995 film Clueless is based on what Jane Austen novel?"
         )
         XCTAssertEqual(question.category, "Movies")
         XCTAssertEqual(question.difficulty, .hard)
         XCTAssertEqual(question.type, .multipleChoice)
-        XCTAssertEqual(question.correctAnswer, "2 Fast 2 Furious")
+        XCTAssertEqual(question.correctAnswer, "Emma")
         XCTAssertEqual(
             question.incorrectAnswers,
-            ["The Fast & The Furious: Tokyo Drift", "Fast Five", "Furious 7"]
+            ["Sense and Sensibility", "Pride and Prejudice", "Mansfield Park"]
         )
     }
 }

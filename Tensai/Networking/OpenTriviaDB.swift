@@ -3,6 +3,22 @@ import Foundation
 /// The [Open Trivia Database](https://opentdb.com) namespace.
 struct OpenTriviaDB {
     
+    /// A response from an API call to the
+    /// [Open Trivia Database](https://opentdb.com).
+    struct APIResponse: Codable {
+        
+        /// The response code.
+        let code: Int
+        
+        /// The questions.
+        let questions: [Question]
+        
+        private enum CodingKeys: String, CodingKey {
+            case code = "response_code"
+            case questions = "results"
+        }
+    }
+    
     /// A question in the [Open Trivia Database](https://opentdb.com).
     struct Question: Codable {
         

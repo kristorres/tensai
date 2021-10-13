@@ -18,6 +18,7 @@
 		30B0FEF3270E48060025A5D9 /* OpenTriviaDBQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0FEF2270E48060025A5D9 /* OpenTriviaDBQuestionTests.swift */; };
 		30B0FEF6270E8C0A0025A5D9 /* TriviaQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0FEF5270E8C0A0025A5D9 /* TriviaQuiz.swift */; };
 		30B0FEF82710F81B0025A5D9 /* TriviaQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B0FEF72710F81B0025A5D9 /* TriviaQuizTests.swift */; };
+		30B3121627178FB500D00FB8 /* NoCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B3121527178FB500D00FB8 /* NoCaching.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		30B0FEF2270E48060025A5D9 /* OpenTriviaDBQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTriviaDBQuestionTests.swift; sourceTree = "<group>"; };
 		30B0FEF5270E8C0A0025A5D9 /* TriviaQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuiz.swift; sourceTree = "<group>"; };
 		30B0FEF72710F81B0025A5D9 /* TriviaQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizTests.swift; sourceTree = "<group>"; };
+		30B3121527178FB500D00FB8 /* NoCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCaching.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		30B0FEDF270CB7450025A5D9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				30B3121527178FB500D00FB8 /* NoCaching.swift */,
 				30B0FEE0270CB7B30025A5D9 /* OpenTriviaDB.swift */,
 			);
 			path = Networking;
@@ -256,6 +259,7 @@
 			files = (
 				304DA4F82707719200D4229C /* TensaiApp.swift in Sources */,
 				30B0FEE3270CDA230025A5D9 /* String+HTMLDecoded.swift in Sources */,
+				30B3121627178FB500D00FB8 /* NoCaching.swift in Sources */,
 				30B0FEE1270CB7B30025A5D9 /* OpenTriviaDB.swift in Sources */,
 				30B0FEF6270E8C0A0025A5D9 /* TriviaQuiz.swift in Sources */,
 				304DA4FA2707719200D4229C /* ContentView.swift in Sources */,

@@ -66,10 +66,10 @@ struct OpenTriviaDB {
                 "?amount=\(questionCount)"
             ]
             
-            if let categoryID = categoryID {
+            if let categoryID = self.categoryID {
                 urlStringParts.append("&category=\(categoryID)")
             }
-            if let questionType = questionType {
+            if let questionType = self.questionType {
                 urlStringParts.append("&type=\(questionType.rawValue)")
             }
             

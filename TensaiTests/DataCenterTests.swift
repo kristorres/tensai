@@ -39,8 +39,8 @@ final class DataCenterTests: XCTestCase {
     func testTriviaQuizFromDefaultQuery() async throws {
         let query = OpenTriviaDB.Query()
         
-        try await testCreateTriviaQuizSuccess(with: query) { triviaQuiz in
-            XCTAssertEqual(triviaQuiz.questions.count, 10)
+        try await testCreateTriviaQuizSuccess(with: query) {
+            XCTAssertEqual($0.questions.count, 10)
         }
     }
     
@@ -48,8 +48,8 @@ final class DataCenterTests: XCTestCase {
         var query = OpenTriviaDB.Query()
         query.questionCount = 50
         
-        try await testCreateTriviaQuizSuccess(with: query) { triviaQuiz in
-            XCTAssertEqual(triviaQuiz.questions.count, 50)
+        try await testCreateTriviaQuizSuccess(with: query) {
+            XCTAssertEqual($0.questions.count, 50)
         }
     }
     

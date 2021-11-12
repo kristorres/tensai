@@ -12,7 +12,19 @@
 		301CB554273CEDF000FDBF7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301CB553273CEDF000FDBF7A /* Assets.xcassets */; };
 		301CB557273CEDF000FDBF7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301CB556273CEDF000FDBF7A /* Preview Assets.xcassets */; };
 		301CB562273CF60800FDBF7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301CB561273CF60800FDBF7A /* LaunchScreen.storyboard */; };
+		303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D885D273E3F1400CDA0CA /* String+HTMLDecoded.swift */; };
+		303D886D273E40B000CDA0CA /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		303D8867273E408600CDA0CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 301CB544273CEDF000FDBF7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 301CB54B273CEDF000FDBF7A;
+			remoteInfo = Tensai;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		301CB54C273CEDF000FDBF7A /* Tensai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tensai.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +36,20 @@
 		301CB55E273CEF6500FDBF7A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		301CB561273CF60800FDBF7A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		301CB569273CF8E900FDBF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		303D885D273E3F1400CDA0CA /* String+HTMLDecoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTMLDecoded.swift"; sourceTree = "<group>"; };
+		303D8863273E408600CDA0CA /* TensaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		301CB549273CEDF000FDBF7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		303D8860273E408600CDA0CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +65,7 @@
 				301CB55E273CEF6500FDBF7A /* README.md */,
 				301CB55D273CEEDA00FDBF7A /* .gitignore */,
 				301CB54E273CEDF000FDBF7A /* Tensai */,
+				303D8864273E408600CDA0CA /* TensaiTests */,
 				301CB54D273CEDF000FDBF7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				301CB54C273CEDF000FDBF7A /* Tensai.app */,
+				303D8863273E408600CDA0CA /* TensaiTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,6 +82,7 @@
 		301CB54E273CEDF000FDBF7A /* Tensai */ = {
 			isa = PBXGroup;
 			children = (
+				303D885D273E3F1400CDA0CA /* String+HTMLDecoded.swift */,
 				301CB54F273CEDF000FDBF7A /* TensaiApp.swift */,
 				301CB55F273CF35900FDBF7A /* Views */,
 				301CB560273CF4AB00FDBF7A /* Supporting Files */,
@@ -92,6 +117,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		303D8864273E408600CDA0CA /* TensaiTests */ = {
+			isa = PBXGroup;
+			children = (
+				303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */,
+			);
+			path = TensaiTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,6 +145,24 @@
 			productReference = 301CB54C273CEDF000FDBF7A /* Tensai.app */;
 			productType = "com.apple.product-type.application";
 		};
+		303D8862273E408600CDA0CA /* TensaiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 303D8869273E408600CDA0CA /* Build configuration list for PBXNativeTarget "TensaiTests" */;
+			buildPhases = (
+				303D885F273E408600CDA0CA /* Sources */,
+				303D8860273E408600CDA0CA /* Frameworks */,
+				303D8861273E408600CDA0CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				303D8868273E408600CDA0CA /* PBXTargetDependency */,
+			);
+			name = TensaiTests;
+			productName = TensaiTests;
+			productReference = 303D8863273E408600CDA0CA /* TensaiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -124,6 +175,10 @@
 				TargetAttributes = {
 					301CB54B273CEDF000FDBF7A = {
 						CreatedOnToolsVersion = 13.1;
+					};
+					303D8862273E408600CDA0CA = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 301CB54B273CEDF000FDBF7A;
 					};
 				};
 			};
@@ -141,6 +196,7 @@
 			projectRoot = "";
 			targets = (
 				301CB54B273CEDF000FDBF7A /* Tensai */,
+				303D8862273E408600CDA0CA /* TensaiTests */,
 			);
 		};
 /* End PBXProject section */
@@ -156,6 +212,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		303D8861273E408600CDA0CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -164,11 +227,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				301CB550273CEDF000FDBF7A /* TensaiApp.swift in Sources */,
+				303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */,
 				301CB552273CEDF000FDBF7A /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		303D885F273E408600CDA0CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				303D886D273E40B000CDA0CA /* HTMLDecodingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		303D8868273E408600CDA0CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 301CB54B273CEDF000FDBF7A /* Tensai */;
+			targetProxy = 303D8867273E408600CDA0CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		301CB558273CEDF000FDBF7A /* Debug */ = {
@@ -349,6 +429,52 @@
 			};
 			name = Release;
 		};
+		303D886A273E408600CDA0CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R6U5GZ53KJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.kristorres.TensaiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tensai.app/Tensai";
+			};
+			name = Debug;
+		};
+		303D886B273E408600CDA0CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = R6U5GZ53KJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.kristorres.TensaiTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tensai.app/Tensai";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -366,6 +492,15 @@
 			buildConfigurations = (
 				301CB55B273CEDF000FDBF7A /* Debug */,
 				301CB55C273CEDF000FDBF7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		303D8869273E408600CDA0CA /* Build configuration list for PBXNativeTarget "TensaiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				303D886A273E408600CDA0CA /* Debug */,
+				303D886B273E408600CDA0CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

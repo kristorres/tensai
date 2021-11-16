@@ -14,6 +14,8 @@
 		301CB562273CF60800FDBF7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301CB561273CF60800FDBF7A /* LaunchScreen.storyboard */; };
 		303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D885D273E3F1400CDA0CA /* String+HTMLDecoded.swift */; };
 		303D886D273E40B000CDA0CA /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */; };
+		303D8870273E47BE00CDA0CA /* OTDBQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D886F273E47BE00CDA0CA /* OTDBQuestion.swift */; };
+		303D8872273F432E00CDA0CA /* OTDBQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		303D885D273E3F1400CDA0CA /* String+HTMLDecoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTMLDecoded.swift"; sourceTree = "<group>"; };
 		303D8863273E408600CDA0CA /* TensaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
+		303D886F273E47BE00CDA0CA /* OTDBQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDBQuestion.swift; sourceTree = "<group>"; };
+		303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDBQuestionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			children = (
 				303D885D273E3F1400CDA0CA /* String+HTMLDecoded.swift */,
 				301CB54F273CEDF000FDBF7A /* TensaiApp.swift */,
+				303D886E273E473F00CDA0CA /* Networking */,
 				301CB55F273CF35900FDBF7A /* Views */,
 				301CB560273CF4AB00FDBF7A /* Supporting Files */,
 				301CB555273CEDF000FDBF7A /* Preview Content */,
@@ -121,8 +126,17 @@
 			isa = PBXGroup;
 			children = (
 				303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */,
+				303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */,
 			);
 			path = TensaiTests;
+			sourceTree = "<group>";
+		};
+		303D886E273E473F00CDA0CA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				303D886F273E47BE00CDA0CA /* OTDBQuestion.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,6 +242,7 @@
 			files = (
 				301CB550273CEDF000FDBF7A /* TensaiApp.swift in Sources */,
 				303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */,
+				303D8870273E47BE00CDA0CA /* OTDBQuestion.swift in Sources */,
 				301CB552273CEDF000FDBF7A /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				303D8872273F432E00CDA0CA /* OTDBQuestionTests.swift in Sources */,
 				303D886D273E40B000CDA0CA /* HTMLDecodingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

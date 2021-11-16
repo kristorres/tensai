@@ -1,0 +1,58 @@
+import XCTest
+@testable import Tensai
+
+final class OTDBQuestionTests: XCTestCase {
+    
+    func testInitWithProperties() {
+        let question = OTDBQuestion(
+            "The 1995 film <i>Clueless</i> is based on what Jane Austen novel?",
+            category: "Movies",
+            difficulty: .hard,
+            type: .multipleChoice,
+            correctAnswer: "<i>Emma</i>",
+            incorrectAnswers: [
+                "<i>Sense and Sensibility</i>",
+                "<i>Pride and Prejudice</i>",
+                "<i>Mansfield Park</i>"
+            ]
+        )
+        
+        testProperties(of: question)
+    }
+    
+    func testInitWithDecoder() throws {
+        let json = """
+        {
+            "category": "Movies",
+            "type": "multiple",
+            "difficulty": "hard",
+            "question": "The 1995 film <i>Clueless</i> is based on what Jane Austen novel?",
+            "correct_answer": "<i>Emma</i>",
+            "incorrect_answers": [
+                "<i>Sense and Sensibility</i>",
+                "<i>Pride and Prejudice</i>",
+                "<i>Mansfield Park</i>"
+            ]
+        }
+        """.data(using: .utf8)!
+        
+        let question = try JSONDecoder().decode(OTDBQuestion.self, from: json)
+        
+        testProperties(of: question)
+    }
+    
+    private func testProperties(of question: OTDBQuestion) {
+        XCTAssertEqual(
+            question.string,
+            "The 1995 film Clueless is based on what Jane Austen novel?"
+        )
+        XCTAssertEqual(question.category, "Movies")
+        XCTAssertEqual(question.difficulty, .hard)
+        XCTAssertEqual(question.type, .multipleChoice)
+        XCTAssertEqual(question.correctAnswer, "Emma")
+        XCTAssertEqual(
+            question.incorrectAnswers,
+            ["Sense and Sensibility", "Pride and Prejudice", "Mansfield Park"]
+        )
+    }
+}

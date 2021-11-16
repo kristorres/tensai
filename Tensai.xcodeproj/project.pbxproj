@@ -16,6 +16,7 @@
 		303D886D273E40B000CDA0CA /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */; };
 		303D8870273E47BE00CDA0CA /* OTDBQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D886F273E47BE00CDA0CA /* OTDBQuestion.swift */; };
 		303D8872273F432E00CDA0CA /* OTDBQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */; };
+		30F030F7274383D500233FEF /* OTDBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F030F6274383D500233FEF /* OTDBResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
 		303D886F273E47BE00CDA0CA /* OTDBQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDBQuestion.swift; sourceTree = "<group>"; };
 		303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDBQuestionTests.swift; sourceTree = "<group>"; };
+		30F030F6274383D500233FEF /* OTDBResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDBResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				303D886F273E47BE00CDA0CA /* OTDBQuestion.swift */,
+				30F030F6274383D500233FEF /* OTDBResponse.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				301CB550273CEDF000FDBF7A /* TensaiApp.swift in Sources */,
 				303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */,
 				303D8870273E47BE00CDA0CA /* OTDBQuestion.swift in Sources */,
+				30F030F7274383D500233FEF /* OTDBResponse.swift in Sources */,
 				301CB552273CEDF000FDBF7A /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

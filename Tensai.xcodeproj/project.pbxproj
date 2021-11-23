@@ -12,6 +12,7 @@
 		301CB554273CEDF000FDBF7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301CB553273CEDF000FDBF7A /* Assets.xcassets */; };
 		301CB557273CEDF000FDBF7A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301CB556273CEDF000FDBF7A /* Preview Assets.xcassets */; };
 		301CB562273CF60800FDBF7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301CB561273CF60800FDBF7A /* LaunchScreen.storyboard */; };
+		3032EC00274CAD4700B46598 /* OTDBQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032EBFF274CAD4700B46598 /* OTDBQueryTests.swift */; };
 		303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D885D273E3F1400CDA0CA /* String+HTMLDecoded.swift */; };
 		303D886D273E40B000CDA0CA /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */; };
 		303D8872273F432E00CDA0CA /* OTDBQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */; };
@@ -38,6 +39,7 @@
 		301CB55E273CEF6500FDBF7A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		301CB561273CF60800FDBF7A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		301CB569273CF8E900FDBF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3032EBFF274CAD4700B46598 /* OTDBQueryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDBQueryTests.swift; sourceTree = "<group>"; };
 		303D885D273E3F1400CDA0CA /* String+HTMLDecoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTMLDecoded.swift"; sourceTree = "<group>"; };
 		303D8863273E408600CDA0CA /* TensaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */,
+				3032EBFF274CAD4700B46598 /* OTDBQueryTests.swift */,
 				303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */,
 			);
 			path = TensaiTests;
@@ -251,8 +254,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				303D8872273F432E00CDA0CA /* OTDBQuestionTests.swift in Sources */,
 				303D886D273E40B000CDA0CA /* HTMLDecodingTests.swift in Sources */,
+				3032EC00274CAD4700B46598 /* OTDBQueryTests.swift in Sources */,
+				303D8872273F432E00CDA0CA /* OTDBQuestionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

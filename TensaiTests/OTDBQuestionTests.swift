@@ -4,7 +4,7 @@ import XCTest
 final class OTDBQuestionTests: XCTestCase {
     
     func testInitWithProperties() {
-        let question = OTDBQuestion(
+        let question = OpenTriviaDB.Question(
             "The 1995 film <i>Clueless</i> is based on what Jane Austen novel?",
             category: "Movies",
             difficulty: .hard,
@@ -36,12 +36,15 @@ final class OTDBQuestionTests: XCTestCase {
         }
         """.data(using: .utf8)!
         
-        let question = try JSONDecoder().decode(OTDBQuestion.self, from: json)
+        let question = try JSONDecoder().decode(
+            OpenTriviaDB.Question.self,
+            from: json
+        )
         
         testProperties(of: question)
     }
     
-    private func testProperties(of question: OTDBQuestion) {
+    private func testProperties(of question: OpenTriviaDB.Question) {
         XCTAssertEqual(
             question.string,
             "The 1995 film Clueless is based on what Jane Austen novel?"

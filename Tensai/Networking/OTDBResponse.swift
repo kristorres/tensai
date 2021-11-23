@@ -8,7 +8,7 @@ struct OTDBResponse: Codable {
     let code: Int
     
     /// The questions.
-    let questions: [OTDBQuestion]
+    let questions: [OpenTriviaDB.Question]
     
     /// An internal type that contains the keys for encoding and decoding.
     private enum CodingKeys: String, CodingKey {

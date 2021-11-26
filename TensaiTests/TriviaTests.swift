@@ -68,15 +68,15 @@ final class TriviaQuizTests: XCTestCase {
     }
     
     func testSubmitCorrectAnswer() {
-        testSubmitAnswer("Twice", correctAnswerCount: 1)
+        submitAnswer("Twice", correctAnswerCount: 1)
     }
     
     func testSubmitWrongAnswer() {
-        testSubmitAnswer("Blackpink", correctAnswerCount: 0)
+        submitAnswer("Blackpink", correctAnswerCount: 0)
     }
     
     func testSubmitNoAnswer() {
-        testSubmitAnswer(nil, correctAnswerCount: 0)
+        submitAnswer(nil, correctAnswerCount: 0)
     }
     
     func testSubmitSecondAnswer() {
@@ -128,7 +128,7 @@ final class TriviaQuizTests: XCTestCase {
         XCTAssertNil(triviaQuiz.currentQuestionIndex)
     }
     
-    private func testSubmitAnswer(_ answer: String?, correctAnswerCount: Int) {
+    private func submitAnswer(_ answer: String?, correctAnswerCount: Int) {
         var triviaQuiz = newTriviaQuiz
         triviaQuiz.submitAnswer(answer)
         

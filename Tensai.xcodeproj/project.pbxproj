@@ -18,6 +18,7 @@
 		303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D885D273E3F1400CDA0CA /* String+HTMLDecoded.swift */; };
 		303D886D273E40B000CDA0CA /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */; };
 		303D8872273F432E00CDA0CA /* OTDBQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */; };
+		30C7283A275B246D007E18A2 /* NoCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C72839275B246D007E18A2 /* NoCaching.swift */; };
 		30F030F92743892500233FEF /* OpenTriviaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F030F82743892500233FEF /* OpenTriviaDB.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		303D8863273E408600CDA0CA /* TensaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
 		303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDBQuestionTests.swift; sourceTree = "<group>"; };
+		30C72839275B246D007E18A2 /* NoCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCaching.swift; sourceTree = "<group>"; };
 		30F030F82743892500233FEF /* OpenTriviaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTriviaDB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 		303D886E273E473F00CDA0CA /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				30C72839275B246D007E18A2 /* NoCaching.swift */,
 				30F030F82743892500233FEF /* OpenTriviaDB.swift */,
 			);
 			path = Networking;
@@ -259,6 +262,7 @@
 			files = (
 				301CB550273CEDF000FDBF7A /* TensaiApp.swift in Sources */,
 				303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */,
+				30C7283A275B246D007E18A2 /* NoCaching.swift in Sources */,
 				30F030F92743892500233FEF /* OpenTriviaDB.swift in Sources */,
 				3032EC03274E013300B46598 /* TriviaQuiz.swift in Sources */,
 				301CB552273CEDF000FDBF7A /* ContentView.swift in Sources */,

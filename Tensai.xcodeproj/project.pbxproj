@@ -14,7 +14,7 @@
 		301CB562273CF60800FDBF7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301CB561273CF60800FDBF7A /* LaunchScreen.storyboard */; };
 		3032EC00274CAD4700B46598 /* OTDBQueryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032EBFF274CAD4700B46598 /* OTDBQueryTests.swift */; };
 		3032EC03274E013300B46598 /* TriviaQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032EC02274E013300B46598 /* TriviaQuiz.swift */; };
-		3032EC05274E9E3200B46598 /* TriviaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032EC04274E9E3200B46598 /* TriviaTests.swift */; };
+		3032EC05274E9E3200B46598 /* TriviaQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3032EC04274E9E3200B46598 /* TriviaQuizTests.swift */; };
 		303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D885D273E3F1400CDA0CA /* String+HTMLDecoded.swift */; };
 		303D886D273E40B000CDA0CA /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */; };
 		303D8872273F432E00CDA0CA /* OTDBQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */; };
@@ -46,7 +46,7 @@
 		301CB569273CF8E900FDBF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3032EBFF274CAD4700B46598 /* OTDBQueryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDBQueryTests.swift; sourceTree = "<group>"; };
 		3032EC02274E013300B46598 /* TriviaQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuiz.swift; sourceTree = "<group>"; };
-		3032EC04274E9E3200B46598 /* TriviaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaTests.swift; sourceTree = "<group>"; };
+		3032EC04274E9E3200B46598 /* TriviaQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuizTests.swift; sourceTree = "<group>"; };
 		303D885D273E3F1400CDA0CA /* String+HTMLDecoded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTMLDecoded.swift"; sourceTree = "<group>"; };
 		303D8863273E408600CDA0CA /* TensaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 				303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */,
 				3032EBFF274CAD4700B46598 /* OTDBQueryTests.swift */,
 				303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */,
-				3032EC04274E9E3200B46598 /* TriviaTests.swift */,
+				3032EC04274E9E3200B46598 /* TriviaQuizTests.swift */,
 			);
 			path = TensaiTests;
 			sourceTree = "<group>";
@@ -283,7 +283,7 @@
 				303D886D273E40B000CDA0CA /* HTMLDecodingTests.swift in Sources */,
 				3032EC00274CAD4700B46598 /* OTDBQueryTests.swift in Sources */,
 				303D8872273F432E00CDA0CA /* OTDBQuestionTests.swift in Sources */,
-				3032EC05274E9E3200B46598 /* TriviaTests.swift in Sources */,
+				3032EC05274E9E3200B46598 /* TriviaQuizTests.swift in Sources */,
 				30CB8129275FDD090034EE4C /* DataCenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

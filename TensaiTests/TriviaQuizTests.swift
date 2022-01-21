@@ -4,7 +4,7 @@ import XCTest
 final class TriviaQuizTests: XCTestCase {
     private let newTriviaQuiz = TriviaQuiz(
         questions: [
-            OpenTriviaDB.Question(
+            OTDBResponse.Question(
                 "What K-pop girl group is Sana Minatozaki from?",
                 category: "Music",
                 difficulty: .hard,
@@ -12,7 +12,7 @@ final class TriviaQuizTests: XCTestCase {
                 correctAnswer: "Twice",
                 incorrectAnswers: ["Blackpink", "Red Velvet", "Itzy"]
             ),
-            OpenTriviaDB.Question(
+            OTDBResponse.Question(
                 "In &quot;The Hobbit&quot;, who kills Smaug?",
                 category: "Books",
                 difficulty: .medium,
@@ -20,7 +20,7 @@ final class TriviaQuizTests: XCTestCase {
                 correctAnswer: "Bard the Bowman",
                 incorrectAnswers: ["Bilbo Baggins", "Gandalf", "Elrond"]
             ),
-            OpenTriviaDB.Question(
+            OTDBResponse.Question(
                 "Leonardo da Vinci’s Mona Lisa does not have eyebrows.",
                 category: "Art",
                 difficulty: .easy,
@@ -28,7 +28,7 @@ final class TriviaQuizTests: XCTestCase {
                 correctAnswer: "True",
                 incorrectAnswers: ["False"]
             ),
-            OpenTriviaDB.Question(
+            OTDBResponse.Question(
                 "Which current Dodger won N.L. MVP honors in 2013?",
                 category: "Sports",
                 difficulty: .medium,

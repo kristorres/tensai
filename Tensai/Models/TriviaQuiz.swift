@@ -9,7 +9,7 @@ struct TriviaQuiz {
     /// [Open Trivia Database](https://opentdb.com).
     ///
     /// - Parameter questions: The questions in the quiz.
-    init(questions: [OpenTriviaDB.Question]) {
+    init(questions: [OTDBResponse.Question]) {
         self.questions = questions.map { question in
             var answers = [question.correctAnswer] + question.incorrectAnswers
             answers = (question.type == .multipleChoice)
@@ -106,7 +106,7 @@ struct TriviaQuiz {
         let category: String
         
         /// The question type.
-        let type: OpenTriviaDB.Question.Kind
+        let type: OTDBResponse.Question.Kind
         
         /// The possible answers to the question.
         let possibleAnswers: [String]

@@ -33,7 +33,7 @@ final class DataCenter {
         let request = URLRequest(url: query.url!)
         return try await makeAPICall(
             with: request,
-            processResponse: { (response: OpenTriviaDB.Response) in
+            processResponse: { (response: OTDBResponse) in
                 if response.code == 1 {
                     throw APIError.notEnoughQuestions
                 }

@@ -71,7 +71,7 @@ final class DataCenterTests: XCTestCase {
         
         try await testCreateTriviaQuizSuccess(with: query) { triviaQuiz in
             let questionTypes = triviaQuiz.questions.map(\.type)
-            let uniqueQuestionTypes = Set<OpenTriviaDB.Question.Kind>(
+            let uniqueQuestionTypes = Set<OTDBResponse.Question.Kind>(
                 questionTypes
             )
             

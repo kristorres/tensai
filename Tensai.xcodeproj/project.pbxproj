@@ -21,7 +21,8 @@
 		30C7283A275B246D007E18A2 /* NoCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C72839275B246D007E18A2 /* NoCaching.swift */; };
 		30C7283C275ED19A007E18A2 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C7283B275ED19A007E18A2 /* DataCenter.swift */; };
 		30CB8129275FDD090034EE4C /* DataCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CB8128275FDD090034EE4C /* DataCenterTests.swift */; };
-		30F030F92743892500233FEF /* OpenTriviaDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F030F82743892500233FEF /* OpenTriviaDB.swift */; };
+		30E27EC5279930160095A27B /* OTDBResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E27EC4279930160095A27B /* OTDBResponse.swift */; };
+		30F030F92743892500233FEF /* OTDBQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F030F82743892500233FEF /* OTDBQuery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,8 @@
 		30C72839275B246D007E18A2 /* NoCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCaching.swift; sourceTree = "<group>"; };
 		30C7283B275ED19A007E18A2 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		30CB8128275FDD090034EE4C /* DataCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenterTests.swift; sourceTree = "<group>"; };
-		30F030F82743892500233FEF /* OpenTriviaDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenTriviaDB.swift; sourceTree = "<group>"; };
+		30E27EC4279930160095A27B /* OTDBResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDBResponse.swift; sourceTree = "<group>"; };
+		30F030F82743892500233FEF /* OTDBQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDBQuery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		3032EC01274E00CF00B46598 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				30F030F82743892500233FEF /* OTDBQuery.swift */,
 				3032EC02274E013300B46598 /* TriviaQuiz.swift */,
 			);
 			path = Models;
@@ -160,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				30C72839275B246D007E18A2 /* NoCaching.swift */,
-				30F030F82743892500233FEF /* OpenTriviaDB.swift */,
+				30E27EC4279930160095A27B /* OTDBResponse.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -269,7 +272,8 @@
 				301CB550273CEDF000FDBF7A /* TensaiApp.swift in Sources */,
 				303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */,
 				30C7283A275B246D007E18A2 /* NoCaching.swift in Sources */,
-				30F030F92743892500233FEF /* OpenTriviaDB.swift in Sources */,
+				30E27EC5279930160095A27B /* OTDBResponse.swift in Sources */,
+				30F030F92743892500233FEF /* OTDBQuery.swift in Sources */,
 				30C7283C275ED19A007E18A2 /* DataCenter.swift in Sources */,
 				3032EC03274E013300B46598 /* TriviaQuiz.swift in Sources */,
 				301CB552273CEDF000FDBF7A /* ContentView.swift in Sources */,
@@ -280,11 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30CB8129275FDD090034EE4C /* DataCenterTests.swift in Sources */,
 				303D886D273E40B000CDA0CA /* HTMLDecodingTests.swift in Sources */,
 				3032EC00274CAD4700B46598 /* OTDBQueryTests.swift in Sources */,
 				303D8872273F432E00CDA0CA /* OTDBQuestionTests.swift in Sources */,
 				3032EC05274E9E3200B46598 /* TriviaQuizTests.swift in Sources */,
-				30CB8129275FDD090034EE4C /* DataCenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

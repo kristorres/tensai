@@ -4,14 +4,14 @@ import XCTest
 final class OTDBQueryTests: XCTestCase {
     
     func testDefaultQueryURL() {
-        let query = OpenTriviaDB.Query()
+        let query = OTDBQuery()
         
         let expectedURL = URL(string: "https://opentdb.com/api.php?amount=10")
         XCTAssertEqual(query.url, expectedURL)
     }
     
     func testQueryURLWithCustomQuestionCountOnly() {
-        var query = OpenTriviaDB.Query()
+        var query = OTDBQuery()
         query.questionCount = 50
         
         let expectedURL = URL(string: "https://opentdb.com/api.php?amount=50")
@@ -19,7 +19,7 @@ final class OTDBQueryTests: XCTestCase {
     }
     
     func testQueryURLWithCategoryID() {
-        var query = OpenTriviaDB.Query()
+        var query = OTDBQuery()
         query.categoryID = 9
         
         let expectedURL = URL(
@@ -29,7 +29,7 @@ final class OTDBQueryTests: XCTestCase {
     }
     
     func testQueryURLWithQuestionType() {
-        var query = OpenTriviaDB.Query()
+        var query = OTDBQuery()
         query.questionType = .multipleChoice
         
         let expectedURL = URL(
@@ -39,7 +39,7 @@ final class OTDBQueryTests: XCTestCase {
     }
     
     func testQueryURLWithAllArguments() {
-        var query = OpenTriviaDB.Query()
+        var query = OTDBQuery()
         query.questionCount = 50
         query.categoryID = 9
         query.questionType = .multipleChoice
@@ -62,7 +62,7 @@ final class OTDBQueryTests: XCTestCase {
             "questionType": "multiple"
         }
         """.data(using: .utf8)!
-        let query = OpenTriviaDB.Query(propertyList: json)
+        let query = OTDBQuery(propertyList: json)
         
         let expectedURLStringParts = [
             "https://opentdb.com/api.php",
@@ -82,6 +82,6 @@ final class OTDBQueryTests: XCTestCase {
         }
         """.data(using: .utf8)!
         
-        XCTAssertNil(OpenTriviaDB.Query(propertyList: json))
+        XCTAssertNil(OTDBQuery(propertyList: json))
     }
 }

@@ -17,7 +17,7 @@ final class DataCenterTests: XCTestCase {
         let urlSession = URLSession(configuration: urlSessionConfiguration)
         let dataCenter = DataCenter(urlSession: urlSession)
         
-        let query = OpenTriviaDB.Query()
+        let query = OTDBQuery()
         
         await testCreateTriviaQuizFail(
             with: query,
@@ -27,7 +27,7 @@ final class DataCenterTests: XCTestCase {
     }
     
     func testInvalidCategory() async {
-        var query = OpenTriviaDB.Query()
+        var query = OTDBQuery()
         query.categoryID = -1
         
         await testCreateTriviaQuizFail(
@@ -37,7 +37,7 @@ final class DataCenterTests: XCTestCase {
     }
     
     func testTriviaQuizFromDefaultQuery() async throws {
-        let query = OpenTriviaDB.Query()
+        let query = OTDBQuery()
         
         try await testCreateTriviaQuizSuccess(with: query) {
             XCTAssertEqual($0.questions.count, 10)
@@ -45,7 +45,7 @@ final class DataCenterTests: XCTestCase {
     }
     
     func testTriviaQuizWithCustomQuestionCountOnly() async throws {
-        var query = OpenTriviaDB.Query()
+        var query = OTDBQuery()
         query.questionCount = 50
         
         try await testCreateTriviaQuizSuccess(with: query) {
@@ -54,7 +54,7 @@ final class DataCenterTests: XCTestCase {
     }
     
     func testTriviaQuizWithCategory() async throws {
-        var query = OpenTriviaDB.Query()
+        var query = OTDBQuery()
         query.categoryID = 9
         
         try await testCreateTriviaQuizSuccess(with: query) { triviaQuiz in
@@ -66,12 +66,12 @@ final class DataCenterTests: XCTestCase {
     }
     
     func testTriviaQuizWithQuestionType() async throws {
-        var query = OpenTriviaDB.Query()
+        var query = OTDBQuery()
         query.questionType = .multipleChoice
         
         try await testCreateTriviaQuizSuccess(with: query) { triviaQuiz in
             let questionTypes = triviaQuiz.questions.map(\.type)
-            let uniqueQuestionTypes = Set<OpenTriviaDB.Question.Kind>(
+            let uniqueQuestionTypes = Set<OTDBResponse.Question.Kind>(
                 questionTypes
             )
             
@@ -80,7 +80,7 @@ final class DataCenterTests: XCTestCase {
     }
     
     private func testCreateTriviaQuizFail(
-        with query: OpenTriviaDB.Query,
+        with query: OTDBQuery,
         dataCenter: DataCenter = .shared,
         expectedError: DataCenter.APIError
     ) async {
@@ -96,7 +96,7 @@ final class DataCenterTests: XCTestCase {
     }
     
     private func testCreateTriviaQuizSuccess(
-        with query: OpenTriviaDB.Query,
+        with query: OTDBQuery,
         testTriviaQuiz: (TriviaQuiz) -> Void
     ) async throws {
         let triviaQuiz = try await DataCenter.shared.createTriviaQuiz(
@@ -107,7 +107,7 @@ final class DataCenterTests: XCTestCase {
     }
     
     private func testInvalidQuestionCount(_ questionCount: Int) async {
-        var query = OpenTriviaDB.Query()
+        var query = OTDBQuery()
         query.questionCount = questionCount
         
         await testCreateTriviaQuizFail(

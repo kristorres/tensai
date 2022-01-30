@@ -23,9 +23,7 @@ final class DataCenter {
     /// - Parameter query: The database query.
     ///
     /// - Returns: The trivia quiz.
-    func createTriviaQuiz(
-        with query: OpenTriviaDB.Query
-    ) async throws -> TriviaQuiz {
+    func createTriviaQuiz(with query: OTDBQuery) async throws -> TriviaQuiz {
         if query.questionCount <= 0 {
             throw APIError.invalidQuestionCount
         }
@@ -33,7 +31,7 @@ final class DataCenter {
         let request = URLRequest(url: query.url!)
         return try await makeAPICall(
             with: request,
-            processResponse: { (response: OpenTriviaDB.Response) in
+            processResponse: { (response: OTDBResponse) in
                 if response.code == 1 {
                     throw APIError.notEnoughQuestions
                 }

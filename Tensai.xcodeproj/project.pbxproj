@@ -20,6 +20,7 @@
 		303D8872273F432E00CDA0CA /* OTDBQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */; };
 		305EC10527D495B100961713 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10427D495B100961713 /* ColorPalette.swift */; };
 		305EC10927D5611100961713 /* Color Palettes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305EC10827D5611100961713 /* Color Palettes.xcassets */; };
+		305EC10B27D8235E00961713 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10A27D8235E00961713 /* Theme.swift */; };
 		30C7283A275B246D007E18A2 /* NoCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C72839275B246D007E18A2 /* NoCaching.swift */; };
 		30C7283C275ED19A007E18A2 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C7283B275ED19A007E18A2 /* DataCenter.swift */; };
 		30CB8129275FDD090034EE4C /* DataCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CB8128275FDD090034EE4C /* DataCenterTests.swift */; };
@@ -56,6 +57,7 @@
 		303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDBQuestionTests.swift; sourceTree = "<group>"; };
 		305EC10427D495B100961713 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
 		305EC10827D5611100961713 /* Color Palettes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Color Palettes.xcassets"; sourceTree = "<group>"; };
+		305EC10A27D8235E00961713 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		30C72839275B246D007E18A2 /* NoCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCaching.swift; sourceTree = "<group>"; };
 		30C7283B275ED19A007E18A2 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		30CB8128275FDD090034EE4C /* DataCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenterTests.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				305EC10427D495B100961713 /* ColorPalette.swift */,
+				305EC10A27D8235E00961713 /* Theme.swift */,
 			);
 			path = Urban;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			files = (
 				301CB550273CEDF000FDBF7A /* TensaiApp.swift in Sources */,
 				305EC10527D495B100961713 /* ColorPalette.swift in Sources */,
+				305EC10B27D8235E00961713 /* Theme.swift in Sources */,
 				303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */,
 				30C7283A275B246D007E18A2 /* NoCaching.swift in Sources */,
 				30E27EC5279930160095A27B /* OTDBResponse.swift in Sources */,

@@ -18,7 +18,7 @@
 		303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D885D273E3F1400CDA0CA /* String+HTMLDecoded.swift */; };
 		303D886D273E40B000CDA0CA /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */; };
 		303D8872273F432E00CDA0CA /* OTDBQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */; };
-		305EC10527D495B100961713 /* ColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10427D495B100961713 /* ColorPalette.swift */; };
+		305EC10527D495B100961713 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10427D495B100961713 /* Palette.swift */; };
 		305EC10927D5611100961713 /* Color Palettes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305EC10827D5611100961713 /* Color Palettes.xcassets */; };
 		305EC10B27D8235E00961713 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10A27D8235E00961713 /* Theme.swift */; };
 		30C7283A275B246D007E18A2 /* NoCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C72839275B246D007E18A2 /* NoCaching.swift */; };
@@ -55,7 +55,7 @@
 		303D8863273E408600CDA0CA /* TensaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
 		303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDBQuestionTests.swift; sourceTree = "<group>"; };
-		305EC10427D495B100961713 /* ColorPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPalette.swift; sourceTree = "<group>"; };
+		305EC10427D495B100961713 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		305EC10827D5611100961713 /* Color Palettes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Color Palettes.xcassets"; sourceTree = "<group>"; };
 		305EC10A27D8235E00961713 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		30C72839275B246D007E18A2 /* NoCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCaching.swift; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 		305EC10327D4953100961713 /* Urban */ = {
 			isa = PBXGroup;
 			children = (
-				305EC10427D495B100961713 /* ColorPalette.swift */,
+				305EC10427D495B100961713 /* Palette.swift */,
 				305EC10A27D8235E00961713 /* Theme.swift */,
 			);
 			path = Urban;
@@ -288,7 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				301CB550273CEDF000FDBF7A /* TensaiApp.swift in Sources */,
-				305EC10527D495B100961713 /* ColorPalette.swift in Sources */,
+				305EC10527D495B100961713 /* Palette.swift in Sources */,
 				305EC10B27D8235E00961713 /* Theme.swift in Sources */,
 				303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */,
 				30C7283A275B246D007E18A2 /* NoCaching.swift in Sources */,

@@ -29,9 +29,9 @@ typealias MCColorPair = (main: Color, content: Color)
 /// Using a color from the palette in a SwiftUI view is very straightforward.
 ///
 /// ```
-/// colorPalette.primary.main
+/// palette.primary.main
 /// ```
-struct UrbanColorPalette {
+struct UrbanPalette {
     
     /// The name of the color palette.
     let name: String

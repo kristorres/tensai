@@ -21,18 +21,18 @@ import SwiftUI
 ///
 /// ```
 /// var theme = UrbanTheme.trebek
-/// theme.colorPalette = UrbanColorPalette(name: "Sajak")
+/// theme.palette = UrbanPalette(name: "Sajak")
 /// ```
 struct UrbanTheme {
     
     /// The Trebek theme.
     static let trebek = UrbanTheme(
-        colorPalette: UrbanColorPalette(name: "Trebek"),
+        palette: UrbanPalette(name: "Trebek"),
         shadowRadius: 4
     )
     
     /// The color palette.
-    var colorPalette: UrbanColorPalette
+    var palette: UrbanPalette
     
     /// The standard shadow “radius.”
     var shadowRadius: CGFloat

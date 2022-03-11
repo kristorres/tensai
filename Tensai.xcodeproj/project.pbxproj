@@ -18,9 +18,10 @@
 		303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D885D273E3F1400CDA0CA /* String+HTMLDecoded.swift */; };
 		303D886D273E40B000CDA0CA /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */; };
 		303D8872273F432E00CDA0CA /* OTDBQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */; };
-		305EC10527D495B100961713 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10427D495B100961713 /* Palette.swift */; };
-		305EC10927D5611100961713 /* Color Palettes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 305EC10827D5611100961713 /* Color Palettes.xcassets */; };
 		305EC10B27D8235E00961713 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10A27D8235E00961713 /* Theme.swift */; };
+		305EC10D27DAB0F700961713 /* Color+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10C27DAB0F700961713 /* Color+Dynamic.swift */; };
+		305EC10F27DAB3FF00961713 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10E27DAB3FF00961713 /* CustomColors.swift */; };
+		305EC11227DAC91900961713 /* Trebek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC11127DAC91900961713 /* Trebek.swift */; };
 		30C7283A275B246D007E18A2 /* NoCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C72839275B246D007E18A2 /* NoCaching.swift */; };
 		30C7283C275ED19A007E18A2 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C7283B275ED19A007E18A2 /* DataCenter.swift */; };
 		30CB8129275FDD090034EE4C /* DataCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CB8128275FDD090034EE4C /* DataCenterTests.swift */; };
@@ -55,9 +56,10 @@
 		303D8863273E408600CDA0CA /* TensaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
 		303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDBQuestionTests.swift; sourceTree = "<group>"; };
-		305EC10427D495B100961713 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
-		305EC10827D5611100961713 /* Color Palettes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Color Palettes.xcassets"; sourceTree = "<group>"; };
 		305EC10A27D8235E00961713 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		305EC10C27DAB0F700961713 /* Color+Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Dynamic.swift"; sourceTree = "<group>"; };
+		305EC10E27DAB3FF00961713 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		305EC11127DAC91900961713 /* Trebek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trebek.swift; sourceTree = "<group>"; };
 		30C72839275B246D007E18A2 /* NoCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCaching.swift; sourceTree = "<group>"; };
 		30C7283B275ED19A007E18A2 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		30CB8128275FDD090034EE4C /* DataCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenterTests.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				301CB54F273CEDF000FDBF7A /* TensaiApp.swift */,
 				3032EC01274E00CF00B46598 /* Models */,
 				303D886E273E473F00CDA0CA /* Networking */,
+				305EC11027DAC8E200961713 /* Themes */,
 				305EC10327D4953100961713 /* Urban */,
 				301CB55F273CF35900FDBF7A /* Views */,
 				301CB560273CF4AB00FDBF7A /* Supporting Files */,
@@ -139,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				301CB553273CEDF000FDBF7A /* Assets.xcassets */,
-				305EC10827D5611100961713 /* Color Palettes.xcassets */,
 				301CB569273CF8E900FDBF7A /* Info.plist */,
 				301CB561273CF60800FDBF7A /* LaunchScreen.storyboard */,
 			);
@@ -179,10 +181,19 @@
 		305EC10327D4953100961713 /* Urban */ = {
 			isa = PBXGroup;
 			children = (
-				305EC10427D495B100961713 /* Palette.swift */,
+				305EC10C27DAB0F700961713 /* Color+Dynamic.swift */,
+				305EC10E27DAB3FF00961713 /* CustomColors.swift */,
 				305EC10A27D8235E00961713 /* Theme.swift */,
 			);
 			path = Urban;
+			sourceTree = "<group>";
+		};
+		305EC11027DAC8E200961713 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				305EC11127DAC91900961713 /* Trebek.swift */,
+			);
+			path = Themes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +278,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				301CB554273CEDF000FDBF7A /* Assets.xcassets in Resources */,
-				305EC10927D5611100961713 /* Color Palettes.xcassets in Resources */,
 				301CB557273CEDF000FDBF7A /* Preview Assets.xcassets in Resources */,
 				301CB562273CF60800FDBF7A /* LaunchScreen.storyboard in Resources */,
 			);
@@ -288,8 +298,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				301CB550273CEDF000FDBF7A /* TensaiApp.swift in Sources */,
-				305EC10527D495B100961713 /* Palette.swift in Sources */,
+				305EC10D27DAB0F700961713 /* Color+Dynamic.swift in Sources */,
+				305EC10F27DAB3FF00961713 /* CustomColors.swift in Sources */,
 				305EC10B27D8235E00961713 /* Theme.swift in Sources */,
+				305EC11227DAC91900961713 /* Trebek.swift in Sources */,
 				303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */,
 				30C7283A275B246D007E18A2 /* NoCaching.swift in Sources */,
 				30E27EC5279930160095A27B /* OTDBResponse.swift in Sources */,

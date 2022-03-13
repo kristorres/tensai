@@ -22,6 +22,7 @@
 		305EC10D27DAB0F700961713 /* Color+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10C27DAB0F700961713 /* Color+Dynamic.swift */; };
 		305EC10F27DAB3FF00961713 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10E27DAB3FF00961713 /* CustomColors.swift */; };
 		305EC11227DAC91900961713 /* Trebek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC11127DAC91900961713 /* Trebek.swift */; };
+		305EC11827DD52F600961713 /* BarlowCondensed-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 305EC11727DD52F600961713 /* BarlowCondensed-Medium.ttf */; };
 		30C7283A275B246D007E18A2 /* NoCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C72839275B246D007E18A2 /* NoCaching.swift */; };
 		30C7283C275ED19A007E18A2 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C7283B275ED19A007E18A2 /* DataCenter.swift */; };
 		30CB8129275FDD090034EE4C /* DataCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CB8128275FDD090034EE4C /* DataCenterTests.swift */; };
@@ -60,6 +61,7 @@
 		305EC10C27DAB0F700961713 /* Color+Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Dynamic.swift"; sourceTree = "<group>"; };
 		305EC10E27DAB3FF00961713 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		305EC11127DAC91900961713 /* Trebek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trebek.swift; sourceTree = "<group>"; };
+		305EC11727DD52F600961713 /* BarlowCondensed-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowCondensed-Medium.ttf"; sourceTree = "<group>"; };
 		30C72839275B246D007E18A2 /* NoCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCaching.swift; sourceTree = "<group>"; };
 		30C7283B275ED19A007E18A2 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		30CB8128275FDD090034EE4C /* DataCenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenterTests.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				301CB553273CEDF000FDBF7A /* Assets.xcassets */,
 				301CB569273CF8E900FDBF7A /* Info.plist */,
 				301CB561273CF60800FDBF7A /* LaunchScreen.storyboard */,
+				305EC11427DC0DD000961713 /* Fonts */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -194,6 +197,14 @@
 				305EC11127DAC91900961713 /* Trebek.swift */,
 			);
 			path = Themes;
+			sourceTree = "<group>";
+		};
+		305EC11427DC0DD000961713 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				305EC11727DD52F600961713 /* BarlowCondensed-Medium.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				305EC11827DD52F600961713 /* BarlowCondensed-Medium.ttf in Resources */,
 				301CB554273CEDF000FDBF7A /* Assets.xcassets in Resources */,
 				301CB557273CEDF000FDBF7A /* Preview Assets.xcassets in Resources */,
 				301CB562273CF60800FDBF7A /* LaunchScreen.storyboard in Resources */,

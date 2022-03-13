@@ -5,6 +5,7 @@ extension UrbanTheme {
     /// The Trebek theme.
     static let trebek: UrbanTheme = {
         var theme = UrbanTheme()
+        
         theme.palette.primary.main = .dynamic(
             light: Color(red: 0.0902, green: 0.3922, blue: 0.8549),
             dark: Color(red: 0.6431, green: 0.7647, blue: 0.9569)
@@ -21,6 +22,9 @@ extension UrbanTheme {
             light: Color(red: 0.6235, green: 0.8471, blue: 1),
             dark: Color(red: 0.0431, green: 0.1176, blue: 0.2353)
         )
+        
+        theme.typography.buttonTypeface = "Barlow Condensed Medium"
+        theme.typography.buttonFontSize = 16
         
         return theme
     }()

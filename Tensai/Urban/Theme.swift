@@ -42,10 +42,13 @@ struct UrbanTheme {
     /// The color palette.
     var palette = Palette()
     
+    /// The font settings.
+    var typography = Typography()
+    
     /// The standard shadow “radius.”
     var shadowRadius: CGFloat = 4
     
-    /// A color palette.
+    /// A color palette that reflects the app’s brand or style.
     struct Palette {
         
         /// Creates a default color palette.
@@ -100,6 +103,22 @@ struct UrbanTheme {
                 dark: Color.white.opacity(0.375)
             )
         )
+    }
+    
+    /// A collection of font settings that present the app’s content as clearly
+    /// and efficiently as possible.
+    struct Typography {
+        
+        /// Creates the default font settings.
+        init() {}
+        
+        /// The typeface for button titles.
+        ///
+        /// If it is `nil`, then the system font will be used.
+        var buttonTypeface: String?
+        
+        /// The font size of a button’s title.
+        var buttonFontSize: CGFloat = 14
     }
 }
 

@@ -45,8 +45,8 @@ struct UrbanTheme {
     /// The font settings.
     var typography = Typography()
     
-    /// The standard shadow “radius.”
-    var shadowRadius: CGFloat = 4
+    /// The standard corner radius of the components.
+    var cornerRadius: CGFloat = 4
     
     /// A color palette that reflects the app’s brand or style.
     struct Palette {

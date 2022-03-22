@@ -36,26 +36,24 @@ struct UrbanPaper<Content>: View where Content: View {
     var body: some View {
         content()
             .foregroundColor(theme.palette.surface.content)
-            .background(background)
+            .background(theme.palette.surface.main)
+            .clipShape(shape)
+            .overlay(borderLayer)
+            .shadow(radius: hasShadow ? 4 : 0)
     }
     
-    /// The background of the paper element.
-    private var background: some View {
-        let paperShape = RoundedRectangle(cornerRadius: theme.cornerRadius)
-        let paperSurface = paperShape.fill(theme.palette.surface.main)
-        
-        return ZStack {
-            if hasShadow {
-                paperSurface.shadow(radius: 4)
-            }
-            else {
-                paperSurface
-            }
-            
+    /// The border “layer” of the paper element.
+    private var borderLayer: some View {
+        Group {
             if hasBorder {
-                paperShape.stroke(theme.palette.surface.content, lineWidth: 2)
+                shape.stroke(theme.palette.surface.content, lineWidth: 2)
             }
         }
+    }
+    
+    /// The shape of the paper element.
+    private var shape: some Shape {
+        RoundedRectangle(cornerRadius: theme.cornerRadius)
     }
 }
 

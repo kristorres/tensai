@@ -142,25 +142,17 @@ struct UrbanButton: View {
                     .padding(.vertical, Constants.verticalPadding)
                     .padding(.horizontal, horizontalPadding)
                     .background(background)
+                    .clipShape(shape)
+                    .overlay(borderLayer)
                     .animation(.default, value: buttonIsEnabled)
             }
             
             /// The background of the button.
             private var background: some View {
-                let buttonShape = RoundedRectangle(
-                    cornerRadius: theme.cornerRadius
-                )
-                
-                return ZStack {
-                    buttonShape.fill(currentBackgroundColor)
+                ZStack {
+                    currentBackgroundColor
                     if configuration.isPressed {
-                        buttonShape.fill(currentHighlightColor)
-                    }
-                    if let borderColor = self.borderColor {
-                        buttonShape.stroke(
-                            borderColor,
-                            lineWidth: Constants.outlinedButtonBorderWidth
-                        )
+                        currentHighlightColor
                     }
                 }
             }
@@ -175,6 +167,18 @@ struct UrbanButton: View {
                 }
                 
                 return defaultColorPair.main
+            }
+            
+            /// The border “layer” of the button.
+            private var borderLayer: some View {
+                Group {
+                    if let borderColor = self.borderColor {
+                        shape.stroke(
+                            borderColor,
+                            lineWidth: Constants.outlinedButtonBorderWidth
+                        )
+                    }
+                }
             }
             
             /// The current background color of the button.
@@ -230,6 +234,11 @@ struct UrbanButton: View {
                 }
                 
                 return Constants.verticalPadding * 2
+            }
+            
+            /// The button shape.
+            private var shape: some Shape {
+                RoundedRectangle(cornerRadius: theme.cornerRadius)
             }
         }
     }

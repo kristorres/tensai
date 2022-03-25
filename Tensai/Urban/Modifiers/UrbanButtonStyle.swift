@@ -71,8 +71,8 @@ struct UrbanButtonStyle: ButtonStyle {
         /// The properties of the button.
         let configuration: Configuration
         
-        /// The app theme.
-        @Environment(\.theme) private var theme
+        /// The Urban theme.
+        @Environment(\.urbanTheme) private var theme
         
         /// Indicates whether the button allows user interaction.
         @Environment(\.isEnabled) private var buttonIsEnabled

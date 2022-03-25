@@ -3,7 +3,7 @@ import SwiftUI
 /// A main/content color pair.
 typealias MCColorPair = (main: Color, content: Color)
 
-/// An app theme.
+/// An Urban theme.
 ///
 /// The purpose of the theme is to apply a consistent tone to the app. You can
 /// customize design aspects such as the colors, typography, and more.
@@ -29,14 +29,14 @@ typealias MCColorPair = (main: Color, content: Color)
 ///
 /// ```
 /// // Setting the theme
-/// MyView().environment(\.theme, .sana)
+/// MyView().urbanTheme(.sana)
 ///
 /// // Getting the theme
-/// @Environment(\.theme) private var theme
+/// @Environment(\.urbanTheme) private var theme
 /// ```
 struct UrbanTheme {
     
-    /// Creates a default app theme.
+    /// Creates a default Urban theme.
     init() {}
     
     /// The color palette.
@@ -124,8 +124,8 @@ struct UrbanTheme {
 
 extension EnvironmentValues {
     
-    /// The app theme.
-    var theme: UrbanTheme {
+    /// The Urban theme.
+    var urbanTheme: UrbanTheme {
         get {
             self[UrbanThemeKey.self]
         }
@@ -136,5 +136,17 @@ extension EnvironmentValues {
     
     private struct UrbanThemeKey: EnvironmentKey {
         static let defaultValue = UrbanTheme()
+    }
+}
+
+extension View {
+    
+    /// Sets the Urban theme for the view.
+    ///
+    /// - Parameter theme: The Urban theme.
+    ///
+    /// - Returns: The modified view.
+    func urbanTheme(_ theme: UrbanTheme) -> some View {
+        return environment(\.urbanTheme, theme)
     }
 }

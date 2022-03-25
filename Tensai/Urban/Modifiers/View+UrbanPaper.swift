@@ -27,8 +27,8 @@ fileprivate struct UrbanPaper: ViewModifier {
     /// Indicates whether the paper element has a shadow.
     let hasShadow: Bool
     
-    /// The app theme.
-    @Environment(\.theme) private var theme
+    /// The Urban theme.
+    @Environment(\.urbanTheme) private var theme
     
     /// Returns the current body of the caller.
     ///

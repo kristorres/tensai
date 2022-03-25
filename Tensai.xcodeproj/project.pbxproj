@@ -20,7 +20,7 @@
 		303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D885D273E3F1400CDA0CA /* String+HTMLDecoded.swift */; };
 		303D886D273E40B000CDA0CA /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */; };
 		303D8872273F432E00CDA0CA /* OTDBQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */; };
-		305EC10B27D8235E00961713 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10A27D8235E00961713 /* Theme.swift */; };
+		305EC10B27D8235E00961713 /* UrbanTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10A27D8235E00961713 /* UrbanTheme.swift */; };
 		305EC10D27DAB0F700961713 /* Color+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10C27DAB0F700961713 /* Color+Dynamic.swift */; };
 		305EC10F27DAB3FF00961713 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10E27DAB3FF00961713 /* CustomColors.swift */; };
 		305EC11227DAC91900961713 /* Trebek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC11127DAC91900961713 /* Trebek.swift */; };
@@ -61,7 +61,7 @@
 		303D8863273E408600CDA0CA /* TensaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
 		303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDBQuestionTests.swift; sourceTree = "<group>"; };
-		305EC10A27D8235E00961713 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		305EC10A27D8235E00961713 /* UrbanTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanTheme.swift; sourceTree = "<group>"; };
 		305EC10C27DAB0F700961713 /* Color+Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Dynamic.swift"; sourceTree = "<group>"; };
 		305EC10E27DAB3FF00961713 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		305EC11127DAC91900961713 /* Trebek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trebek.swift; sourceTree = "<group>"; };
@@ -199,7 +199,7 @@
 			children = (
 				305EC10C27DAB0F700961713 /* Color+Dynamic.swift */,
 				305EC10E27DAB3FF00961713 /* CustomColors.swift */,
-				305EC10A27D8235E00961713 /* Theme.swift */,
+				305EC10A27D8235E00961713 /* UrbanTheme.swift */,
 				300E181627E153D50007BE50 /* Modifiers */,
 			);
 			path = Urban;
@@ -326,7 +326,7 @@
 				301CB550273CEDF000FDBF7A /* TensaiApp.swift in Sources */,
 				305EC10D27DAB0F700961713 /* Color+Dynamic.swift in Sources */,
 				305EC10F27DAB3FF00961713 /* CustomColors.swift in Sources */,
-				305EC10B27D8235E00961713 /* Theme.swift in Sources */,
+				305EC10B27D8235E00961713 /* UrbanTheme.swift in Sources */,
 				300E181827E154490007BE50 /* UrbanButtonStyle.swift in Sources */,
 				30080A1927E7A611002941B4 /* View+UrbanPaper.swift in Sources */,
 				305EC11227DAC91900961713 /* Trebek.swift in Sources */,

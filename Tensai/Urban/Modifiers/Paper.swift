@@ -98,7 +98,10 @@ struct UrbanPaper_Previews: PreviewProvider {
                 }
                     .padding()
                 Divider()
-                UrbanButton("Expand") {}
+                Button(action: {}) {
+                    Text("Expand").fontWeight(.semibold)
+                }
+                    .buttonStyle(.urban())
                     .padding(8)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }

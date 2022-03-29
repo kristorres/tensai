@@ -216,14 +216,10 @@ struct UrbanButtonStyle_Previews: PreviewProvider {
             VStack(spacing: 16) {
                 ForEach(variants, id: \.self) { variant in
                     ForEach(colors, id: \.self) { color in
-                        Button(action: {}) {
-                            Text("Press Me").fontWeight(.semibold)
-                        }
+                        Button("Press Me") {}
                             .buttonStyle(.urban(variant: variant, color: color))
                     }
-                    Button(action: {}) {
-                        Text("Press Me").fontWeight(.semibold)
-                    }
+                    Button("Press Me") {}
                         .buttonStyle(.urban(variant: variant))
                         .disabled(true)
                 }
@@ -237,16 +233,12 @@ struct UrbanButtonStyle_Previews: PreviewProvider {
                 ForEach(variants, id: \.self) { variant in
                     ForEach(colors, id: \.self) { color in
                         Button(action: {}) {
-                            Text("Press Me")
-                                .fontWeight(.semibold)
-                                .frame(maxWidth: 100)
+                            Text("Press Me").frame(maxWidth: 100)
                         }
                             .buttonStyle(.urban(variant: variant, color: color))
                     }
                     Button(action: {}) {
-                        Text("Press Me")
-                            .fontWeight(.semibold)
-                            .frame(maxWidth: 100)
+                        Text("Press Me").frame(maxWidth: 100)
                     }
                         .buttonStyle(.urban(variant: variant))
                         .disabled(true)

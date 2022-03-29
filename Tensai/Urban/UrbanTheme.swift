@@ -112,6 +112,18 @@ struct UrbanTheme {
         /// Creates the default font set.
         init() {}
         
+        /// The title font.
+        var title = Font.largeTitle
+        
+        /// The header font.
+        var header = Font.title
+        
+        /// The subheader font.
+        var subheader = Font.title2
+        
+        /// The font for body text.
+        var body = Font.body
+        
         /// The font for button titles.
         var button = Font.body.bold()
     }

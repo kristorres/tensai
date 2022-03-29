@@ -79,7 +79,7 @@ struct UrbanButtonStyle: ButtonStyle {
         
         var body: some View {
             configuration.label
-                .font(contentFont)
+                .font(theme.typography.button)
                 .textCase(.uppercase)
                 .multilineTextAlignment(.center)
                 .foregroundColor(foregroundColor)
@@ -127,17 +127,6 @@ struct UrbanButtonStyle: ButtonStyle {
                     )
                 }
             }
-        }
-        
-        /// The font of the button’s content.
-        private var contentFont: Font {
-            let fontSize = theme.typography.buttonFontSize
-            
-            if let buttonTypeface = theme.typography.buttonTypeface {
-                return .custom(buttonTypeface, fixedSize: fontSize)
-            }
-            
-            return .system(size: fontSize)
         }
         
         /// The main/content color pair when the button is enabled.

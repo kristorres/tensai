@@ -23,8 +23,7 @@ extension UrbanTheme {
             dark: Color(red: 0.0431, green: 0.1176, blue: 0.2353)
         )
         
-        theme.typography.buttonTypeface = "Barlow Condensed Medium"
-        theme.typography.buttonFontSize = 16
+        theme.typography.button = .custom("Barlow Condensed Medium", size: 28)
         
         return theme
     }()

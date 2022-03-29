@@ -121,10 +121,7 @@ struct UrbanButtonStyle: ButtonStyle {
             
             return Group {
                 if variant == .outlined {
-                    shape.stroke(
-                        borderColor,
-                        lineWidth: Constants.outlinedButtonBorderWidth
-                    )
+                    shape.stroke(borderColor, lineWidth: Constants.borderWidth)
                 }
             }
         }
@@ -174,10 +171,10 @@ struct UrbanButtonStyle: ButtonStyle {
         }
     }
     
-    /// An internal struct that contains drawing constants.
-    private struct Constants {
+    /// An internal enum that contains drawing constants.
+    private enum Constants {
+        static let borderWidth: CGFloat = 2
         static let highlightOpacity: Double = 0.25
-        static let outlinedButtonBorderWidth: CGFloat = 2
         static let verticalPadding: CGFloat = 8
     }
 }

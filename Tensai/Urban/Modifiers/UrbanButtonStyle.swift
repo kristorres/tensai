@@ -79,7 +79,7 @@ struct UrbanButtonStyle: ButtonStyle {
         
         var body: some View {
             configuration.label
-                .font(contentFont)
+                .font(theme.typography.button)
                 .textCase(.uppercase)
                 .multilineTextAlignment(.center)
                 .foregroundColor(foregroundColor)
@@ -121,23 +121,9 @@ struct UrbanButtonStyle: ButtonStyle {
             
             return Group {
                 if variant == .outlined {
-                    shape.stroke(
-                        borderColor,
-                        lineWidth: Constants.outlinedButtonBorderWidth
-                    )
+                    shape.stroke(borderColor, lineWidth: Constants.borderWidth)
                 }
             }
-        }
-        
-        /// The font of the button’s content.
-        private var contentFont: Font {
-            let fontSize = theme.typography.buttonFontSize
-            
-            if let buttonTypeface = theme.typography.buttonTypeface {
-                return .custom(buttonTypeface, fixedSize: fontSize)
-            }
-            
-            return .system(size: fontSize)
         }
         
         /// The main/content color pair when the button is enabled.
@@ -185,10 +171,10 @@ struct UrbanButtonStyle: ButtonStyle {
         }
     }
     
-    /// An internal struct that contains drawing constants.
-    private struct Constants {
+    /// An internal enum that contains drawing constants.
+    private enum Constants {
+        static let borderWidth: CGFloat = 2
         static let highlightOpacity: Double = 0.25
-        static let outlinedButtonBorderWidth: CGFloat = 2
         static let verticalPadding: CGFloat = 8
     }
 }
@@ -227,14 +213,10 @@ struct UrbanButtonStyle_Previews: PreviewProvider {
             VStack(spacing: 16) {
                 ForEach(variants, id: \.self) { variant in
                     ForEach(colors, id: \.self) { color in
-                        Button(action: {}) {
-                            Text("Press Me").fontWeight(.semibold)
-                        }
+                        Button("Press Me") {}
                             .buttonStyle(.urban(variant: variant, color: color))
                     }
-                    Button(action: {}) {
-                        Text("Press Me").fontWeight(.semibold)
-                    }
+                    Button("Press Me") {}
                         .buttonStyle(.urban(variant: variant))
                         .disabled(true)
                 }
@@ -248,16 +230,12 @@ struct UrbanButtonStyle_Previews: PreviewProvider {
                 ForEach(variants, id: \.self) { variant in
                     ForEach(colors, id: \.self) { color in
                         Button(action: {}) {
-                            Text("Press Me")
-                                .fontWeight(.semibold)
-                                .frame(maxWidth: 100)
+                            Text("Press Me").frame(maxWidth: 100)
                         }
                             .buttonStyle(.urban(variant: variant, color: color))
                     }
                     Button(action: {}) {
-                        Text("Press Me")
-                            .fontWeight(.semibold)
-                            .frame(maxWidth: 100)
+                        Text("Press Me").frame(maxWidth: 100)
                     }
                         .buttonStyle(.urban(variant: variant))
                         .disabled(true)

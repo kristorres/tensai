@@ -42,8 +42,8 @@ struct UrbanTheme {
     /// The color palette.
     var palette = Palette()
     
-    /// The font settings.
-    var typography = Typography()
+    /// The font set.
+    var typography = FontSet()
     
     /// The standard corner radius of the components.
     var cornerRadius: CGFloat = 4
@@ -105,20 +105,27 @@ struct UrbanTheme {
         )
     }
     
-    /// A collection of font settings that present the app’s content as clearly
-    /// and efficiently as possible.
-    struct Typography {
+    /// A set of fonts that present the app’s content as clearly and efficiently
+    /// as possible.
+    struct FontSet {
         
-        /// Creates the default font settings.
+        /// Creates the default font set.
         init() {}
         
-        /// The typeface for button titles.
-        ///
-        /// If it is `nil`, then the system font will be used.
-        var buttonTypeface: String?
+        /// The title font.
+        var title = Font.largeTitle
         
-        /// The font size of a button’s title.
-        var buttonFontSize: CGFloat = 14
+        /// The header font.
+        var header = Font.title
+        
+        /// The subheader font.
+        var subheader = Font.title2
+        
+        /// The font for body text.
+        var body = Font.body
+        
+        /// The font for button titles.
+        var button = Font.body.bold()
     }
 }
 

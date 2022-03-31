@@ -41,14 +41,17 @@ fileprivate struct UrbanPaper: ViewModifier {
             .background(theme.palette.surface.main)
             .clipShape(shape)
             .overlay(borderLayer)
-            .shadow(radius: hasShadow ? 4 : 0)
+            .shadow(radius: hasShadow ? Constants.shadowRadius : 0)
     }
     
     /// The border “layer” of the paper element.
     private var borderLayer: some View {
         Group {
             if hasBorder {
-                shape.stroke(theme.palette.surface.content, lineWidth: 2)
+                shape.stroke(
+                    theme.palette.surface.content,
+                    lineWidth: Constants.borderWidth
+                )
             }
         }
     }
@@ -56,6 +59,12 @@ fileprivate struct UrbanPaper: ViewModifier {
     /// The shape of the paper element.
     private var shape: some Shape {
         RoundedRectangle(cornerRadius: theme.cornerRadius)
+    }
+    
+    /// An internal enum that contains drawing constants.
+    private enum Constants {
+        static let borderWidth: CGFloat = 2
+        static let shadowRadius: CGFloat = 4
     }
 }
 
@@ -98,9 +107,7 @@ struct UrbanPaper_Previews: PreviewProvider {
             }
                 .padding()
             Divider()
-            Button(action: {}) {
-                Text("Expand").fontWeight(.semibold)
-            }
+            Button("Expand") {}
                 .buttonStyle(.urban())
                 .padding(8)
                 .frame(maxWidth: .infinity, alignment: .leading)

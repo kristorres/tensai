@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "urban",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kristorres/urban",
+      "state" : {
+        "revision" : "0b08bf2d39eb92dc7bd10079d2ac0a0d4b404492",
+        "version" : "0.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}

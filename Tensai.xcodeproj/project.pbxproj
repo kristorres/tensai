@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30080A1927E7A611002941B4 /* View+UrbanPaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30080A1827E7A611002941B4 /* View+UrbanPaper.swift */; };
-		300E181827E154490007BE50 /* UrbanButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300E181727E154490007BE50 /* UrbanButtonStyle.swift */; };
 		301CB550273CEDF000FDBF7A /* TensaiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB54F273CEDF000FDBF7A /* TensaiApp.swift */; };
 		301CB552273CEDF000FDBF7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301CB551273CEDF000FDBF7A /* ContentView.swift */; };
 		301CB554273CEDF000FDBF7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 301CB553273CEDF000FDBF7A /* Assets.xcassets */; };
@@ -20,11 +18,9 @@
 		303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D885D273E3F1400CDA0CA /* String+HTMLDecoded.swift */; };
 		303D886D273E40B000CDA0CA /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */; };
 		303D8872273F432E00CDA0CA /* OTDBQuestionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */; };
-		305EC10B27D8235E00961713 /* UrbanTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10A27D8235E00961713 /* UrbanTheme.swift */; };
-		305EC10D27DAB0F700961713 /* Color+Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10C27DAB0F700961713 /* Color+Dynamic.swift */; };
-		305EC10F27DAB3FF00961713 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC10E27DAB3FF00961713 /* CustomColors.swift */; };
 		305EC11227DAC91900961713 /* Trebek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 305EC11127DAC91900961713 /* Trebek.swift */; };
 		305EC11827DD52F600961713 /* BarlowCondensed-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 305EC11727DD52F600961713 /* BarlowCondensed-Medium.ttf */; };
+		30722D8328022F8500DF87CA /* Urban in Frameworks */ = {isa = PBXBuildFile; productRef = 30722D8228022F8500DF87CA /* Urban */; };
 		30C7283A275B246D007E18A2 /* NoCaching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C72839275B246D007E18A2 /* NoCaching.swift */; };
 		30C7283C275ED19A007E18A2 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30C7283B275ED19A007E18A2 /* DataCenter.swift */; };
 		30CB8129275FDD090034EE4C /* DataCenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30CB8128275FDD090034EE4C /* DataCenterTests.swift */; };
@@ -43,8 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		30080A1827E7A611002941B4 /* View+UrbanPaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+UrbanPaper.swift"; sourceTree = "<group>"; };
-		300E181727E154490007BE50 /* UrbanButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanButtonStyle.swift; sourceTree = "<group>"; };
 		301CB54C273CEDF000FDBF7A /* Tensai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tensai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		301CB54F273CEDF000FDBF7A /* TensaiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensaiApp.swift; sourceTree = "<group>"; };
 		301CB551273CEDF000FDBF7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,9 +55,6 @@
 		303D8863273E408600CDA0CA /* TensaiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensaiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		303D886C273E40B000CDA0CA /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
 		303D8871273F432E00CDA0CA /* OTDBQuestionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTDBQuestionTests.swift; sourceTree = "<group>"; };
-		305EC10A27D8235E00961713 /* UrbanTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrbanTheme.swift; sourceTree = "<group>"; };
-		305EC10C27DAB0F700961713 /* Color+Dynamic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Dynamic.swift"; sourceTree = "<group>"; };
-		305EC10E27DAB3FF00961713 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		305EC11127DAC91900961713 /* Trebek.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trebek.swift; sourceTree = "<group>"; };
 		305EC11727DD52F600961713 /* BarlowCondensed-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BarlowCondensed-Medium.ttf"; sourceTree = "<group>"; };
 		30C72839275B246D007E18A2 /* NoCaching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCaching.swift; sourceTree = "<group>"; };
@@ -78,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30722D8328022F8500DF87CA /* Urban in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,15 +83,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		300E181627E153D50007BE50 /* Modifiers */ = {
-			isa = PBXGroup;
-			children = (
-				300E181727E154490007BE50 /* UrbanButtonStyle.swift */,
-				30080A1827E7A611002941B4 /* View+UrbanPaper.swift */,
-			);
-			path = Modifiers;
-			sourceTree = "<group>";
-		};
 		301CB543273CEDF000FDBF7A = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +112,6 @@
 				3032EC01274E00CF00B46598 /* Models */,
 				303D886E273E473F00CDA0CA /* Networking */,
 				305EC11027DAC8E200961713 /* Themes */,
-				305EC10327D4953100961713 /* Urban */,
 				301CB55F273CF35900FDBF7A /* Views */,
 				301CB560273CF4AB00FDBF7A /* Supporting Files */,
 				301CB555273CEDF000FDBF7A /* Preview Content */,
@@ -194,17 +176,6 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		305EC10327D4953100961713 /* Urban */ = {
-			isa = PBXGroup;
-			children = (
-				305EC10C27DAB0F700961713 /* Color+Dynamic.swift */,
-				305EC10E27DAB3FF00961713 /* CustomColors.swift */,
-				305EC10A27D8235E00961713 /* UrbanTheme.swift */,
-				300E181627E153D50007BE50 /* Modifiers */,
-			);
-			path = Urban;
-			sourceTree = "<group>";
-		};
 		305EC11027DAC8E200961713 /* Themes */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +208,9 @@
 			dependencies = (
 			);
 			name = Tensai;
+			packageProductDependencies = (
+				30722D8228022F8500DF87CA /* Urban */,
+			);
 			productName = Tensai;
 			productReference = 301CB54C273CEDF000FDBF7A /* Tensai.app */;
 			productType = "com.apple.product-type.application";
@@ -287,6 +261,9 @@
 				Base,
 			);
 			mainGroup = 301CB543273CEDF000FDBF7A;
+			packageReferences = (
+				30722D8128022F8500DF87CA /* XCRemoteSwiftPackageReference "urban" */,
+			);
 			productRefGroup = 301CB54D273CEDF000FDBF7A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -324,11 +301,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				301CB550273CEDF000FDBF7A /* TensaiApp.swift in Sources */,
-				305EC10D27DAB0F700961713 /* Color+Dynamic.swift in Sources */,
-				305EC10F27DAB3FF00961713 /* CustomColors.swift in Sources */,
-				305EC10B27D8235E00961713 /* UrbanTheme.swift in Sources */,
-				300E181827E154490007BE50 /* UrbanButtonStyle.swift in Sources */,
-				30080A1927E7A611002941B4 /* View+UrbanPaper.swift in Sources */,
 				305EC11227DAC91900961713 /* Trebek.swift in Sources */,
 				303D885E273E3F1400CDA0CA /* String+HTMLDecoded.swift in Sources */,
 				30C7283A275B246D007E18A2 /* NoCaching.swift in Sources */,
@@ -618,6 +590,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		30722D8128022F8500DF87CA /* XCRemoteSwiftPackageReference "urban" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kristorres/urban";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		30722D8228022F8500DF87CA /* Urban */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 30722D8128022F8500DF87CA /* XCRemoteSwiftPackageReference "urban" */;
+			productName = Urban;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 301CB544273CEDF000FDBF7A /* Project object */;
 }
